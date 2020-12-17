@@ -4,10 +4,11 @@ const kanban = {
   state: initialKanban,
   actions: {},
   getters: {
-    getBoards: (state) => state.kanban.boards,
-    getBoardsOrder: (state) => state.kanban.boardsOrder,
-    getBoard: (state) => (boardId) => state.kanban.boards[boardId],
-    getTask: (state) => (boardId, taskId) => state.kanban.boards[boardId].tasks[taskId],
+    listBoards: (state) => state.boards,
+    boardsOrder: (state) => state.boardsOrder,
+    singleBoard: (state) => (boardId) => state.boards[boardId],
+    singleTask: (state) => (boardId, taskId) => state.boards[boardId].tasks[taskId],
+    listProject: (state) => state,
   },
   mutations: {},
 };
