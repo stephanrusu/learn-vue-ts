@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container mx-auto">
+  <div id="app" class="container mx-auto w-p-95">
     <!-- <nav-section /> -->
     <router-view />
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex p-4 max-w-full items-center space-x-4">
+  <div class="flex p-4 flex-1 items-center space-x-4">
     <kanban-filter-priority />
     <kanban-filter-type />
   </div>

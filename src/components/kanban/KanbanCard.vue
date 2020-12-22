@@ -1,7 +1,9 @@
 <template>
   <div class="px-3 border-b">
     <header class="flex flex-row justify-between py-3 border-b">
-      <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">PNG preview</div>
+      <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">
+        Kanban-{{ boardId }}
+      </div>
       <div class="flex flex-row">
         <div :class="`rounded-tl rounded-bl px-3 py-1 ${taskCard.priority.color} text-xs font-medium text-white`">
           {{ taskCard.priority.text }}

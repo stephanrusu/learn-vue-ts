@@ -48,7 +48,7 @@
         </button>
       </div>
     </header>
-    <main class="flex flex-row py-3 bg-white mb-4 shadow-card border-t">
+    <main class="bg-white mb-4 shadow-card border-t">
       <kanban-filter />
     </main>
     <kanban-boards />
