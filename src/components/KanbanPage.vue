@@ -1,7 +1,7 @@
 <template>
   <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="px-4 pb-4 font-sans">
-    <header class="mb-4 shadow-card bg-white px-4 py-2 flex items-center justify-between">
+    <header class="mt-4 shadow-card bg-white px-4 py-2 flex items-center justify-between">
       <h1 class="text-md font-medium leading-tight text-gray-900">Dashboard</h1>
       <div class="space-x-4">
         <button type="button" class="bg-white hover:bg-gray-100 p-1.5">
@@ -48,15 +48,19 @@
         </button>
       </div>
     </header>
+    <main class="flex flex-row py-3 bg-white mb-4 shadow-card border-t">
+      <kanban-filter />
+    </main>
     <kanban-boards />
   </div>
 </template>
 
 <script>
+import KanbanFilter from "./kanban/filters/KanbanFilter.vue";
 import KanbanBoards from "./kanban/KanbanBoards.vue";
 
 export default {
   name: "KanbanPage",
-  components: { KanbanBoards },
+  components: { KanbanBoards, KanbanFilter },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="px-3 border-b">
     <header class="flex flex-row justify-between py-3 border-b">
-      <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-700">PNG preview</div>
+      <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">PNG preview</div>
       <div class="flex flex-row">
         <div :class="`rounded-tl rounded-bl px-3 py-1 ${taskCard.priority.color} text-xs font-medium text-white`">
           {{ taskCard.priority.text }}
@@ -39,7 +39,7 @@
               </svg>
               <div class="ml-2 text-gray-800 font-medium">06 Nov 2020</div>
             </div>
-            <div class="flex flex-row text-xs items-center">
+            <div v-if="taskCard.subTasks.length > 0" class="flex flex-row text-xs items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -57,7 +57,7 @@
               </svg>
               <div class="ml-2 text-gray-800 font-medium">{{ taskCard.subTasks.length }}</div>
             </div>
-            <div class="flex flex-row text-xs items-center">
+            <div v-if="taskCard.comments.length > 0" class="flex flex-row text-xs items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -96,7 +96,11 @@
       </div>
     </main>
     <footer class="flex flex-row py-3">
-      <button type="button" class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center">
+      <button
+        v-if="!isFirstBoard"
+        type="button"
+        class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center"
+      >
         <svg
           fill="none"
           height="24"
@@ -107,13 +111,17 @@
           viewBox="0 0 24 24"
           width="24"
           xmlns="http://www.w3.org/2000/svg"
-          class="feather chevron-left"
+          class="feather chevron-left w-5 h-5"
         >
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
-      <div class="flex-none mx-2 border"></div>
-      <button type="button" class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center">
+      <div v-if="!isFirstBoard && !isLastBoard" class="flex-none mx-2 border"></div>
+      <button
+        v-if="!isLastBoard"
+        type="button"
+        class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center"
+      >
         <svg
           fill="none"
           height="24"
@@ -124,7 +132,7 @@
           viewBox="0 0 24 24"
           width="24"
           xmlns="http://www.w3.org/2000/svg"
-          class="feather chevron-right"
+          class="feather chevron-right w-5 h-5"
         >
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
@@ -152,6 +160,17 @@ export default {
     },
     boardColor() {
       return this.$store.getters.singleBoard(this.boardId).board.color;
+    },
+    boardsOrder() {
+      return this.$store.getters.boardsOrder;
+    },
+    isFirstBoard() {
+      const boardIndex = this.boardsOrder.indexOf(this.boardId);
+      return boardIndex === 0;
+    },
+    isLastBoard() {
+      const boardIndex = this.boardsOrder.indexOf(this.boardId);
+      return boardIndex === this.boardsOrder.length - 1;
     },
   },
 };

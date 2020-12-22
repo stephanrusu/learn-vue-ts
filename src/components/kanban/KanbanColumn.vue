@@ -1,6 +1,6 @@
 <template>
   <div class="flex-1">
-    <div class="bg-white shadow-panel rounded-md">
+    <div class="bg-white shadow-card rounded-md">
       <header :class="`flex justify-between ${boardColumn.board.color} text-white p-3 rounded-tl-md rounded-tr-md`">
         <div class="text-white font-medium">{{ boardColumn.board.text }}</div>
         <span class="bg-white text-gray-700 h-6 px-2 rounded-sm text-xs font-medium inline-flex items-center">

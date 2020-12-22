@@ -1,17 +1,21 @@
 <template>
   <div id="app" class="container mx-auto">
-    <nav-section />
+    <!-- <nav-section /> -->
     <router-view />
   </div>
 </template>
 
 <script>
-import NavSection from "@/components/NavSection.vue";
+// import NavSection from "@/components/NavSection.vue";
 
 export default {
   name: "App",
-  components: {
-    NavSection,
-  },
 };
 </script>
+
+<style>
+html,
+body {
+  background-color: rgb(250, 251, 255);
+}
+</style>
