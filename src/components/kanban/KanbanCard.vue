@@ -5,10 +5,14 @@
         Kanban-{{ boardId }}
       </div>
       <div class="flex flex-row">
-        <div :class="`rounded-tl rounded-bl px-3 py-1 ${taskCard.priority.color} text-xs font-medium text-white`">
+        <div
+          :class="`rounded-tl rounded-bl px-3 py-1 ${taskCard.priority.background.color} text-xs font-medium text-white`"
+        >
           {{ taskCard.priority.text }}
         </div>
-        <div :class="`rounded-tr rounded-br px-3 py-1 ${taskCard.type.color} text-xs font-medium text-white`">
+        <div
+          :class="`rounded-tr rounded-br px-3 py-1 ${taskCard.type.background.color} text-xs font-medium text-white`"
+        >
           {{ taskCard.type.text }}
         </div>
       </div>
