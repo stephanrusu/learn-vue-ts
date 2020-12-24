@@ -6,7 +6,7 @@
 import KanbanPage from "@/components/KanbanPage.vue";
 
 export default {
-  name: "Home",
+  name: "Kanban",
   components: { KanbanPage },
 };
 </script>

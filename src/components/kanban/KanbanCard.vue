@@ -1,9 +1,11 @@
 <template>
   <div class="px-3 border-b">
     <header class="flex flex-row justify-between py-3 border-b">
-      <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">
-        Kanban-{{ boardId }}
-      </div>
+      <router-link :to="{ name: 'task-view', params: { taskId } }">
+        <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">
+          Kanban-{{ boardId }}
+        </div>
+      </router-link>
       <div class="flex flex-row">
         <div
           :class="`rounded-tl rounded-bl px-3 py-1 ${taskCard.priority.background.color} text-xs font-medium text-white`"
@@ -18,11 +20,13 @@
       </div>
     </header>
     <main class="flex flex-row py-3 border-b">
-      <div :class="`w-1 ${boardColor} rounded mr-3`"></div>
+      <div :class="`w-1 bg-${boardColor}-500 rounded mr-3`"></div>
       <div class="flex-1">
-        <div class="font-medium text-sm tracking-wider text-gray-600 mb-4">
-          {{ taskCard.title }}
-        </div>
+        <router-link :to="{ name: 'task-view', params: { taskId } }">
+          <div class="font-medium text-sm tracking-wider text-gray-600 mb-4">
+            {{ taskCard.title }}
+          </div>
+        </router-link>
         <div class="flex flex-row justify-between">
           <div class="flex-1 flex flex-row space-x-2">
             <div class="flex flex-row text-xs items-center">
@@ -43,7 +47,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <div class="ml-2 text-gray-800 font-medium">06 Nov 2020</div>
+              <div class="ml-2 text-gray-800 font-medium">{{ taskCard.date | taskDate }}</div>
             </div>
             <div v-if="taskCard.subTasks.length > 0" class="flex flex-row text-xs items-center">
               <svg
@@ -178,6 +182,12 @@ export default {
       const boardIndex = this.boardsOrder.indexOf(this.boardId);
       return boardIndex === this.boardsOrder.length - 1;
     },
+  },
+  methods: {
+    // moveTask(direction) {
+    //   const boardIndex = this.boardsOrder.indexOf(this.boardId);
+    //   const newBoardId = this.boardsOrder[boardIndex + direction];
+    // },
   },
 };
 </script>

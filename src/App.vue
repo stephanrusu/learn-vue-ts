@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="container mx-auto w-p-95">
     <!-- <nav-section /> -->
-    <router-view />
+    <transition name="fade" mode="out-in" :duration="300" appear>
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -17,5 +19,15 @@ export default {
 html,
 body {
   background-color: rgb(250, 251, 255);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>
