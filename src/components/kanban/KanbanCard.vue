@@ -110,6 +110,7 @@
         v-if="!isFirstBoard"
         type="button"
         class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center"
+        @click="moveTask(-1)"
       >
         <svg
           fill="none"
@@ -131,6 +132,7 @@
         v-if="!isLastBoard"
         type="button"
         class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center"
+        @click="moveTask(1)"
       >
         <svg
           fill="none"
@@ -184,10 +186,14 @@ export default {
     },
   },
   methods: {
-    // moveTask(direction) {
-    //   const boardIndex = this.boardsOrder.indexOf(this.boardId);
-    //   const newBoardId = this.boardsOrder[boardIndex + direction];
-    // },
+    moveTask(direction) {
+      const boardIndex = this.boardsOrder.indexOf(this.boardId);
+      const newBoardId = this.boardsOrder[boardIndex + direction];
+      const movingTask = { ...this.taskCard };
+
+      this.$store.dispatch("removeTask", { boardId: this.boardId, taskId: this.taskId });
+      this.$store.dispatch("addTask", { boardId: newBoardId, taskId: this.taskId, task: movingTask });
+    },
   },
 };
 </script>

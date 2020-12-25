@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container mx-auto w-p-95">
+  <div id="app" class="container mx-auto">
     <!-- <nav-section /> -->
     <transition name="fade" mode="out-in" :duration="300" appear>
       <router-view />
@@ -19,6 +19,10 @@ export default {
 html,
 body {
   background-color: rgb(250, 251, 255);
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .fade-enter-active,

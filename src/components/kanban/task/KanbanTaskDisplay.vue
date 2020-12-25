@@ -58,6 +58,7 @@
             v-if="!isFirstBoard"
             type="button"
             :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.prevBoard.board.color}-50 hover:bg-${actionsBoard.prevBoard.board.color}-100 items-center justify-center`"
+            @click="moveTask(-1)"
           >
             <svg
               fill="none"
@@ -82,6 +83,7 @@
             v-if="!isLastBoard"
             type="button"
             :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.nextBoard.board.color}-50 hover:bg-${actionsBoard.nextBoard.board.color}-100 items-center justify-center`"
+            @click="moveTask(1)"
           >
             <div :class="`font-medium text-${actionsBoard.nextBoard.board.color}-500`">
               {{ actionsBoard.nextBoard.board.text }}
@@ -155,6 +157,18 @@ export default {
         prevBoard: this.boards[this.boardsOrder[boardIndex - 1]],
         nextBoard: this.boards[this.boardsOrder[boardIndex + 1]],
       };
+    },
+  },
+  methods: {
+    moveTask(direction) {
+      const boardId = this.column.uid;
+      const taskId = this.$route.params.taskId;
+      const boardIndex = this.boardsOrder.indexOf(boardId);
+      const newBoardId = this.boardsOrder[boardIndex + direction];
+      const movingTask = { ...this.task };
+
+      this.$store.dispatch("removeTask", { boardId, taskId });
+      this.$store.dispatch("addTask", { boardId: newBoardId, taskId, task: movingTask });
     },
   },
 };
