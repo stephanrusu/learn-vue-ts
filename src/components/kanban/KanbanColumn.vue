@@ -28,6 +28,7 @@
 
 <script>
 import KanbanCard from "./KanbanCard";
+import { displayFilters } from "@/utils";
 
 export default {
   name: "KanbanColumn",
@@ -44,8 +45,14 @@ export default {
     boardColumn() {
       return this.$store.getters.singleBoard(this.boardId);
     },
+    priorityFilter() {
+      return this.$store.getters.priority;
+    },
+    typeFilter() {
+      return this.$store.getters.type;
+    },
     tasksList() {
-      return Object.keys(this.boardColumn.tasks);
+      return Object.keys(displayFilters(this.boardColumn.tasks, this.priorityFilter, this.typeFilter));
     },
   },
 };
