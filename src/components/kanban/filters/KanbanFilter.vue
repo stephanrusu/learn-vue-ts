@@ -8,8 +8,9 @@
 <script>
 import KanbanFilterPriority from "./KanbanFilterPriority.vue";
 import KanbanFilterType from "./KanbanFilterType.vue";
+
 export default {
-  name: "KanbanBase",
+  name: "KanbanFilter",
   components: { KanbanFilterPriority, KanbanFilterType },
 };
 </script>

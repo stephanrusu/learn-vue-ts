@@ -57,7 +57,7 @@
           <button
             v-if="!isFirstBoard"
             type="button"
-            :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.prevBoard.board.color}-50 hover:bg-${actionsBoard.prevBoard.board.color}-100 items-center justify-center`"
+            :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.prevBoard.board.color}-50 hover:bg-${actionsBoard.prevBoard.board.color}-100 items-center justify-center shadow-sm`"
             @click="moveTask(-1)"
           >
             <svg
@@ -82,7 +82,7 @@
           <button
             v-if="!isLastBoard"
             type="button"
-            :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.nextBoard.board.color}-50 hover:bg-${actionsBoard.nextBoard.board.color}-100 items-center justify-center`"
+            :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.nextBoard.board.color}-50 hover:bg-${actionsBoard.nextBoard.board.color}-100 items-center justify-center shadow-sm`"
             @click="moveTask(1)"
           >
             <div :class="`font-medium text-${actionsBoard.nextBoard.board.color}-500`">

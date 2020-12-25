@@ -2,7 +2,7 @@
   <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="px-4 pb-4 font-sans">
     <div class="mb-4">
-      <div class="mt-4 shadow-card bg-white px-4 py-2 flex items-center justify-between">
+      <div class="mt-4 shadow-card bg-white px-4 py-2 flex items-center justify-between rounded-sm">
         <router-link :to="{ name: 'kanban' }">
           <h1 class="text-md font-medium leading-tight text-gray-900">Dashboard</h1>
         </router-link>
@@ -75,7 +75,7 @@ export default {
   data() {
     return {
       isModalOpen: false,
-      isFilterOpen: false,
+      isFilterOpen: true,
     };
   },
 };

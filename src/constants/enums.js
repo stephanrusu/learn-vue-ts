@@ -8,6 +8,7 @@ export const Boards = {
 export const KanbanPriorityFilter = {
   all: {
     text: "All",
+    key: "all",
     background: {
       color: "bg-gray-200",
       active: "bg-gray-300",
@@ -15,6 +16,7 @@ export const KanbanPriorityFilter = {
   },
   blocker: {
     text: "Blocker",
+    key: "blocker",
     background: {
       color: "bg-red-400",
       active: "bg-red-500",
@@ -22,6 +24,7 @@ export const KanbanPriorityFilter = {
   },
   critical: {
     text: "Critical",
+    key: "critical",
     background: {
       color: "bg-orange-400",
       active: "bg-orange-500",
@@ -29,6 +32,7 @@ export const KanbanPriorityFilter = {
   },
   major: {
     text: "Major",
+    key: "major",
     background: {
       color: "bg-yellow-400",
       active: "bg-yellow-500",
@@ -36,6 +40,7 @@ export const KanbanPriorityFilter = {
   },
   minor: {
     text: "Minor",
+    key: "minor",
     background: {
       color: "bg-cyan-400",
       active: "bg-cyan-500",
@@ -43,6 +48,7 @@ export const KanbanPriorityFilter = {
   },
   trivial: {
     text: "Trivial",
+    key: "trivial",
     background: {
       color: "bg-teal-400",
       active: "bg-teal-500",
@@ -53,6 +59,7 @@ export const KanbanPriorityFilter = {
 export const KanbanTypeFilter = {
   all: {
     text: "All",
+    key: "all",
     background: {
       color: "bg-gray-200",
       active: "bg-gray-300",
@@ -60,6 +67,7 @@ export const KanbanTypeFilter = {
   },
   bug: {
     text: "Bug",
+    key: "bug",
     background: {
       color: "bg-red-600",
       active: "bg-red-700",
@@ -67,6 +75,7 @@ export const KanbanTypeFilter = {
   },
   task: {
     text: "Task",
+    key: "task",
     background: {
       color: "bg-blue-600",
       active: "bg-blue-700",
@@ -74,6 +83,7 @@ export const KanbanTypeFilter = {
   },
   design: {
     text: "Design",
+    key: "design",
     background: {
       color: "bg-indigo-600",
       active: "bg-indigo-700",
