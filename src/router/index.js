@@ -2,27 +2,39 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Kanban from "@/views/Kanban.vue";
 import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
+import KanbanPage from "@/components/KanbanPage.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "kanban",
+    name: "home",
+    redirect: "/kanban",
+  },
+  {
+    path: "/kanban",
     component: Kanban,
-  },
-  {
-    path: "/create",
-    name: "task-create",
-  },
-  {
-    path: "/edit/:taskId",
-    name: "task-edit",
-  },
-  {
-    path: "/view/:taskId",
-    name: "task-view",
-    component: KanbanTaskDisplay,
+    children: [
+      {
+        path: "",
+        name: "kanban",
+        component: KanbanPage,
+      },
+      {
+        path: "create",
+        name: "task-create",
+      },
+      {
+        path: "edit/:taskId",
+        name: "task-edit",
+      },
+      {
+        path: "view/:taskId",
+        name: "task-view",
+        component: KanbanTaskDisplay,
+      },
+    ],
   },
 ];
 
