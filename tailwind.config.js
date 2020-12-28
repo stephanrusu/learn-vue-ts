@@ -162,6 +162,7 @@ module.exports = {
       initial: "0 1 auto",
       none: "none",
       full: "1 1 100%",
+      "0-auto": "0 0 auto",
     },
     flexGrow: {
       0: "0",
@@ -918,5 +919,5 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus"],
   },
-  plugins: [],
+  plugins: [require("./plugins/flex-basis")],
 };

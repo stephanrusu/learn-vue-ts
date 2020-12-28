@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container mx-auto">
+  <div id="app" class="container mx-auto box-border">
     <!-- <nav-section /> -->
     <transition name="fade" mode="out-in" :duration="300" appear>
       <router-view />
