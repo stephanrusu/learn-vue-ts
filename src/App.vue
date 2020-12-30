@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container mx-auto box-border">
+  <div id="app" class="container mx-auto box-border flex items-center justify-center">
     <!-- <nav-section /> -->
     <transition name="fade" mode="out-in" :duration="300" appear>
       <router-view />
