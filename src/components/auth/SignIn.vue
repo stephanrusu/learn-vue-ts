@@ -1,10 +1,19 @@
 <template>
-  <div class="flex flex-row flex-wrap space-x-4 h-full">
-    <div class="flex-auto bg-indigo-400 max-w-1/2 shadow-tiny"></div>
-    <div class="flex-auto max-w-1/2 flex items-center justify-center">
-      <div class="bg-white px-4 py-8 shadow-card rounded-md w-3/4">
-        <div class="mb-4">
-          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+  <div class="flex flex-row flex-wrap h-screen">
+    <div class="flex-auto bg-indigo-400 max-w-1/2 flex flex-col items-center justify-center">
+      <div class="text-white text-xl font-medium mb-6">Don't have an account ?</div>
+      <router-link
+        :to="{ name: 'sign-up' }"
+        class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small border-solid border-2 border-white ease-in transition-colors hover:bg-gray-50 hover:text-indigo-500"
+      >
+        Sign up
+      </router-link>
+    </div>
+    <div class="flex-auto bg-white max-w-1/2 flex items-center justify-center">
+      <div class="w-3/4 flex flex-col">
+        <div class="font-bold text-2xl mb-10 text-center">Welcome</div>
+        <div class="mb-6">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email address </label>
           <input
             id="email"
             type="email"
@@ -12,7 +21,7 @@
             class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
           />
         </div>
-        <div class="mb-4">
+        <div class="mb-6">
           <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
           <input
             id="password"
@@ -22,7 +31,9 @@
           />
         </div>
         <div class="flex flex-row items-center justify-between">
-          <div class="text-xs text-gray-600">Forgot your password ?</div>
+          <router-link :to="{ name: 'forget-pass' }" class="text-sm text-indigo-600 font-medium">
+            Forgot your password?
+          </router-link>
           <button
             type="button"
             class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
