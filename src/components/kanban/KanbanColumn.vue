@@ -15,14 +15,6 @@
         </template>
       </main>
     </div>
-    <footer v-if="boardColumn.allowNew" class="py-3 w-full">
-      <button
-        type="button"
-        class="bg-blue-50 text-blue-500 hover:bg-blue-100 px-3 py-2 rounded-md text-sm font-medium w-full"
-      >
-        Add new task
-      </button>
-    </footer>
   </div>
 </template>
 

@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import Kanban from "@/views/Kanban.vue";
 import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
 import KanbanPage from "@/components/KanbanPage.vue";
-import Home from "@/views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -11,7 +10,7 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: Home,
+    redirect: "/kanban",
   },
   {
     path: "/kanban",

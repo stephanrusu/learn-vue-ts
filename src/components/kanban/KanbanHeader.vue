@@ -2,7 +2,7 @@
   <div class="mb-4">
     <div class="mt-4 shadow-card bg-white px-4 py-2 flex items-center justify-between rounded-sm">
       <router-link :to="{ name: 'kanban' }" class="py-2">
-        <h1 class="text-md font-medium leading-tight text-gray-900">Dashboard</h1>
+        <h1 class="text-md font-medium leading-tight text-gray-900">{{ projectTitle }}</h1>
       </router-link>
       <div v-if="hideActions" class="space-x-4">
         <button type="button" class="bg-white hover:bg-gray-100 p-1.5" @click="isModalOpen = true">
@@ -69,6 +69,11 @@ export default {
       isFilterOpen: false,
       hideActions: false,
     };
+  },
+  computed: {
+    projectTitle() {
+      return this.$store.getters.listProject.title;
+    },
   },
   watch: {
     $route: {

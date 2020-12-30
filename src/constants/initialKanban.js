@@ -10,7 +10,6 @@ const initialKanban = {
       uid: "ntq5y153g",
       date: 1604613600000,
       board: Boards.toDo,
-      allowNew: true,
       tasks: {
         "8lvzs23uf": {
           uid: "8lvzs23uf",
@@ -62,7 +61,6 @@ const initialKanban = {
       uid: "wewoprlx1",
       date: 1604613600000,
       board: Boards.inProgress,
-      allowNew: true,
       tasks: {
         "98t5ma5pg": {
           uid: "98t5ma5pg",
@@ -92,7 +90,6 @@ const initialKanban = {
       uid: "sl0mm9cem",
       date: 1604613600000,
       board: Boards.inReview,
-      allowNew: true,
       tasks: {
         otvgpj19o: {
           uid: "otvgpj19o",
