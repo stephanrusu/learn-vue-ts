@@ -1,15 +1,16 @@
 <template>
   <div class="px-4 pb-4 font-sans">
     <kanban-header />
-    <router-view />
+    <kanban-page />
   </div>
 </template>
 
 <script>
-import KanbanHeader from "../components/kanban/KanbanHeader.vue";
+import KanbanHeader from "@/components/kanban/KanbanHeader.vue";
+import KanbanPage from "@/components/KanbanPage.vue";
 
 export default {
   name: "Kanban",
-  components: { KanbanHeader },
+  components: { KanbanHeader, KanbanPage },
 };
 </script>

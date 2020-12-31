@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 
 import Kanban from "@/views/Kanban.vue";
 import KanbanTaskOverlay from "@/components/kanban/KanbanTaskOverlay.vue";
-import KanbanPage from "@/components/KanbanPage.vue";
 
 import Auth from "@/views/Auth.vue";
 import SignIn from "@/components/auth/SignIn.vue";
@@ -49,19 +48,23 @@ const routes = [
   {
     path: "/kanban",
     component: Kanban,
+    name: "kanban",
     children: [
-      {
-        path: "",
-        name: "kanban",
-        component: KanbanPage,
-      },
       {
         path: "create",
         name: "task-create",
+        meta: {
+          showModal: true,
+        },
+        props: true,
       },
       {
         path: "edit/:taskId",
         name: "task-edit",
+        meta: {
+          showModal: true,
+        },
+        props: true,
       },
       {
         path: "view/:taskId",
