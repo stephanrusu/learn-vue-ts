@@ -3,7 +3,7 @@
     <header class="flex flex-row justify-between py-3 border-b">
       <router-link :to="{ name: 'task-view', params: { taskId } }">
         <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">
-          Kanban-{{ boardId }}
+          {{ projectTitle }}-{{ boardId }}
         </div>
       </router-link>
       <div class="flex flex-row">
@@ -167,6 +167,9 @@ export default {
     },
   },
   computed: {
+    projectTitle() {
+      return this.$store.getters.listProject.title;
+    },
     taskCard() {
       return this.$store.getters.singleTask(this.boardId, this.taskId);
     },
