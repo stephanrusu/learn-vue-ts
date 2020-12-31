@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container mx-auto box-border flex items-center justify-center">
+  <div id="app" class="container mx-auto box-border">
     <!-- <nav-section /> -->
     <transition name="fade" mode="out-in" :duration="300" appear>
       <router-view />
@@ -16,6 +16,12 @@ export default {
 </script>
 
 <style>
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: rgb(250, 251, 255);
