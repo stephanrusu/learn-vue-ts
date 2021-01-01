@@ -1,57 +1,88 @@
 <template>
-  <main class="pb-4 font-sans mt-4 shadow-card bg-white py-2 flex flex-col">
-    <div class="flex items-center justify-between py-3 px-4 border-b">
-      <div :class="`rounded px-3 py-1 bg-${column.board.color}-500 text-xs font-medium tracking-wider text-white`">
-        {{ column.board.text }}
-      </div>
-      <div class="text-md text-gray-800 font-medium tracking-wide">Kanban - {{ task.uid }}</div>
-      <div class="flex flex-row">
-        <div
-          :class="`rounded-tl rounded-bl px-3 py-1 ${task.priority.background.color} text-xs font-medium text-white`"
-        >
-          {{ task.priority.text }}
-        </div>
-        <div :class="`rounded-tr rounded-br px-3 py-1 ${task.type.background.color} text-xs font-medium text-white`">
-          {{ task.type.text }}
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col py-3 px-4 border-b">
-      <div class="flex items-start justify-between">
-        <div>
-          <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">
-            {{ task.title }}
+  <kanban-task-overlay>
+    <div class="h-full flex flex-col bg-white">
+      <!-- Replace with your content -->
+      <main class="flex flex-col">
+        <div class="p-6 border-b bg-gray-50">
+          <div class="flex justify-between items-center pb-4">
+            <div class="text-md font-medium text-gray-800">{{ projectTitle }} - {{ task.uid }}</div>
+            <router-link :to="{ name: 'kanban' }" class="rounded-md text-gray-300 hover:text-white focus:outline-none">
+              <span class="sr-only">Close panel</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x stroke-current text-gray-500"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </router-link>
           </div>
-          <div class="text-xs text-gray-400">
-            {{ task.date | taskDate }}
+          <div class="flex items-center justify-between">
+            <div
+              :class="`rounded px-3 py-1 bg-${column.board.color}-500 text-xs font-medium tracking-wider text-white`"
+            >
+              {{ column.board.text }}
+            </div>
+            <div class="flex flex-row">
+              <div
+                :class="`rounded-tl rounded-bl px-3 py-1 ${task.priority.background.color} text-xs font-medium text-white`"
+              >
+                {{ task.priority.text }}
+              </div>
+              <div
+                :class="`rounded-tr rounded-br px-3 py-1 ${task.type.background.color} text-xs font-medium text-white`"
+              >
+                {{ task.type.text }}
+              </div>
+            </div>
           </div>
         </div>
-        <div class="bg-teal-400 p-2 rounded shadow-small">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-user stroke-current text-white stroke-2 w-5 h-5"
-          >
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
+        <div class="flex flex-col py-4 px-6">
+          <div class="flex items-start justify-between">
+            <div>
+              <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">
+                {{ task.title }}
+              </div>
+              <div class="text-xs text-gray-400">
+                {{ task.date | taskDate }}
+              </div>
+            </div>
+            <div class="bg-teal-400 p-2 rounded shadow-small">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-user stroke-current text-white stroke-2 w-5 h-5"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="py-4 text-sm text-gray-500">
+            {{ task.description }}
+          </div>
         </div>
-      </div>
-      <div class="py-4 text-md text-gray-500">
-        {{ task.description }}
-      </div>
-      <div class="flex flex-row py-3">
+      </main>
+      <div class="flex flex-row pb-6 px-6 mt-auto border-t pt-3">
         <button
           v-if="!isFirstBoard"
           type="button"
-          :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.prevBoard.board.color}-50 hover:bg-${actionsBoard.prevBoard.board.color}-100 items-center justify-center shadow-sm`"
+          :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.prevBoard.board.color}-500 hover:bg-${actionsBoard.prevBoard.board.color}-600 items-center justify-center shadow-small rounded-md ease-in transition-colors`"
           @click="moveTask(-1)"
         >
           <svg
@@ -64,11 +95,11 @@
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
-            :class="`feather chevron-left w-5 h-5 stroke-current text-${actionsBoard.prevBoard.board.color}-600`"
+            :class="`feather chevron-left w-5 h-5 stroke-current text-white`"
           >
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
-          <div :class="`font-medium text-${actionsBoard.prevBoard.board.color}-500`">
+          <div :class="`font-medium text-white`">
             {{ actionsBoard.prevBoard.board.text }}
           </div>
         </button>
@@ -76,10 +107,10 @@
         <button
           v-if="!isLastBoard"
           type="button"
-          :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.nextBoard.board.color}-50 hover:bg-${actionsBoard.nextBoard.board.color}-100 items-center justify-center shadow-sm`"
+          :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.nextBoard.board.color}-500 hover:bg-${actionsBoard.nextBoard.board.color}-600 items-center justify-center shadow-small rounded-md ease-in transition-colors`"
           @click="moveTask(1)"
         >
-          <div :class="`font-medium text-${actionsBoard.nextBoard.board.color}-500`">
+          <div :class="`font-medium text-white`">
             {{ actionsBoard.nextBoard.board.text }}
           </div>
           <svg
@@ -92,20 +123,27 @@
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
-            :class="`feather chevron-right w-5 h-5 stroke-current text-${actionsBoard.nextBoard.board.color}-600`"
+            :class="`feather chevron-right w-5 h-5 stroke-current text-white`"
           >
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </button>
       </div>
+      <!-- /End replace -->
     </div>
-  </main>
+  </kanban-task-overlay>
 </template>
 
 <script>
+import KanbanTaskOverlay from "../KanbanTaskOverlay.vue";
+
 export default {
-  name: "KanbanTaskDisplay",
+  name: "KanbanTaskDispay",
+  components: { KanbanTaskOverlay },
   computed: {
+    projectTitle() {
+      return this.$store.getters.listProject.title;
+    },
     boards() {
       return this.$store.getters.listBoards;
     },
@@ -166,5 +204,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Kanban from "@/views/Kanban.vue";
-import KanbanTaskOverlay from "@/components/kanban/KanbanTaskOverlay.vue";
+import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
 
 import Auth from "@/views/Auth.vue";
 import SignIn from "@/components/auth/SignIn.vue";
@@ -69,7 +69,7 @@ const routes = [
       {
         path: "view/:taskId",
         name: "task-view",
-        component: KanbanTaskOverlay,
+        component: KanbanTaskDisplay,
         meta: {
           showModal: true,
         },

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <div class="font-bold text-lg my-4 px-4 text-gray-700 tracking-wide">Create a new account</div>
+    <div class="font-bold text-lg my-8 px-4 text-gray-700 tracking-wide">Create a new account</div>
     <div class="px-4">
       <div class="mb-4">
         <label for="name" class="block text-sm font-medium text-gray-500">Name</label>

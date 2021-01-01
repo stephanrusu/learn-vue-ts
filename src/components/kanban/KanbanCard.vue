@@ -1,6 +1,6 @@
 <template>
   <div class="px-3 border-b">
-    <header class="flex flex-row justify-between py-3 border-b">
+    <header class="flex flex-row items-center justify-between py-3 border-b">
       <router-link :to="{ name: 'task-view', params: { taskId } }">
         <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">
           {{ projectTitle }}-{{ boardId }}
@@ -109,7 +109,7 @@
       <button
         v-if="!isFirstBoard"
         type="button"
-        class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center"
+        class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
         @click="moveTask(-1)"
       >
         <svg
@@ -131,7 +131,7 @@
       <button
         v-if="!isLastBoard"
         type="button"
-        class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center"
+        class="flex flex-1 px-3 py-2 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
         @click="moveTask(1)"
       >
         <svg
