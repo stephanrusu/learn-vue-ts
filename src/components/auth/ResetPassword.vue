@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col">
-    <div class="font-bold text-lg my-8 px-4 text-gray-700 tracking-wide">Reset your password</div>
+  <div class="flex flex-col h-full">
+    <div class="font-medium text-xl mb-8 mt-auto px-4 text-gray-800">Reset your password</div>
     <div class="px-4">
       <div class="mb-4">
         <label for="password" class="text-sm font-medium text-gray-500">New password</label>
@@ -29,7 +29,7 @@
         </button>
       </div>
     </div>
-    <div class="bg-gray-50 p-4 border-t flex">
+    <div class="bg-gray-50 p-4 border-t flex mt-auto">
       <div class="text-sm text-gray-600 mr-2">Already have an account?</div>
       <router-link :to="{ name: 'sign-in' }" class="text-sm text-indigo-600 font-medium tracking-wide hover:underline">
         Sign in

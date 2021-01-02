@@ -14,6 +14,7 @@ const initialKanban = {
         "8lvzs23uf": {
           uid: "8lvzs23uf",
           date: 1604613600000,
+          assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: KanbanTypeFilter.task,
           priority: KanbanPriorityFilter.major,
@@ -36,6 +37,7 @@ const initialKanban = {
         "8e8v16b0a": {
           uid: "8e8v16b0a",
           date: 1604613600000,
+          assigned: ["MR", "SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: KanbanTypeFilter.design,
           priority: KanbanPriorityFilter.critical,
@@ -47,6 +49,7 @@ const initialKanban = {
         lud0xissi: {
           uid: "lud0xissi",
           date: 1604613600000,
+          assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: KanbanTypeFilter.bug,
           priority: KanbanPriorityFilter.trivial,
@@ -65,6 +68,7 @@ const initialKanban = {
         "98t5ma5pg": {
           uid: "98t5ma5pg",
           date: 1604613600000,
+          assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: KanbanTypeFilter.bug,
           priority: KanbanPriorityFilter.minor,
@@ -76,6 +80,7 @@ const initialKanban = {
         hc49m900w: {
           uid: "hc49m900w",
           date: 1604613600000,
+          assigned: ["MR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: KanbanTypeFilter.design,
           priority: KanbanPriorityFilter.major,
@@ -94,6 +99,7 @@ const initialKanban = {
         otvgpj19o: {
           uid: "otvgpj19o",
           date: 1604613600000,
+          assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: KanbanTypeFilter.bug,
           priority: KanbanPriorityFilter.blocker,
@@ -112,9 +118,22 @@ const initialKanban = {
         boc7qorhc: {
           uid: "boc7qorhc",
           date: 1604613600000,
+          assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: KanbanTypeFilter.task,
           priority: KanbanPriorityFilter.critical,
+          description:
+            "Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.",
+          comments: [],
+          subTasks: [],
+        },
+        ewhp355qo: {
+          uid: "ewhp355qo",
+          date: 1604613600000,
+          assigned: ["SR"],
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          type: KanbanTypeFilter.feature,
+          priority: KanbanPriorityFilter.major,
           description:
             "Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.",
           comments: [],

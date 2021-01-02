@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col">
-    <div class="font-bold text-lg my-8 px-4 text-gray-700 tracking-wide">Sign in to your account</div>
+  <div class="flex flex-col h-full">
+    <div class="font-medium text-xl mb-8 mt-auto px-4 text-gray-800">Sign in to your account</div>
     <div class="px-4">
       <div class="mb-4">
         <label for="email" class="text-sm font-medium text-gray-500">Email address </label>
@@ -32,7 +32,7 @@
         </router-link>
       </div>
     </div>
-    <div class="bg-gray-50 p-4 border-t flex">
+    <div class="bg-gray-50 p-4 border-t flex mt-auto">
       <div class="text-sm text-gray-600 mr-2">Don't have an account ?</div>
       <router-link :to="{ name: 'sign-up' }" class="text-sm text-indigo-600 font-medium tracking-wide hover:underline">
         Sign up

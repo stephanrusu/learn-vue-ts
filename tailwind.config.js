@@ -522,6 +522,7 @@ module.exports = {
       0: "0px",
       full: "100%",
       screen: "100vh",
+      login: "35rem",
     },
     minWidth: {
       0: "0px",
@@ -917,7 +918,7 @@ module.exports = {
     whitespace: ["responsive"],
     width: ["responsive"],
     wordBreak: ["responsive"],
-    zIndex: ["responsive", "focus-within", "focus"],
+    zIndex: ["responsive", "focus-within", "focus", "hover"],
   },
   plugins: [require("./plugins/flex-basis"), require("@tailwindcss/forms")],
 };

@@ -93,8 +93,8 @@ export const KanbanTypeFilter = {
     text: "Feature",
     key: "feature",
     background: {
-      color: "bg-green-600",
-      active: "bg-green-700",
+      color: "bg-cyan-600",
+      active: "bg-cyan-700",
     },
   },
 };

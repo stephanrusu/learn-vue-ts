@@ -55,22 +55,16 @@
                 {{ task.date | taskDate }}
               </div>
             </div>
-            <div class="bg-teal-400 p-2 rounded shadow-small">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-user stroke-current text-white stroke-2 w-5 h-5"
+            <div class="flex flex-row">
+              <div
+                v-for="(user, index) in task.assigned"
+                :key="index"
+                :class="`bg-teal-400 hover:z-10 flex items-center justify-center rounded-md shadow-small px-2 py-1 text-sm text-white font-medium text-center border border-white ${
+                  index > 0 ? '-ml-3' : ''
+                }`"
               >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
+                {{ user }}
+              </div>
             </div>
           </div>
           <div class="py-4 text-sm text-gray-500">

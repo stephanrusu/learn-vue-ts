@@ -1,6 +1,6 @@
 <template>
   <div class="font-sans h-screen flex items-center justify-center">
-    <div class="w-1/2 flex bg-white shadow-card">
+    <div class="w-1/2 flex bg-white shadow-card min-h-login">
       <div class="flex-1 max-w-1/3 bg-indigo-400 rounded-tl-md rounded-bl-md flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

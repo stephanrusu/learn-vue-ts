@@ -20,7 +20,6 @@ const routes = [
   },
   {
     path: "/auth",
-    name: "auth",
     component: Auth,
     children: [
       {
