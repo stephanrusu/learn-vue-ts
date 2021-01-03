@@ -522,7 +522,7 @@ module.exports = {
       0: "0px",
       full: "100%",
       screen: "100vh",
-      login: "35rem",
+      login: "33rem",
     },
     minWidth: {
       0: "0px",

@@ -1,10 +1,37 @@
 <template>
   <div class="mb-4">
     <div class="mt-4 shadow-card bg-white px-4 py-2 flex items-center justify-between rounded-sm">
-      <router-link :to="{ name: 'kanban' }" class="py-2">
-        <h1 class="text-md font-medium leading-tight text-gray-900">{{ projectTitle }}</h1>
-      </router-link>
-      <div v-if="hideActions" class="space-x-4">
+      <div class="flex items-center">
+        <router-link :to="{ name: 'home' }" class="py-2 mr-4">
+          <h1 class="text-md font-medium leading-tight text-gray-900">Projects</h1>
+        </router-link>
+        <div class="mr-4">/</div>
+        <router-link :to="{ name: 'kanban' }" class="py-2">
+          <h1 class="text-md font-medium leading-tight text-gray-900">{{ projectTitle }}</h1>
+        </router-link>
+      </div>
+      <div v-if="hideActions" class="space-x-4 flex items-center">
+        <button
+          type="button"
+          class="text-white flex items-center justify-between px-4 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors mr-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-plus stroke-current w-5 h-5 text-white mr-2"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Add new</span>
+        </button>
         <button type="button" class="bg-white hover:bg-gray-100 p-1.5" @click="isModalOpen = true">
           <svg
             xmlns="http://www.w3.org/2000/svg"

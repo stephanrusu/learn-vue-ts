@@ -1,10 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import Kanban from "@/views/Kanban.vue";
-import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
-
 import Auth from "@/views/Auth.vue";
+import Home from "@/views/Home.vue";
+import Kanban from "@/views/Kanban.vue";
+
+import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
 import SignIn from "@/components/auth/SignIn.vue";
 import SignUp from "@/components/auth/SignUp.vue";
 import ForgotPass from "@/components/auth/ForgotPassword.vue";
@@ -16,7 +17,7 @@ const routes = [
   {
     path: "/",
     name: "home",
-    redirect: "/kanban",
+    component: Home,
   },
   {
     path: "/auth",
