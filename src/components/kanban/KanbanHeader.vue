@@ -10,10 +10,10 @@
           <h1 class="text-md font-medium leading-tight text-gray-900">{{ projectTitle }}</h1>
         </router-link>
       </div>
-      <div v-if="hideActions" class="space-x-4 flex items-center">
+      <div class="space-x-4 flex items-center">
         <button
           type="button"
-          class="text-white flex items-center justify-between px-4 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors mr-4"
+          class="text-white flex items-center justify-between pl-3 pr-4 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors mr-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

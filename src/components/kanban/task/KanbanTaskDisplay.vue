@@ -1,11 +1,11 @@
 <template>
   <kanban-task-overlay>
-    <div class="h-full flex flex-col bg-white">
+    <div class="h-full flex flex-col bg-white rounded-md">
       <!-- Replace with your content -->
       <main class="flex flex-col">
-        <div class="p-6 border-b bg-gray-50">
+        <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
           <div class="flex justify-between items-center pb-4">
-            <div class="text-md font-medium text-gray-800">{{ projectTitle }} - {{ task.uid }}</div>
+            <div class="text-md font-medium text-gray-700">{{ projectTitle }} - {{ task.uid }}</div>
             <router-link :to="{ name: 'kanban' }" class="rounded-md text-gray-300 hover:text-white focus:outline-none">
               <span class="sr-only">Close panel</span>
               <svg
@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col py-4 px-6">
+        <div class="flex flex-col py-4 px-4">
           <div class="flex items-start justify-between">
             <div>
               <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">
@@ -72,7 +72,7 @@
           </div>
         </div>
       </main>
-      <div class="flex flex-row pb-6 px-6 mt-auto border-t pt-3">
+      <div class="flex flex-row pb-4 px-4 mt-auto pt-3">
         <button
           v-if="!isFirstBoard"
           type="button"

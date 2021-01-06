@@ -1,9 +1,9 @@
 <template>
   <div>
     <kanban-boards />
-    <div v-if="showModal">
+    <transition name="fade" mode="out-in" :duration="300" appear>
       <router-view />
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -17,14 +17,6 @@ export default {
     return {
       showModal: false,
     };
-  },
-  watch: {
-    $route: {
-      immediate: true,
-      handler: function (newVal) {
-        this.showModal = newVal.meta && newVal.meta.showModal;
-      },
-    },
   },
 };
 </script>
