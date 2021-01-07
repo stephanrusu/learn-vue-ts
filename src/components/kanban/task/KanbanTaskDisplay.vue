@@ -5,7 +5,59 @@
       <main class="flex flex-col">
         <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
           <div class="flex justify-between items-center pb-4">
-            <div class="text-md font-medium text-gray-700">{{ projectTitle }} - {{ task.uid }}</div>
+            <div class="flex flex-row items-center">
+              <div class="text-md font-medium text-gray-700 mr-4">{{ projectTitle }} - {{ task.uid }}</div>
+              <div class="relative inline-block text-left">
+                <div>
+                  <button
+                    id="options-menu"
+                    type="button"
+                    class="inline-flex justify-center px-2 py-1 hover:bg-gray-50"
+                    aria-haspopup="true"
+                    aria-expanded="true"
+                    @click="taskOptionsToggle = !taskOptionsToggle"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      :class="`feather feather-more-vertical w-5 h-5 stroke-current text-gray-700`"
+                    >
+                      <circle cx="12" cy="12" r="1"></circle>
+                      <circle cx="12" cy="5" r="1"></circle>
+                      <circle cx="12" cy="19" r="1"></circle>
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  v-if="taskOptionsToggle"
+                  class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                >
+                  <div class="p-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                    <button
+                      class="rounded block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
+                      role="menuitem"
+                      @click="taskOptionsToggle = !taskOptionsToggle"
+                    >
+                      Edit task
+                    </button>
+                    <button
+                      class="rounded block w-full px-4 py-2 text-sm text-red-700 hover:bg-gray-100 hover:text-gray-900 text-left"
+                      role="menuitem"
+                      @click="taskOptionsToggle = !taskOptionsToggle"
+                    >
+                      Remove task
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <router-link :to="{ name: 'kanban' }" class="rounded-md text-gray-300 hover:text-white focus:outline-none">
               <span class="sr-only">Close panel</span>
               <svg
@@ -67,7 +119,7 @@
               </div>
             </div>
           </div>
-          <div class="py-4 text-sm text-gray-500">
+          <div class="py-4 text-md text-gray-500">
             {{ task.description }}
           </div>
         </div>
@@ -134,6 +186,11 @@ import KanbanTaskOverlay from "../KanbanTaskOverlay.vue";
 export default {
   name: "KanbanTaskDispay",
   components: { KanbanTaskOverlay },
+  data() {
+    return {
+      taskOptionsToggle: false,
+    };
+  },
   computed: {
     projectTitle() {
       return this.$store.getters.listProject.title;
