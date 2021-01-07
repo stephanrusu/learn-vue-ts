@@ -3,7 +3,7 @@
     <div class="mt-4 shadow-card bg-white px-4 py-2 flex items-center justify-between rounded-sm">
       <div class="flex items-center">
         <router-link :to="{ name: 'home' }" class="py-2 mr-4">
-          <h1 class="text-md font-medium leading-tight text-gray-900">Projects</h1>
+          <h1 class="text-md font-medium leading-tight text-gray-500">Projects</h1>
         </router-link>
         <div class="mr-4">/</div>
         <router-link :to="{ name: 'kanban' }" class="py-2">

@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-6">
+  <nav class="py-4">
     <div class="bg-white max-w-full mx-auto px-4 rounded-lg shadow-card">
       <div class="flex items-center h-16 space-x-4">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
