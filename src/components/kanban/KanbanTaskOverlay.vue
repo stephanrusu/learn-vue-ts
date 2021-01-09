@@ -29,7 +29,11 @@
         <div class="bg-white rounded-md w-2 h-32"></div>
       </div>
       <div :class="`relative transition-all ease-in duration-300 ${toggleFullScreen ? 'w-p-95' : 'w-p-50'} p-2`">
-        <slot></slot>
+        <div class="h-full flex flex-col bg-white rounded-md">
+          <slot name="header"></slot>
+          <slot name="main"></slot>
+          <slot name="footer"></slot>
+        </div>
       </div>
     </section>
     <!-- </transition> -->

@@ -1,129 +1,128 @@
 <template>
   <kanban-task-overlay>
-    <div class="h-full flex flex-col bg-white rounded-md">
-      <!-- Replace with your content -->
-      <main class="flex flex-col">
-        <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
-          <div class="flex justify-between items-center pb-4">
-            <div class="flex flex-row items-center">
-              <div class="text-md font-medium text-gray-700 mr-4">{{ projectTitle }} - {{ task.uid }}</div>
-              <div class="relative inline-block text-left">
-                <div>
+    <template #header>
+      <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
+        <div class="flex justify-between items-center pb-4">
+          <div class="flex flex-row items-center">
+            <div class="text-md font-medium text-gray-700 mr-4">{{ projectTitle }} - {{ task.uid }}</div>
+            <div class="relative inline-block text-left">
+              <div>
+                <button
+                  id="options-menu"
+                  type="button"
+                  class="inline-flex justify-center p-2 hover:bg-gray-50"
+                  aria-haspopup="true"
+                  aria-expanded="true"
+                  @click="taskOptionsToggle = !taskOptionsToggle"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    :class="`feather feather-more-horizontal w-5 h-5 stroke-current text-gray-700`"
+                  >
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                  </svg>
+                </button>
+              </div>
+              <div
+                v-if="taskOptionsToggle"
+                class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+              >
+                <div class="p-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                   <button
-                    id="options-menu"
-                    type="button"
-                    class="inline-flex justify-center px-2 py-1 hover:bg-gray-50"
-                    aria-haspopup="true"
-                    aria-expanded="true"
+                    class="rounded block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
+                    role="menuitem"
                     @click="taskOptionsToggle = !taskOptionsToggle"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      :class="`feather feather-more-vertical w-5 h-5 stroke-current text-gray-700`"
-                    >
-                      <circle cx="12" cy="12" r="1"></circle>
-                      <circle cx="12" cy="5" r="1"></circle>
-                      <circle cx="12" cy="19" r="1"></circle>
-                    </svg>
+                    Edit task
+                  </button>
+                  <button
+                    class="rounded block w-full px-4 py-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
+                    role="menuitem"
+                    @click="taskOptionsToggle = !taskOptionsToggle"
+                  >
+                    Remove task
                   </button>
                 </div>
-                <div
-                  v-if="taskOptionsToggle"
-                  class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-                >
-                  <div class="p-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                    <button
-                      class="rounded block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-left"
-                      role="menuitem"
-                      @click="taskOptionsToggle = !taskOptionsToggle"
-                    >
-                      Edit task
-                    </button>
-                    <button
-                      class="rounded block w-full px-4 py-2 text-sm text-red-700 hover:bg-gray-100 hover:text-gray-900 text-left"
-                      role="menuitem"
-                      @click="taskOptionsToggle = !taskOptionsToggle"
-                    >
-                      Remove task
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
-            <router-link :to="{ name: 'kanban' }" class="rounded-md text-gray-300 hover:text-white focus:outline-none">
-              <span class="sr-only">Close panel</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-x stroke-current text-gray-500"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </router-link>
           </div>
-          <div class="flex items-center justify-between">
-            <div
-              :class="`rounded px-3 py-1 bg-${column.board.color}-500 text-xs font-medium tracking-wider text-white`"
+          <router-link :to="{ name: 'kanban' }" class="rounded-md text-gray-300 hover:text-white focus:outline-none">
+            <span class="sr-only">Close panel</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-x stroke-current text-gray-500"
             >
-              {{ column.board.text }}
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </router-link>
+        </div>
+        <div class="flex items-center justify-between">
+          <div :class="`rounded px-3 py-1 bg-${column.board.color}-500 text-xs font-medium tracking-wider text-white`">
+            {{ column.board.text }}
+          </div>
+          <div class="flex flex-row">
+            <div
+              :class="`rounded-tl rounded-bl px-3 py-1 ${task.priority.background.color} text-xs font-medium text-white`"
+            >
+              {{ task.priority.text }}
             </div>
-            <div class="flex flex-row">
-              <div
-                :class="`rounded-tl rounded-bl px-3 py-1 ${task.priority.background.color} text-xs font-medium text-white`"
-              >
-                {{ task.priority.text }}
-              </div>
-              <div
-                :class="`rounded-tr rounded-br px-3 py-1 ${task.type.background.color} text-xs font-medium text-white`"
-              >
-                {{ task.type.text }}
-              </div>
+            <div
+              :class="`rounded-tr rounded-br px-3 py-1 ${task.type.background.color} text-xs font-medium text-white`"
+            >
+              {{ task.type.text }}
             </div>
           </div>
         </div>
-        <div class="flex flex-col py-4 px-4">
-          <div class="flex items-start justify-between">
-            <div>
-              <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">
-                {{ task.title }}
-              </div>
-              <div class="text-xs text-gray-400">
-                {{ task.date | taskDate }}
-              </div>
+      </div>
+    </template>
+    <template #main>
+      <div class="flex flex-col py-4 px-4">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">
+              {{ task.title }}
             </div>
-            <div class="flex flex-row">
-              <div
-                v-for="(user, index) in task.assigned"
-                :key="index"
-                :class="`bg-teal-400 hover:z-10 flex items-center justify-center rounded-md shadow-small px-2 py-1 text-sm text-white font-medium text-center border border-white ${
-                  index > 0 ? '-ml-3' : ''
-                }`"
-              >
-                {{ user }}
-              </div>
+            <div class="text-xs text-gray-400">
+              {{ task.date | taskDate }}
             </div>
           </div>
-          <div class="py-4 text-md text-gray-500">
-            {{ task.description }}
+          <div class="flex flex-row">
+            <div
+              v-for="(user, index) in task.assigned"
+              :key="index"
+              :class="`bg-teal-400 hover:z-10 flex items-center justify-center rounded-md shadow-small px-2 py-1 text-sm text-white font-medium text-center border border-white ${
+                index > 0 ? '-ml-3' : ''
+              }`"
+            >
+              {{ user }}
+            </div>
           </div>
         </div>
-      </main>
+        <div class="py-4 text-md text-gray-500">
+          {{ task.description }}
+        </div>
+      </div>
+    </template>
+    <template #footer>
       <div class="flex flex-row pb-4 px-4 mt-auto pt-3">
         <button
           v-if="!isFirstBoard"
@@ -175,8 +174,7 @@
           </svg>
         </button>
       </div>
-      <!-- /End replace -->
-    </div>
+    </template>
   </kanban-task-overlay>
 </template>
 
