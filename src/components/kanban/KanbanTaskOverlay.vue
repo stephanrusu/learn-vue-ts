@@ -1,29 +1,8 @@
 <template>
   <div class="fixed inset-0 overflow-hidden">
-    <!-- <transition
-      enter-active-class="transition-opacity ease-in-out duration-500"
-      enter-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition-opacity ease-in-out duration-500"
-      leave-class="opacity-100"
-      leave-to-class="opacity-0"
-      mode="in-out"
-      appear
-    > -->
     <div class="fixed inset-0 transition-opacity" aria-hidden="true">
       <div class="absolute inset-0 bg-gray-700 opacity-50"></div>
     </div>
-    <!-- </transition> -->
-    <!-- <transition
-      enter-active-class="transform transition ease-in-out duration-500 sm:duration-500"
-      enter-class="translate-x-full"
-      enter-to-class="translate-x-0"
-      leave-active-class="transform transition ease-in-out duration-500 sm:duration-500"
-      leave-class="translate-x-0"
-      leave-to-class="translate-x-full"
-      mode="out-in"
-      appear
-    > -->
     <section class="absolute inset-0 flex justify-end" aria-labelledby="slide-over-heading">
       <div class="flex items-center">
         <router-link :to="{ name: 'kanban' }" class="bg-white rounded-md w-2 h-32"></router-link>
@@ -80,7 +59,6 @@
         </div>
       </div>
     </section>
-    <!-- </transition> -->
   </div>
 </template>
 

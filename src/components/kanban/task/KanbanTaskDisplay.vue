@@ -94,7 +94,7 @@
               v-if="taskOptionsToggle"
               class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
             >
-              <div class="p-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+              <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                 <button
                   class="rounded block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                   role="menuitem"
@@ -120,17 +120,137 @@
         <div class="text-md text-gray-500">
           {{ task.description }}
         </div>
-        <div class="relative flex py-3 space-x-2 mt-3">
-          <div class="z-10 cursor-pointer text-center py-1 px-3 font-medium text-sm text-white bg-indigo-600 rounded">
+        <div class="relative flex py-4 space-x-2 mt-4 border-t">
+          <div class="z-10 cursor-pointer text-center py-1 px-3 font-medium text-sm text-white bg-purple-600 rounded">
             Sub tasks
           </div>
           <div
-            class="z-10 cursor-pointer text-center py-1 px-3 font-medium text-sm text-gray-400 hover:text-indigo-600"
+            class="z-10 cursor-pointer text-center py-1 px-3 font-medium text-sm text-gray-400 hover:text-purple-600"
           >
             Comments
           </div>
         </div>
-        <div></div>
+        <div>
+          <div class="flex flex-col space-y-4">
+            <div class="flex flex-row items-center justify-between">
+              <label class="flex flex-row items-center" for="inputCheckbox">
+                <input id="inputCheckbox" type="checkbox" class="opacity-0 absolute d-none" />
+                <label
+                  for="inputCheckbox"
+                  class="rounded p-1 shadow-small bg-purple-500 hover:bg-purple-600 ease-in transition-colors mr-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check stroke-current w-4 h-4 text-white"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </label>
+                <div class="text-md text-gray-700">Some text here</div>
+              </label>
+              <button
+                type="button"
+                class="rounded p-1 shadow-small bg-red-500 hover:bg-red-600 ease-in transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus stroke-current w-4 h-4 text-white"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-row items-center justify-between">
+              <label class="flex flex-row items-center" for="inputCheckbox">
+                <input id="inputCheckbox" type="checkbox" class="opacity-0 absolute d-none" />
+                <label
+                  for="inputCheckbox"
+                  class="rounded-md p-1 shadow-small bg-gray-100 hover:bg-gray-200 ease-in transition-colors mr-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check stroke-current w-4 h-4 text-white"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </label>
+                <div class="text-md text-gray-700">Some text here</div>
+              </label>
+              <button
+                type="button"
+                class="rounded-md p-1 shadow-small bg-red-500 hover:bg-red-600 ease-in transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus stroke-current w-4 h-4 text-white"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-row mt-4">
+            <input
+              type="text"
+              name="text"
+              class="focus:border-purple-300 mr-4 w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+            />
+            <button
+              type="button"
+              class="rounded-md p-2 shadow-small bg-purple-500 hover:text-purple-600 ease-in transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-plus stroke-current w-5 h-5 text-white"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </template>
     <template #footer>
