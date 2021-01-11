@@ -29,13 +29,13 @@
         <router-link :to="{ name: 'kanban' }" class="bg-white rounded-md w-2 h-32"></router-link>
       </div>
       <div :class="`relative transition-all ease-in duration-300 ${toggleFullScreen ? 'w-p-95' : 'w-p-50'} p-2`">
-        <div class="h-full flex flex-col bg-white rounded-md p-3">
+        <div class="h-full flex flex-col bg-white rounded-md">
           <slot name="header"></slot>
           <slot name="main"></slot>
-          <div class="flex flex-row items-center justify-between mt-auto pt-3">
+          <div class="flex flex-row items-center justify-between mt-auto p-4 bg-gray-50">
             <button
               type="button"
-              class="flex-0-auto px-3 py-2 hover:bg-gray-100 items-center justify-center rounded-md ease-in transition-colors"
+              class="flex-0-auto px-3 py-2 bg-white hover:bg-gray-100 items-center justify-center rounded-md ease-in transition-colors shadow-small"
               @click="toggleFullScreen = !toggleFullScreen"
             >
               <svg

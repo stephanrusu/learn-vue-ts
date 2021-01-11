@@ -1,8 +1,8 @@
 <template>
   <kanban-task-overlay>
     <template #header>
-      <div class="p-3 rounded-tl-md rounded-tr-md shadow-card">
-        <div class="flex items-start justify-between pb-3">
+      <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
+        <div class="flex items-start justify-between pb-4">
           <div>
             <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">
               {{ task.title }}
@@ -94,16 +94,16 @@
               v-if="taskOptionsToggle"
               class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
             >
-              <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+              <div class="p-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                 <button
-                  class="rounded block w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
+                  class="rounded block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                   role="menuitem"
                   @click="taskOptionsToggle = !taskOptionsToggle"
                 >
                   Edit task
                 </button>
                 <button
-                  class="rounded block w-full px-3 py-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
+                  class="rounded block w-full px-4 py-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
                   role="menuitem"
                   @click="taskOptionsToggle = !taskOptionsToggle"
                 >
@@ -116,8 +116,8 @@
       </div>
     </template>
     <template #main>
-      <div class="flex flex-col mt-4">
-        <div class="text-md text-gray-500 shadow-card p-3">
+      <div class="flex flex-col p-4">
+        <div class="text-md text-gray-500">
           {{ task.description }}
         </div>
         <div class="relative flex py-3 space-x-2 mt-3">
@@ -134,11 +134,11 @@
       </div>
     </template>
     <template #footer>
-      <div class="flex-1 flex flex-row max-w-1/2">
+      <div class="flex-1 flex flex-row max-w-xs">
         <button
           v-if="!isFirstBoard"
           type="button"
-          :class="`flex flex-1 px-3 py-1 bg-${actionsBoard.prevBoard.board.color}-500 hover:bg-${actionsBoard.prevBoard.board.color}-600 items-center justify-center shadow-small rounded-md ease-in transition-colors`"
+          :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.prevBoard.board.color}-500 hover:bg-${actionsBoard.prevBoard.board.color}-600 items-center justify-center shadow-small rounded-md ease-in transition-colors`"
           @click="moveTask(-1)"
         >
           <svg
