@@ -27,5 +27,13 @@ export default {
       showModal: false,
     };
   },
+  watch: {
+    $route: {
+      immediate: true,
+      handler: function (newVal) {
+        this.showModal = newVal.meta && newVal.meta.showModal;
+      },
+    },
+  },
 };
 </script>
