@@ -85,17 +85,7 @@
               <div class="ml-2 text-gray-800 font-medium">{{ taskCard.comments.length }}</div>
             </div>
           </div>
-          <div class="flex flex-row">
-            <div
-              v-for="(user, index) in taskCard.assigned"
-              :key="index"
-              :class="`bg-teal-400 hover:z-10 flex items-center justify-center rounded-md shadow-small px-2 py-1 text-sm text-white font-medium text-center border border-white ${
-                index > 0 ? '-ml-3' : ''
-              }`"
-            >
-              {{ user }}
-            </div>
-          </div>
+          <users-assigned :users="taskCard.assigned" />
         </div>
       </div>
     </main>
@@ -148,8 +138,10 @@
 </template>
 
 <script>
+import UsersAssigned from "./common/UsersAssigned.vue";
 export default {
   name: "KanbanCard",
+  components: { UsersAssigned },
   props: {
     boardId: {
       type: String,

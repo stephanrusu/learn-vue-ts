@@ -14,7 +14,7 @@
           <div class="flex flex-row items-center justify-between mt-auto p-4 bg-gray-50">
             <button
               type="button"
-              class="flex-0-auto px-3 py-2 bg-white hover:bg-gray-100 items-center justify-center rounded-md ease-in transition-colors shadow-small"
+              class="flex-0-auto px-2 py-2 bg-indigo-500 hover:bg-indigo-600 items-center justify-center rounded-md ease-in transition-colors shadow-small"
               @click="toggleFullScreen = !toggleFullScreen"
             >
               <svg
@@ -25,10 +25,10 @@
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="feather w-5 h-5 stroke-current text-gray-700"
+                class="feather w-4 h-4 stroke-current text-white"
               >
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <polyline points="9 21 3 21 3 15"></polyline>
@@ -43,10 +43,10 @@
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="feather feather-minimize-2 w-5 h-5 stroke-current text-gray-700"
+                class="feather feather-minimize-2 w-4 h-4 stroke-current text-white"
               >
                 <polyline points="4 14 10 14 10 20"></polyline>
                 <polyline points="20 10 14 10 14 4"></polyline>
