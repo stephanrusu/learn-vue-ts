@@ -1,5 +1,6 @@
 import Vue from "vue";
 import initialKanban from "../../constants/initialKanban";
+import { getUuid } from "../../utils/index";
 
 const kanban = {
   state: initialKanban,
@@ -12,6 +13,16 @@ const kanban = {
     },
     removeTask({ commit }, payload) {
       commit("removeTask", payload);
+    },
+
+    addSubTask({ commit }, payload) {
+      commit("addSubTask", payload);
+    },
+    toggleSubTask({ commit }, payload) {
+      commit("toggleSubTask", payload);
+    },
+    removeSubTask({ commit }, payload) {
+      commit("removeSubTask", payload);
     },
   },
   getters: {
@@ -26,7 +37,6 @@ const kanban = {
       const { boardId, task } = payload;
       Vue.set(state.boards[boardId].tasks, task.uid, task);
     },
-
     addTask(state, payload) {
       const { boardId, taskId, task } = payload;
 
@@ -34,10 +44,31 @@ const kanban = {
         Vue.set(state.boards[boardId].tasks, taskId, task);
       }
     },
-
     removeTask(state, payload) {
       const { boardId, taskId } = payload;
       Vue.delete(state.boards[boardId].tasks, taskId);
+    },
+
+    addSubTask(state, payload) {
+      const { boardId, taskId, text } = payload;
+
+      const newSubTask = {
+        text,
+        uid: getUuid(),
+        completed: false,
+      };
+
+      state.boards[boardId].tasks[taskId].subTasks.push(newSubTask);
+    },
+    toggleSubTask(state, payload) {
+      const { boardId, taskId, index, completed } = payload;
+
+      state.boards[boardId].tasks[taskId].subTasks[index].completed = completed;
+    },
+    removeSubTask(state, payload) {
+      const { boardId, taskId, index } = payload;
+
+      state.boards[boardId].tasks[taskId].subTasks.splice(index, 1);
     },
   },
 };

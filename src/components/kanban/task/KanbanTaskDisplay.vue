@@ -126,7 +126,7 @@
           </template>
         </div>
         <div>
-          <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" />
+          <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :task-id="task.uid" :board-id="column.uid" />
           <kanban-comments-list v-if="activeTab === 'comments'" />
         </div>
       </div>

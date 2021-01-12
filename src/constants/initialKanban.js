@@ -24,12 +24,12 @@ const initialKanban = {
           subTasks: [
             {
               text: "Lorem ipsum dolor sit amet",
-              complete: true,
+              completed: true,
               uid: "x4m5hnlkz",
             },
             {
               text: "Consectetur adipiscing elit.",
-              complete: false,
+              completed: false,
               uid: "aj39ghidc",
             },
           ],
