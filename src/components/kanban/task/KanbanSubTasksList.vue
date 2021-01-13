@@ -7,12 +7,12 @@
           type="text"
           name="text"
           placeholder="What do you need to do?"
-          class="focus:border-indigo-300 mr-4 w-full border-gray-300 rounded shadow-small focus:shadow-small-2"
+          class="focus:border-indigo-300 mr-4 w-full border-gray-300 rounded shadow-small focus:shadow-small-2 text-sm"
           @change="checkValidation"
         />
         <button
           type="button"
-          class="rounded p-2 shadow-small bg-indigo-500 hover:text-indigo-600 ease-in transition-colors"
+          class="rounded py-2 px-3 shadow-small bg-indigo-500 hover:text-indigo-600 ease-in transition-colors"
           @click="addSubTask"
         >
           <svg
@@ -38,7 +38,9 @@
       <template v-for="(sub, index) in listSubTasks">
         <div
           :key="sub.uid"
-          :class="`flex flex-row items-center justify-between border p-3 border-gray-300 ${listClasses(index)}`"
+          :class="`flex flex-row items-center justify-between border p-3 border-gray-300 ${listClasses(
+            index,
+          )} hover:bg-gray-50`"
         >
           <label class="flex flex-row items-center cursor-pointer" :for="`subtask-${sub.uid}`">
             <input
