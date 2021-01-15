@@ -19,11 +19,11 @@
         </div>
       </div>
     </header>
-    <main class="flex flex-row py-3 border-b">
+    <main class="flex flex-row py-3">
       <div :class="`w-1 bg-${boardColor}-500 rounded mr-3`"></div>
       <div class="flex-1">
         <router-link :to="{ name: 'task-view', params: { taskId } }">
-          <div class="font-medium text-sm tracking-wider text-gray-600 mb-4">
+          <div class="font-medium text-sm tracking-wider text-gray-700 mb-4">
             {{ taskCard.title }}
           </div>
         </router-link>
@@ -47,7 +47,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <div class="ml-2 text-gray-800 font-medium">{{ taskCard.date | taskDate }}</div>
+              <div class="ml-2 text-gray-500 font-medium">{{ taskCard.date | taskDate }}</div>
             </div>
             <div v-if="taskCard.subTasks.length > 0" class="flex flex-row text-xs items-center">
               <svg
@@ -65,7 +65,7 @@
                 <polyline points="9 11 12 14 22 4"></polyline>
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
               </svg>
-              <div class="ml-2 text-gray-800 font-medium">{{ taskCard.subTasks.length }}</div>
+              <div class="ml-2 text-gray-500 font-medium">{{ taskCard.subTasks.length }}</div>
             </div>
             <div v-if="taskCard.comments.length > 0" class="flex flex-row text-xs items-center">
               <svg
@@ -82,14 +82,14 @@
               >
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
               </svg>
-              <div class="ml-2 text-gray-800 font-medium">{{ taskCard.comments.length }}</div>
+              <div class="ml-2 text-gray-500 font-medium">{{ taskCard.comments.length }}</div>
             </div>
           </div>
           <users-assigned :users="taskCard.assigned" />
         </div>
       </div>
     </main>
-    <footer class="flex flex-row py-3">
+    <footer class="flex flex-row py-3 border-t">
       <button
         v-if="!isFirstBoard"
         type="button"

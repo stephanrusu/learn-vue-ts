@@ -110,13 +110,13 @@
         <div class="text-md text-gray-500">
           {{ task.description }}
         </div>
-        <div class="relative flex pt-2 mb-4 border-b border-gray-300">
+        <div class="flex mt-2 mb-4 p-2 bg-gray-50">
           <template v-for="tab in tabs">
             <div
               :key="tab.key"
-              :class="`z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm -mb-px ${
+              :class="`z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm ${
                 activeTab === tab.key
-                  ? 'text-indigo-600 border-indigo-600 border-b-2'
+                  ? 'text-indigo-600 border-indigo-600 bg-white shadow-small '
                   : 'text-gray-400 hover:text-indigo-600'
               }`"
               @click="activeTab = tab.key"

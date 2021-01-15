@@ -1,12 +1,9 @@
 <template>
   <div class="text-green-800 grid grid-cols-4 gap-8">
-    <div class="bg-white shadow-card rounded-md p-4 h-60">card 1</div>
-    <div class="bg-white shadow-card rounded-md p-4 h-60">card 2</div>
-    <div class="bg-white shadow-card rounded-md p-4 h-60">card 3</div>
-    <div class="bg-white shadow-card rounded-md p-4 h-60">card 4</div>
-    <div class="bg-white shadow-card rounded-md p-4 h-60">card 5</div>
-    <div class="bg-white shadow-card rounded-md p-4 h-60">card 6</div>
-    <div class="bg-white shadow-card rounded-md p-4 h-60">card 7</div>
+    <div :key="n" class="bg-white shadow-card rounded-md p-4 h-60">card 0</div>
+    <template v-for="n in 6">
+      <div :key="n" class="bg-white shadow-card rounded-md p-4 h-60">card {{ n }}</div>
+    </template>
     <div class="bg-gray-100 rounded-md p-4 h-60 flex items-center justify-center">
       <button
         type="button"
