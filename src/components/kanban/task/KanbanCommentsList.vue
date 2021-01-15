@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-3">
+  <div class="space-y-4">
     <template v-for="n in 3">
       <div :key="n" class="shadow-small">
         <div class="flex flex-row items-center justify-between">
@@ -13,7 +13,7 @@
           </div>
           <div class="text-xs text-gray-400 font-medium">{{ new Date() | taskDate }}</div>
         </div>
-        <div class="text-sm p-3 text-gray-500 font-medium">
+        <div class="text-sm p-2 text-gray-500">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laboriosam eaque natus quibusdam quasi
           magnam?
         </div>

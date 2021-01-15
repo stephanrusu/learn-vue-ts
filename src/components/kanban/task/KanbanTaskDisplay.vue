@@ -110,14 +110,14 @@
         <div class="text-md text-gray-500">
           {{ task.description }}
         </div>
-        <div class="relative flex py-4 space-x-2 mt-4 border-t">
+        <div class="relative flex pt-2 mb-4 border-b border-gray-300">
           <template v-for="tab in tabs">
             <div
               :key="tab.key"
-              :class="`rounded z-10 cursor-pointer text-center py-1 px-3 font-medium text-sm ${
+              :class="`z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm -mb-px ${
                 activeTab === tab.key
-                  ? 'text-white bg-indigo-600'
-                  : 'text-gray-400 hover:text-indigo-600 hover:bg-gray-50'
+                  ? 'text-indigo-600 border-indigo-600 border-b-2'
+                  : 'text-gray-400 hover:text-indigo-600'
               }`"
               @click="activeTab = tab.key"
             >
@@ -125,7 +125,7 @@
             </div>
           </template>
         </div>
-        <div>
+        <div class="">
           <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :task-id="task.uid" :board-id="column.uid" />
           <kanban-comments-list v-if="activeTab === 'comments'" />
         </div>

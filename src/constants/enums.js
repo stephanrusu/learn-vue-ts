@@ -5,6 +5,17 @@ export const Boards = {
   done: { text: "Done", color: "teal" },
 };
 
+export const ProjectStatus = {
+  ongoing: {
+    text: "Ongoing",
+    color: "orange",
+  },
+  finished: {
+    text: "Finished",
+    color: "green",
+  },
+};
+
 export const KanbanPriorityFilter = {
   all: {
     text: "All",

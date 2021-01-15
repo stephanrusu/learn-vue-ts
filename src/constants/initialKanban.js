@@ -1,10 +1,11 @@
-import { Boards, KanbanPriorityFilter, KanbanTypeFilter } from "./enums";
+import { Boards, KanbanPriorityFilter, KanbanTypeFilter, ProjectStatus } from "./enums";
 
 const initialKanban = {
   uid: "nigyhcmrs",
   date: 1604918663862,
   title: "Kanban",
   boardsOrder: ["ntq5y153g", "wewoprlx1", "sl0mm9cem", "z73qbvdv1"],
+  status: ProjectStatus.ongoing,
   boards: {
     ntq5y153g: {
       uid: "ntq5y153g",
@@ -21,6 +22,7 @@ const initialKanban = {
           description:
             "Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.",
           comments: [],
+          files: [],
           subTasks: [
             {
               text: "Lorem ipsum dolor sit amet",
@@ -44,6 +46,7 @@ const initialKanban = {
           description:
             "Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.",
           comments: [],
+          files: [],
           subTasks: [],
         },
         lud0xissi: {
@@ -56,6 +59,7 @@ const initialKanban = {
           description:
             "Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.",
           comments: [],
+          files: [],
           subTasks: [],
         },
       },
@@ -75,6 +79,7 @@ const initialKanban = {
           description:
             "Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.",
           comments: [],
+          files: [],
           subTasks: [],
         },
         hc49m900w: {
@@ -87,6 +92,7 @@ const initialKanban = {
           description:
             "Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.",
           comments: [],
+          files: [],
           subTasks: [],
         },
       },
@@ -106,6 +112,7 @@ const initialKanban = {
           description:
             "Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.",
           comments: [],
+          files: [],
           subTasks: [],
         },
       },
@@ -125,6 +132,7 @@ const initialKanban = {
           description:
             "Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.",
           comments: [],
+          files: [],
           subTasks: [],
         },
         ewhp355qo: {
@@ -137,6 +145,7 @@ const initialKanban = {
           description:
             "Caramels pudding jelly. Sweet wafer toffee halvah macaroon cake croissant gingerbread caramels. Bonbon gummies sesame snaps pudding bonbon powder. Sweet topping wafer. Gummi bears bonbon jelly jelly beans jujubes. Lemon drops topping muffin halvah bonbon icing chocolate cake toffee. Lemon drops bear claw tiramisu lemon drops tootsie roll ice cream cake.",
           comments: [],
+          files: [],
           subTasks: [],
         },
       },
