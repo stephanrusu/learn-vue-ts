@@ -1,13 +1,19 @@
 <template>
   <div class="mb-4">
-    <div class="mt-4 shadow-card bg-white px-4 py-2 flex items-center justify-between rounded-sm">
+    <div class="mt-4 shadow-card bg-white p-4 flex items-center justify-between rounded-sm">
       <div class="flex items-center">
-        <router-link :to="{ name: 'home' }" class="py-2 mr-4">
-          <h1 class="text-md font-medium leading-tight text-gray-500">Projects</h1>
+        <router-link
+          :to="{ name: 'home' }"
+          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+        >
+          Projects
         </router-link>
-        <div class="mr-4">/</div>
-        <router-link :to="{ name: 'kanban' }" class="py-2">
-          <h1 class="text-md font-medium leading-tight text-gray-900">{{ projectTitle }}</h1>
+        <div class="mx-2 cursor-default text-gray-300">/</div>
+        <router-link
+          :to="{ name: 'kanban' }"
+          class="text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+        >
+          {{ projectTitle }}
         </router-link>
       </div>
       <div class="space-x-4 flex items-center">

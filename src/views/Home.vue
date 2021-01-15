@@ -7,7 +7,8 @@
 
 <script>
 import ProjectsPage from "@/components/project/ProjectsPage.vue";
-import NavSection from "../components/NavSection.vue";
+import NavSection from "@/components/NavSection.vue";
+
 export default {
   name: "Home",
   components: { ProjectsPage, NavSection },

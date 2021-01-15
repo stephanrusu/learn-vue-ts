@@ -209,6 +209,10 @@ export default {
           text: "Comments",
           key: "comments",
         },
+        {
+          text: "Files",
+          key: "files",
+        },
       ],
     };
   },

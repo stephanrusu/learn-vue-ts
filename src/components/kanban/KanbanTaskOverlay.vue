@@ -8,7 +8,7 @@
         <router-link :to="{ name: 'kanban' }" class="bg-white rounded-md w-2 h-32"></router-link>
       </div>
       <div :class="`relative transition-all ease-in duration-300 ${toggleFullScreen ? 'w-p-95' : 'w-p-50'} p-2`">
-        <div class="h-full flex flex-col bg-white rounded-md">
+        <div class="min-h-full flex flex-col bg-white rounded-md">
           <slot name="header"></slot>
           <slot name="main"></slot>
           <div class="flex flex-row items-center justify-between mt-auto p-4 bg-gray-50">

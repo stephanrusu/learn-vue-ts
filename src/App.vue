@@ -36,7 +36,7 @@ body {
   background-color: rgb(250, 251, 255);
 }
 
-html {
+body {
   overflow-y: scroll;
 }
 

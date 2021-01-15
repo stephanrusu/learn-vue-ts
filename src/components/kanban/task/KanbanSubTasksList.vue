@@ -12,7 +12,7 @@
         />
         <button
           type="button"
-          class="rounded py-2 px-3 shadow-small bg-indigo-500 hover:text-indigo-600 ease-in transition-colors"
+          class="rounded py-2 px-3 shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
           @click="addSubTask"
         >
           <svg
@@ -34,13 +34,11 @@
       </div>
       <div v-if="errorText" class="text-sm text-red-600 mt-1">This field is required</div>
     </div>
-    <div class="shadow-small">
+    <div class="">
       <template v-for="(sub, index) in listSubTasks">
         <div
           :key="sub.uid"
-          :class="`flex flex-row items-center justify-between border p-3 border-gray-300 ${listClasses(
-            index,
-          )} hover:bg-gray-50`"
+          :class="`flex flex-row items-center justify-between p-2 border-gray-300 rounded hover:bg-gray-50`"
         >
           <label class="flex flex-row items-center cursor-pointer" :for="`subtask-${sub.uid}`">
             <input
@@ -129,19 +127,6 @@ export default {
     },
   },
   methods: {
-    listClasses(index) {
-      if (index === 0) {
-        if (this.listSubTasks.length === 1) {
-          return "rounded";
-        } else {
-          return "rounded-tr rounded-tl";
-        }
-      } else if (index === this.listSubTasks.length - 1) {
-        return "rounded-br rounded-bl -mt-px";
-      } else {
-        return "-mt-px";
-      }
-    },
     checkValidation() {
       this.errorText = this.subTaskText.trim() === "";
     },
