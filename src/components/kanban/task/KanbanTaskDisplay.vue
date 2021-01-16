@@ -50,7 +50,7 @@
               {{ column.board.text }}
             </div>
           </div>
-          <div class="relative text-left">
+          <div class="relative">
             <div>
               <button
                 id="options-menu"
@@ -114,7 +114,7 @@
           <template v-for="tab in tabs">
             <div
               :key="tab.key"
-              :class="`z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm ${
+              :class="`z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded ${
                 activeTab === tab.key
                   ? 'text-indigo-600 border-indigo-600 bg-white shadow-small '
                   : 'text-gray-400 hover:text-indigo-600'
