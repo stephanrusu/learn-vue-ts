@@ -38,7 +38,7 @@
       <template v-for="(sub, index) in listSubTasks">
         <div
           :key="sub.uid"
-          :class="`flex flex-row items-center justify-between p-2 border-gray-300 rounded hover:bg-gray-50`"
+          class="flex flex-row items-center justify-between p-2 border-gray-300 rounded hover:bg-gray-50"
         >
           <label class="flex flex-row items-center cursor-pointer" :for="`subtask-${sub.uid}`">
             <input
@@ -69,7 +69,7 @@
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
             </label>
-            <div :class="`text-md ${sub.completed ? 'text-gray-400' : 'text-gray-700'}`">
+            <div :class="['text-md', sub.completed ? 'text-gray-400' : 'text-gray-700']">
               {{ sub.text }}
             </div>
           </label>

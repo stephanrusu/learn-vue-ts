@@ -6,11 +6,11 @@
     <div class="flex items-center z-20">
       <router-link :to="{ name: 'kanban' }" class="bg-white rounded-md w-2 h-32"></router-link>
     </div>
-    <div :class="`z-20 relative transition-all ease-in duration-300 ${toggleFullScreen ? 'w-p-95' : 'w-p-50'} p-2`">
+    <div :class="['z-20 relative transition-all ease-in duration-300 p-2', toggleFullScreen ? 'w-p-95' : 'w-p-50']">
       <div class="min-h-full flex flex-col bg-white rounded-md">
         <slot name="header"></slot>
         <slot name="main"></slot>
-        <div class="flex flex-row items-center justify-between mt-auto p-4 rounded-bl-md rounded-br-md">
+        <div class="flex flex-row items-center justify-between mt-auto p-4 rounded-bl-md rounded-br-md bg-gray-50">
           <button
             type="button"
             class="flex-0-auto px-2 py-2 bg-indigo-500 hover:bg-indigo-600 items-center justify-center rounded-md ease-in transition-colors shadow-small"

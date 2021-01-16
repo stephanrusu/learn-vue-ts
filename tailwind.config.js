@@ -29,6 +29,7 @@ module.exports = {
       pink: colors.pink,
       cyan: colors.cyan,
       teal: colors.teal,
+      lavander: "#fafbff",
     },
     spacing: {
       px: "1px",

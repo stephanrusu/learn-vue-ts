@@ -106,7 +106,7 @@
           viewBox="0 0 24 24"
           width="24"
           xmlns="http://www.w3.org/2000/svg"
-          :class="`feather chevron-left w-5 h-5 stroke-current text-gray-700`"
+          class="feather chevron-left w-5 h-5 stroke-current text-gray-700"
         >
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
@@ -128,7 +128,7 @@
           viewBox="0 0 24 24"
           width="24"
           xmlns="http://www.w3.org/2000/svg"
-          :class="`feather chevron-right w-5 h-5 stroke-current text-gray-700`"
+          class="feather chevron-right w-5 h-5 stroke-current text-gray-700"
         >
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>

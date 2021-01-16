@@ -20,7 +20,7 @@
       <div v-if="errorText" class="text-sm text-red-600 mt-1">This field is required</div>
     </div>
     <div class="space-y-4">
-      <template v-for="n in 3">
+      <template v-for="n in 1">
         <div :key="`comment-${n}`" class="shadow-small">
           <div class="flex flex-row items-center justify-between px-2">
             <div class="text-sm text-indigo-500 font-medium flex items-center">

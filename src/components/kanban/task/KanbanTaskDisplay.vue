@@ -55,9 +55,10 @@
               <button
                 id="options-menu"
                 type="button"
-                :class="`inline-flex justify-center px-2 py-1 ${
-                  taskOptionsToggle ? 'bg-gray-100' : ''
-                } hover:bg-gray-100 focus:outline-none`"
+                :class="[
+                  'inline-flex justify-center px-2 py-1 hover:bg-gray-100 focus:outline-none',
+                  taskOptionsToggle ? 'bg-gray-100' : '',
+                ]"
                 aria-haspopup="true"
                 aria-expanded="true"
                 @click="taskOptionsToggle = !taskOptionsToggle"
@@ -72,7 +73,7 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  :class="`feather feather-more-horizontal w-5 h-5 stroke-current text-gray-700`"
+                  class="feather feather-more-horizontal w-5 h-5 stroke-current text-gray-700"
                 >
                   <circle cx="12" cy="12" r="1"></circle>
                   <circle cx="19" cy="12" r="1"></circle>
@@ -110,15 +111,16 @@
         <div class="text-md text-gray-500">
           {{ task.description }}
         </div>
-        <div class="flex mt-2 mb-4 p-2 bg-gray-50">
+        <div class="flex mt-2 mb-4 p-2 bg-lavander">
           <template v-for="tab in tabs">
             <div
               :key="tab.key"
-              :class="`z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded ${
+              :class="[
+                'z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded',
                 activeTab === tab.key
-                  ? 'text-indigo-600 border-indigo-600 bg-white shadow-small '
-                  : 'text-gray-400 hover:text-indigo-600'
-              }`"
+                  ? 'text-indigo-600 border-indigo-600 bg-white shadow-small'
+                  : 'text-indigo-400 hover:text-indigo-600',
+              ]"
               @click="activeTab = tab.key"
             >
               {{ tab.text }}
@@ -149,11 +151,11 @@
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
-            :class="`feather chevron-left w-5 h-5 stroke-current text-white`"
+            class="feather chevron-left w-5 h-5 stroke-current text-white"
           >
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
-          <div :class="`font-medium text-white text-sm`">
+          <div class="font-medium text-white text-sm">
             {{ actionsBoard.prevBoard.board.text }}
           </div>
         </button>
@@ -164,7 +166,7 @@
           :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.nextBoard.board.color}-500 hover:bg-${actionsBoard.nextBoard.board.color}-600 items-center justify-center shadow-small rounded-md ease-in transition-colors`"
           @click="moveTask(1)"
         >
-          <div :class="`font-medium text-white text-sm`">
+          <div class="font-medium text-white text-sm">
             {{ actionsBoard.nextBoard.board.text }}
           </div>
           <svg
@@ -177,7 +179,7 @@
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
-            :class="`feather chevron-right w-5 h-5 stroke-current text-white`"
+            class="feather chevron-right w-5 h-5 stroke-current text-white"
           >
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>

@@ -31,11 +31,6 @@ export default {
   box-sizing: border-box;
 }
 
-html,
-body {
-  background-color: rgb(250, 251, 255);
-}
-
 body {
   overflow-y: scroll;
 }
