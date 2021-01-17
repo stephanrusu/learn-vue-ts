@@ -87,14 +87,14 @@
             >
               <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                 <button
-                  class="rounded block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
+                  class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                   role="menuitem"
                   @click="taskOptionsToggle = !taskOptionsToggle"
                 >
                   Edit task
                 </button>
                 <button
-                  class="rounded block w-full px-4 py-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
+                  class="rounded block w-full p-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
                   role="menuitem"
                   @click="taskOptionsToggle = !taskOptionsToggle"
                 >
@@ -111,26 +111,7 @@
         <div class="text-md text-gray-500">
           {{ task.description }}
         </div>
-        <div class="flex mt-2 mb-4 p-2 bg-lavander">
-          <template v-for="tab in tabs">
-            <div
-              :key="tab.key"
-              :class="[
-                'z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded',
-                activeTab === tab.key
-                  ? 'text-indigo-600 border-indigo-600 bg-white shadow-small'
-                  : 'text-indigo-400 hover:text-indigo-600',
-              ]"
-              @click="activeTab = tab.key"
-            >
-              {{ tab.text }}
-            </div>
-          </template>
-        </div>
-        <div class="">
-          <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :task-id="task.uid" :board-id="column.uid" />
-          <kanban-comments-list v-if="activeTab === 'comments'" />
-        </div>
+        <kanban-task-tabs :task-id="task.uid" :board-id="column.uid" />
       </div>
     </template>
     <template #footer>
@@ -192,30 +173,14 @@
 <script>
 import UsersAssigned from "../common/UsersAssigned.vue";
 import KanbanTaskOverlay from "../KanbanTaskOverlay.vue";
-import KanbanCommentsList from "./KanbanCommentsList.vue";
-import KanbanSubTasksList from "./KanbanSubTasksList.vue";
+import KanbanTaskTabs from "./KanbanTaskTabs.vue";
 
 export default {
   name: "KanbanTaskDispay",
-  components: { KanbanTaskOverlay, KanbanSubTasksList, KanbanCommentsList, UsersAssigned },
+  components: { KanbanTaskOverlay, UsersAssigned, KanbanTaskTabs },
   data() {
     return {
       taskOptionsToggle: false,
-      activeTab: "",
-      tabs: [
-        {
-          text: "Subtasks",
-          key: "subtasks",
-        },
-        {
-          text: "Comments",
-          key: "comments",
-        },
-        {
-          text: "Files",
-          key: "files",
-        },
-      ],
     };
   },
   computed: {
