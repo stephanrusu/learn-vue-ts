@@ -1,18 +1,48 @@
 export const Boards = {
-  toDo: { text: "To Do", color: "indigo" },
-  inProgress: { text: "In Progress", color: "blue" },
-  inReview: { text: "In Review", color: "cyan" },
-  done: { text: "Done", color: "teal" },
+  toDo: {
+    text: "To Do",
+    color: {
+      active: "bg-indigo-500",
+      hover: "bg-indigo-600",
+    },
+  },
+  inProgress: {
+    text: "In Progress",
+    color: {
+      active: "bg-blue-500",
+      hover: "bg-blue-600",
+    },
+  },
+  inReview: {
+    text: "In Review",
+    color: {
+      active: "bg-cyan-500",
+      hover: "bg-cyan-600",
+    },
+  },
+  done: {
+    text: "Done",
+    color: {
+      active: "bg-teal-500",
+      hover: "bg-teal-600",
+    },
+  },
 };
 
 export const ProjectStatus = {
   ongoing: {
     text: "Ongoing",
-    color: "orange",
+    color: {
+      background: "bg-orange-100",
+      text: "text-orange-800",
+    },
   },
   finished: {
     text: "Finished",
-    color: "green",
+    color: {
+      background: "bg-green-100",
+      text: "text-green-800",
+    },
   },
 };
 

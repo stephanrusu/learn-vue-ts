@@ -8,19 +8,22 @@
       </router-link>
       <div class="flex flex-row">
         <div
-          :class="`rounded-tl rounded-bl px-3 py-1 ${taskCard.priority.background.color} text-xs font-medium text-white`"
+          :class="[
+            'rounded-tl rounded-bl px-3 py-1 text-xs font-medium text-white',
+            taskCard.priority.background.color,
+          ]"
         >
           {{ taskCard.priority.text }}
         </div>
         <div
-          :class="`rounded-tr rounded-br px-3 py-1 ${taskCard.type.background.color} text-xs font-medium text-white`"
+          :class="['rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white', taskCard.type.background.color]"
         >
           {{ taskCard.type.text }}
         </div>
       </div>
     </header>
     <main class="flex flex-row py-3">
-      <div :class="`w-1 bg-${boardColor}-500 rounded mr-3`"></div>
+      <div :class="['w-1 rounded mr-3', boardColor.active]"></div>
       <div class="flex-1">
         <router-link :to="{ name: 'task-view', params: { taskId } }">
           <div class="font-medium text-sm tracking-wider text-gray-700 mb-4">

@@ -34,18 +34,24 @@
           <div class="flex items-center">
             <div class="flex flex-row pr-4">
               <div
-                :class="`rounded-tl rounded-bl px-3 py-1 ${task.priority.background.color} text-xs font-medium text-white`"
+                :class="[
+                  task.priority.background.color,
+                  'rounded-tl rounded-bl px-3 py-1 text-xs font-medium text-white',
+                ]"
               >
                 {{ task.priority.text }}
               </div>
               <div
-                :class="`rounded-tr rounded-br px-3 py-1 ${task.type.background.color} text-xs font-medium text-white`"
+                :class="[task.type.background.color, 'rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white']"
               >
                 {{ task.type.text }}
               </div>
             </div>
             <div
-              :class="`rounded px-3 py-1 bg-${column.board.color}-500 text-xs font-medium tracking-wider text-white`"
+              :class="[
+                column.board.color.active,
+                'rounded px-3 py-1 bg-${}-500 text-xs font-medium tracking-wider text-white',
+              ]"
             >
               {{ column.board.text }}
             </div>
@@ -119,7 +125,10 @@
         <button
           v-if="!isFirstBoard"
           type="button"
-          :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.prevBoard.board.color}-500 hover:bg-${actionsBoard.prevBoard.board.color}-600 items-center justify-center shadow-small rounded-md ease-in transition-colors`"
+          :class="[
+            'flex flex-1 px-3 py-2 items-center justify-center shadow-small rounded-md ease-in transition-colors',
+            `${actionsBoard.prevBoard.board.color.active} hover:${actionsBoard.prevBoard.board.color.hover}`,
+          ]"
           @click="moveTask(-1)"
         >
           <svg
@@ -144,7 +153,10 @@
         <button
           v-if="!isLastBoard"
           type="button"
-          :class="`flex flex-1 px-3 py-2 bg-${actionsBoard.nextBoard.board.color}-500 hover:bg-${actionsBoard.nextBoard.board.color}-600 items-center justify-center shadow-small rounded-md ease-in transition-colors`"
+          :class="[
+            `flex flex-1 px-3 py-2 items-center justify-center shadow-small rounded-md ease-in transition-colors`,
+            `${actionsBoard.nextBoard.board.color.active} hover:${actionsBoard.nextBoard.board.color.hover}`,
+          ]"
           @click="moveTask(1)"
         >
           <div class="font-medium text-white text-sm">

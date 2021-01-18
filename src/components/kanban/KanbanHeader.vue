@@ -64,7 +64,7 @@
         </button>
         <button
           type="button"
-          :class="`${isFilterOpen ? 'bg-gray-100' : 'bg-white'} hover:bg-gray-100 p-1.5`"
+          :class="['hover:bg-gray-100 p-1.5', isFilterOpen ? 'bg-gray-100' : 'bg-white']"
           @click="isFilterOpen = !isFilterOpen"
         >
           <svg

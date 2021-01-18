@@ -1,7 +1,30 @@
 <template>
   <section class="fixed inset-0 overflow-hidden flex justify-end">
-    <div class="fixed inset-0 transition-opacity" aria-hidden="true" @click="$router.go(-1)">
+    <div class="fixed inset-0 transition-opacity" aria-hidden="true">
       <div class="absolute inset-0 bg-gray-700 opacity-50"></div>
+    </div>
+    <div class="z-20 mr-auto p-4">
+      <button
+        class="rounded-full text-gray-300 hover:text-white focus:outline-none bg-gray-500 hover:bg-gray-700 p-1 ease-in transition-colors"
+        @click="$router.go(-1)"
+      >
+        <span class="sr-only">Close panel</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-x stroke-current text-white"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
     <div class="flex items-center z-20">
       <router-link :to="{ name: 'kanban' }" class="bg-white rounded-md w-2 h-32"></router-link>

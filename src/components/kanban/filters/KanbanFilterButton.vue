@@ -2,9 +2,11 @@
   <button
     :key="filterType.text"
     type="button"
-    :class="`${isActive ? filterType.background.active : filterType.background.color} hover:${
-      filterType.background.active
-    } text-white px-5 py-2 rounded-md text-xs font-medium tracking-wide shadow-small`"
+    :class="[
+      isActive ? filterType.background.active : filterType.background.color,
+      `hover:${filterType.background.active}`,
+      'text-white px-5 py-2 rounded-md text-xs font-medium tracking-wide shadow-small',
+    ]"
     @click="$emit('selectFilter', filterType.key)"
   >
     {{ filterType.text }}

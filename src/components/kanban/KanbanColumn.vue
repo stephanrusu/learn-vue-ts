@@ -2,7 +2,7 @@
   <div class="flex-1">
     <div class="bg-white shadow-card rounded-md">
       <header
-        :class="`flex justify-between bg-${boardColumn.board.color}-500 text-white p-3 rounded-tl-md rounded-tr-md`"
+        :class="['flex justify-between text-white p-3 rounded-tl-md rounded-tr-md', boardColumn.board.color.active]"
       >
         <div class="text-white font-medium">{{ boardColumn.board.text }}</div>
         <span class="bg-white text-gray-700 h-6 px-2 rounded-sm text-xs font-medium inline-flex items-center">
