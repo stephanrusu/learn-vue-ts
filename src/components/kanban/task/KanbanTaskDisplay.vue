@@ -1,5 +1,5 @@
 <template>
-  <kanban-task-overlay>
+  <kanban-overlay>
     <template #header>
       <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
         <div class="flex items-start justify-between pb-4">
@@ -179,18 +179,18 @@
         </button>
       </div>
     </template>
-  </kanban-task-overlay>
+  </kanban-overlay>
 </template>
 
 <script>
-import UsersAssigned from "../common/UsersAssigned.vue";
-import KanbanTaskOverlay from "../KanbanTaskOverlay.vue";
+import UsersAssigned from "@/components/kanban/common/UsersAssigned.vue";
+import KanbanOverlay from "@/components/KanbanOverlay.vue";
 import KanbanTaskTabs from "./KanbanTaskTabs.vue";
 import { Boards, KanbanTypeFilter, KanbanPriorityFilter } from "@/constants/enums";
 
 export default {
   name: "KanbanTaskDispay",
-  components: { KanbanTaskOverlay, UsersAssigned, KanbanTaskTabs },
+  components: { KanbanOverlay, UsersAssigned, KanbanTaskTabs },
   data() {
     return {
       taskOptionsToggle: false,

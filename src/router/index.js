@@ -5,11 +5,12 @@ import Auth from "@/views/Auth.vue";
 import Home from "@/views/Home.vue";
 import Kanban from "@/views/Kanban.vue";
 
-import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
 import SignIn from "@/components/auth/SignIn.vue";
 import SignUp from "@/components/auth/SignUp.vue";
 import ForgotPass from "@/components/auth/ForgotPassword.vue";
 import ResetPass from "@/components/auth/ResetPassword.vue";
+import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
+import KanbanTaskForm from "@/components/kanban/task/KanbanTaskForm.vue";
 
 Vue.use(VueRouter);
 
@@ -53,6 +54,7 @@ const routes = [
       {
         path: "create",
         name: "task-create",
+        component: KanbanTaskForm,
         meta: {
           showModal: true,
         },
