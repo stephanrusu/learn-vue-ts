@@ -52,15 +52,7 @@ export const ProjectStatus = {
   },
 };
 
-export const KanbanPriorityFilter = {
-  all: {
-    text: "All",
-    key: "all",
-    background: {
-      color: "bg-gray-200",
-      active: "bg-gray-300",
-    },
-  },
+export const KanbanPriority = {
   blocker: {
     text: "Blocker",
     key: "blocker",
@@ -103,15 +95,7 @@ export const KanbanPriorityFilter = {
   },
 };
 
-export const KanbanTypeFilter = {
-  all: {
-    text: "All",
-    key: "all",
-    background: {
-      color: "bg-gray-200",
-      active: "bg-gray-300",
-    },
-  },
+export const KanbanType = {
   bug: {
     text: "Bug",
     key: "bug",
@@ -144,4 +128,25 @@ export const KanbanTypeFilter = {
       active: "bg-cyan-700",
     },
   },
+};
+
+const allEntry = {
+  all: {
+    text: "All",
+    key: "all",
+    background: {
+      color: "bg-gray-200",
+      active: "bg-gray-300",
+    },
+  },
+};
+
+export const KanbanPriorityFilter = {
+  ...allEntry,
+  ...KanbanPriority,
+};
+
+export const KanbanTypeFilter = {
+  ...allEntry,
+  ...KanbanType,
 };

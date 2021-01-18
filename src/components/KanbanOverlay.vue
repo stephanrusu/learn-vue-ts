@@ -1,11 +1,11 @@
 <template>
   <section class="fixed inset-0 overflow-hidden flex justify-end">
     <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-      <div class="absolute inset-0 bg-gray-700 opacity-50"></div>
+      <div class="absolute inset-0 bg-gray-700 bg-opacity-50"></div>
     </div>
     <div class="z-20 mr-auto p-4">
       <button
-        class="rounded-full text-gray-300 hover:text-white focus:outline-none hover:bg-gray-500 p-1 ease-in transition-colors"
+        class="rounded-full text-gray-300 hover:text-white focus:outline-none hover:bg-gray-500 p-1 ease-in transition-colors hover:bg-opacity-70"
         @click="$router.go(-1)"
       >
         <span class="sr-only">Close panel</span>

@@ -3,24 +3,138 @@
     <template #header>
       <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
         <div class="flex flex-col">
-          <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">New task</div>
-          <div class="text-sm text-gray-600">Get started by filling the information below to create a new task</div>
+          <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">Create a new task</div>
+          <div class="text-sm text-gray-500">Get started by filling the information below to create a new task</div>
         </div>
       </div>
     </template>
     <template #main>
-      <div class="flex flex-col p-4">
-        <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">Demo</div>
+      <div class="flex flex-col p-4 space-y-4">
+        <div class="">
+          <label for="taskTitle" class="text-sm font-medium text-gray-700">Title</label>
+          <input
+            id="taskTitle"
+            type="text"
+            name="task-title"
+            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+          />
+        </div>
+        <div class="">
+          <label for="taskDescription" class="text-sm font-medium text-gray-700">Description</label>
+          <textarea
+            id="taskDescription"
+            name="task-title"
+            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="">
+          <label for="taskTitle" class="text-sm font-medium text-gray-700">Type</label>
+          <div class="flex items-center space-x-2 mt-2">
+            <template v-for="typeValue in typeValues">
+              <button
+                :key="typeValue.key"
+                :class="[
+                  'rounded px-3 py-1 text-sm font-medium text-white shadow-small',
+                  selectedType === typeValue.key
+                    ? typeValue.background.color
+                    : 'bg-gray-100 text-gray-400 bg-opacity-75',
+                ]"
+                type="button"
+                @click="selectedType = typeValue.key"
+              >
+                {{ typeValue.text }}
+              </button>
+            </template>
+          </div>
+        </div>
+        <div class="">
+          <label for="taskTitle" class="text-sm font-medium text-gray-700">Priority</label>
+          <div class="flex items-center space-x-2 mt-2">
+            <template v-for="priorityValue in priorityValues">
+              <button
+                :key="priorityValue.key"
+                :class="[
+                  'rounded px-3 py-1 text-sm font-medium text-white shadow-small',
+                  selectedPriority === priorityValue.key
+                    ? priorityValue.background.color
+                    : 'bg-gray-100 text-gray-400 bg-opacity-75',
+                ]"
+                type="button"
+                @click="selectedPriority = priorityValue.key"
+              >
+                {{ priorityValue.text }}
+              </button>
+            </template>
+          </div>
+        </div>
+        <div class="">
+          <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
+          <div class="flex items-center space-x-2 mt-2">
+            <div
+              data-v-925b48ac=""
+              class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
+            >
+              SR
+            </div>
+            <button
+              type="button"
+              class="rounded py-2 px-3 shadow-small bg-lavander hover:bg-indigo-200 ease-in transition-colors border border-indigo-200 hover:bg-opacity-75"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-plus stroke-current w-4 h-4 text-indigo-500"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </template>
-    <template #footer> Test </template>
+    <template #footer>
+      <div class="flex flex-row space-x-2">
+        <button
+          type="button"
+          class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide bg-gray-100 hover:bg-gray-200 ease-in transition-colors"
+          @click="$router.go(-1)"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
+        >
+          Create task
+        </button>
+      </div>
+    </template>
   </kanban-overlay>
 </template>
 
 <script>
 import KanbanOverlay from "@/components/KanbanOverlay.vue";
+import { KanbanType, KanbanPriority } from "@/constants/enums";
+
 export default {
   name: "KanbanTaskForm",
   components: { KanbanOverlay },
+  data() {
+    return {
+      selectedType: "",
+      selectedPriority: "",
+      typeValues: KanbanType,
+      priorityValues: KanbanPriority,
+    };
+  },
 };
 </script>
