@@ -5,7 +5,7 @@
     </div>
     <div class="z-20 mr-auto p-4">
       <button
-        class="rounded-full text-gray-300 hover:text-white focus:outline-none bg-gray-500 hover:bg-gray-700 p-1 ease-in transition-colors"
+        class="rounded-full text-gray-300 hover:text-white focus:outline-none hover:bg-gray-500 p-1 ease-in transition-colors"
         @click="$router.go(-1)"
       >
         <span class="sr-only">Close panel</span>

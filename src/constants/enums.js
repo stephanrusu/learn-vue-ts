@@ -1,6 +1,7 @@
 export const Boards = {
   toDo: {
     text: "To Do",
+    key: "toDo",
     color: {
       active: "bg-indigo-500",
       hover: "bg-indigo-600",
@@ -8,6 +9,7 @@ export const Boards = {
   },
   inProgress: {
     text: "In Progress",
+    key: "inProgress",
     color: {
       active: "bg-blue-500",
       hover: "bg-blue-600",
@@ -15,6 +17,7 @@ export const Boards = {
   },
   inReview: {
     text: "In Review",
+    key: "inReview",
     color: {
       active: "bg-cyan-500",
       hover: "bg-cyan-600",
@@ -22,6 +25,7 @@ export const Boards = {
   },
   done: {
     text: "Done",
+    key: "done",
     color: {
       active: "bg-teal-500",
       hover: "bg-teal-600",
@@ -32,6 +36,7 @@ export const Boards = {
 export const ProjectStatus = {
   ongoing: {
     text: "Ongoing",
+    key: "ongoing",
     color: {
       background: "bg-orange-100",
       text: "text-orange-800",
@@ -39,6 +44,7 @@ export const ProjectStatus = {
   },
   finished: {
     text: "Finished",
+    key: "finished",
     color: {
       background: "bg-green-100",
       text: "text-green-800",
