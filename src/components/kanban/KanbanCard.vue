@@ -7,18 +7,11 @@
         </div>
       </router-link>
       <div class="flex flex-row">
-        <div
-          :class="[
-            'rounded-tl rounded-bl px-3 py-1 text-xs font-medium text-white',
-            taskCard.priority.background.color,
-          ]"
-        >
-          {{ taskCard.priority.text }}
+        <div :class="['rounded-tl rounded-bl px-3 py-1 text-xs font-medium text-white', taskPriority.background.color]">
+          {{ taskPriority.text }}
         </div>
-        <div
-          :class="['rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white', taskCard.type.background.color]"
-        >
-          {{ taskCard.type.text }}
+        <div :class="['rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white', taskType.background.color]">
+          {{ taskType.text }}
         </div>
       </div>
     </header>
@@ -142,6 +135,8 @@
 
 <script>
 import UsersAssigned from "./common/UsersAssigned.vue";
+import { Boards, KanbanTypeFilter, KanbanPriorityFilter } from "@/constants/enums";
+
 export default {
   name: "KanbanCard",
   components: { UsersAssigned },
@@ -163,7 +158,7 @@ export default {
       return this.$store.getters.singleTask(this.boardId, this.taskId);
     },
     boardColor() {
-      return this.$store.getters.singleBoard(this.boardId).board.color;
+      return Boards[this.$store.getters.singleBoard(this.boardId).board].color;
     },
     boardsOrder() {
       return this.$store.getters.boardsOrder;
@@ -175,6 +170,13 @@ export default {
     isLastBoard() {
       const boardIndex = this.boardsOrder.indexOf(this.boardId);
       return boardIndex === this.boardsOrder.length - 1;
+    },
+
+    taskType() {
+      return KanbanTypeFilter[this.taskCard.type];
+    },
+    taskPriority() {
+      return KanbanPriorityFilter[this.taskCard.priority];
     },
   },
   methods: {

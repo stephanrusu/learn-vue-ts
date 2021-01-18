@@ -35,25 +35,25 @@
             <div class="flex flex-row pr-4">
               <div
                 :class="[
-                  task.priority.background.color,
+                  taskPriority.background.color,
                   'rounded-tl rounded-bl px-3 py-1 text-xs font-medium text-white',
                 ]"
               >
-                {{ task.priority.text }}
+                {{ taskPriority.text }}
               </div>
               <div
-                :class="[task.type.background.color, 'rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white']"
+                :class="[taskType.background.color, 'rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white']"
               >
-                {{ task.type.text }}
+                {{ taskType.text }}
               </div>
             </div>
             <div
               :class="[
-                column.board.color.active,
+                columnDetails.color.active,
                 'rounded px-3 py-1 bg-${}-500 text-xs font-medium tracking-wider text-white',
               ]"
             >
-              {{ column.board.text }}
+              {{ columnDetails.text }}
             </div>
           </div>
           <div class="relative">
@@ -127,7 +127,7 @@
           type="button"
           :class="[
             'flex flex-1 px-3 py-2 items-center justify-center shadow-small rounded-md ease-in transition-colors',
-            `${actionsBoard.prevBoard.board.color.active} hover:${actionsBoard.prevBoard.board.color.hover}`,
+            `${actionsBoardDetails.prevBoard.color.active} hover:${actionsBoardDetails.prevBoard.color.hover}`,
           ]"
           @click="moveTask(-1)"
         >
@@ -146,7 +146,7 @@
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
           <div class="font-medium text-white text-sm">
-            {{ actionsBoard.prevBoard.board.text }}
+            {{ actionsBoardDetails.prevBoard.text }}
           </div>
         </button>
         <div v-if="!isFirstBoard && !isLastBoard" class="flex-none mx-3 border"></div>
@@ -155,12 +155,12 @@
           type="button"
           :class="[
             `flex flex-1 px-3 py-2 items-center justify-center shadow-small rounded-md ease-in transition-colors`,
-            `${actionsBoard.nextBoard.board.color.active} hover:${actionsBoard.nextBoard.board.color.hover}`,
+            `${actionsBoardDetails.nextBoard.color.active} hover:${actionsBoardDetails.nextBoard.color.hover}`,
           ]"
           @click="moveTask(1)"
         >
           <div class="font-medium text-white text-sm">
-            {{ actionsBoard.nextBoard.board.text }}
+            {{ actionsBoardDetails.nextBoard.text }}
           </div>
           <svg
             fill="none"
@@ -186,6 +186,7 @@
 import UsersAssigned from "../common/UsersAssigned.vue";
 import KanbanTaskOverlay from "../KanbanTaskOverlay.vue";
 import KanbanTaskTabs from "./KanbanTaskTabs.vue";
+import { Boards, KanbanTypeFilter, KanbanPriorityFilter } from "@/constants/enums";
 
 export default {
   name: "KanbanTaskDispay",
@@ -235,14 +236,24 @@ export default {
       const boardIndex = this.boardsOrder.indexOf(boardId);
       return boardIndex === this.boardsOrder.length - 1;
     },
-    actionsBoard() {
+    actionsBoardDetails() {
       const boardId = this.column.uid;
       const boardIndex = this.boardsOrder.indexOf(boardId);
 
       return {
-        prevBoard: this.boards[this.boardsOrder[boardIndex - 1]],
-        nextBoard: this.boards[this.boardsOrder[boardIndex + 1]],
+        prevBoard: this.getBoardDetails(this.boards[this.boardsOrder[boardIndex - 1]]),
+        nextBoard: this.getBoardDetails(this.boards[this.boardsOrder[boardIndex + 1]]),
       };
+    },
+
+    taskType() {
+      return KanbanTypeFilter[this.task.type];
+    },
+    taskPriority() {
+      return KanbanPriorityFilter[this.task.priority];
+    },
+    columnDetails() {
+      return Boards[this.column.board];
     },
   },
   methods: {
@@ -255,6 +266,13 @@ export default {
 
       this.$store.dispatch("removeTask", { boardId, taskId });
       this.$store.dispatch("addTask", { boardId: newBoardId, taskId, task: movingTask });
+    },
+    getBoardDetails(boardData) {
+      if (boardData !== undefined) {
+        return Boards[boardData.board];
+      }
+
+      return null;
     },
   },
 };

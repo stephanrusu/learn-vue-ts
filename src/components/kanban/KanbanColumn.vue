@@ -1,10 +1,8 @@
 <template>
   <div class="flex-1">
     <div class="bg-white shadow-card rounded-md">
-      <header
-        :class="['flex justify-between text-white p-3 rounded-tl-md rounded-tr-md', boardColumn.board.color.active]"
-      >
-        <div class="text-white font-medium">{{ boardColumn.board.text }}</div>
+      <header :class="['flex justify-between text-white p-3 rounded-tl-md rounded-tr-md', boardDetails.color.active]">
+        <div class="text-white font-medium">{{ boardDetails.text }}</div>
         <span class="bg-white text-gray-700 h-6 px-2 rounded-sm text-xs font-medium inline-flex items-center">
           {{ tasksList.length }}
         </span>
@@ -21,6 +19,7 @@
 <script>
 import KanbanCard from "./KanbanCard";
 import { displayFilters } from "@/utils";
+import { Boards } from "@/constants/enums";
 
 export default {
   name: "KanbanColumn",
@@ -45,6 +44,9 @@ export default {
     },
     tasksList() {
       return Object.keys(displayFilters(this.boardColumn.tasks, this.priorityFilter, this.typeFilter));
+    },
+    boardDetails() {
+      return Boards[this.boardColumn.board];
     },
   },
 };
