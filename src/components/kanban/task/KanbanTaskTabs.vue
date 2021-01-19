@@ -1,14 +1,12 @@
 <template>
   <div>
-    <div class="flex mt-2 mb-4 p-2 bg-lavander">
+    <div class="flex mt-2 mb-4 p-1">
       <template v-for="tab in tabs">
         <div
           :key="tab.key"
           :class="[
             'z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded',
-            activeTab === tab.key
-              ? 'text-indigo-600 border-indigo-600 bg-white shadow-small'
-              : 'text-indigo-400 hover:text-indigo-600',
+            activeTab === tab.key ? 'text-white bg-indigo-500 shadow-small' : 'text-indigo-300 hover:text-indigo-600',
           ]"
           @click="activeTab = tab.key"
         >

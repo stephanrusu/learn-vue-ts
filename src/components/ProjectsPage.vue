@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import ProjectCard from "./ProjectCard.vue";
+import ProjectCard from "./project/ProjectCard.vue";
 export default {
   name: "ProjectsPage",
   components: { ProjectCard },

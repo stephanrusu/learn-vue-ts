@@ -12,7 +12,7 @@
         />
         <button
           type="button"
-          class="rounded py-2 px-3 text-sm shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors text-white"
+          class="rounded py-2 px-3 text-sm shadow-small bg-indigo-400 hover:bg-indigo-500 ease-in transition-colors text-white"
         >
           Post
         </button>
