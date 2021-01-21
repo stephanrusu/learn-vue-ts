@@ -9,11 +9,11 @@ export const displayFilters = (list, priority, type) => {
   let filteredTasks = list;
 
   if (priority !== KanbanPriorityFilter.all.key) {
-    filteredTasks = applyFilterTask(list, (task) => task.priority.key === priority);
+    filteredTasks = applyFilterTask(list, (task) => task.priority === priority);
   }
 
   if (type !== KanbanTypeFilter.all.key) {
-    filteredTasks = applyFilterTask(filteredTasks, (task) => task.type.key === type);
+    filteredTasks = applyFilterTask(filteredTasks, (task) => task.type === type);
   }
   return filteredTasks;
 };

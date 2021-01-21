@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex mt-2 mb-4 p-1">
+    <div class="flex mt-3 mb-4">
       <template v-for="tab in tabs">
         <div
           :key="tab.key"

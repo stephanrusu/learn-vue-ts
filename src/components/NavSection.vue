@@ -7,12 +7,6 @@
           Projects
         </router-link>
         <router-link
-          :to="{ name: 'kanban' }"
-          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
-        >
-          Kanban
-        </router-link>
-        <router-link
           :to="{ name: 'sign-in' }"
           class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
         >

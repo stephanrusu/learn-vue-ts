@@ -1,7 +1,7 @@
 const initialKanban = {
   uid: "nigyhcmrs",
   date: 1604918663862,
-  title: "Kanban",
+  title: "Endless",
   boardsOrder: ["ntq5y153g", "wewoprlx1", "sl0mm9cem", "z73qbvdv1"],
   status: "ongoing",
   boards: {
@@ -86,7 +86,7 @@ const initialKanban = {
           assigned: ["MR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "design",
-          priority: "major",
+          priority: "minor",
           description:
             "Carrot cake chocolate bar liquorice muffin. Gummies chocolate donut marzipan lollipop. Cheesecake danish danish pastry cupcake. Powder icing gummi bears. Macaroon cake cookie tiramisu cheesecake toffee marzipan donut. Sweet marshmallow tart tiramisu wafer chocolate. Sweet gingerbread bonbon dessert jujubes sweet chupa chups pastry.",
           comments: [],

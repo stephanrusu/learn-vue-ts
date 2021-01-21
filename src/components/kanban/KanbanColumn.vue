@@ -1,7 +1,13 @@
 <template>
   <div class="flex-1">
     <div class="bg-white shadow-card rounded-md">
-      <header :class="['flex justify-between text-white p-3 rounded-tl-md rounded-tr-md', boardDetails.color.active]">
+      <header
+        :class="[
+          'flex justify-between text-white p-3',
+          boardDetails.color.active,
+          tasksList.length > 0 ? 'rounded-tl-md rounded-tr-md' : 'rounded-md',
+        ]"
+      >
         <div class="text-white font-medium">{{ boardDetails.text }}</div>
         <span class="bg-white text-gray-700 h-6 px-2 rounded-sm text-xs font-medium inline-flex items-center">
           {{ tasksList.length }}

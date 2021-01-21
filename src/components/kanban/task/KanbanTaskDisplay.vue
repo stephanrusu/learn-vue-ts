@@ -57,36 +57,34 @@
             </div>
           </div>
           <div class="relative">
-            <div>
-              <button
-                id="options-menu"
-                type="button"
-                :class="[
-                  'inline-flex justify-center px-2 py-1 hover:bg-gray-100 focus:outline-none',
-                  taskOptionsToggle ? 'bg-gray-100' : '',
-                ]"
-                aria-haspopup="true"
-                aria-expanded="true"
-                @click="taskOptionsToggle = !taskOptionsToggle"
+            <button
+              id="options-menu"
+              type="button"
+              :class="[
+                'inline-flex justify-center px-2 py-1 hover:bg-gray-100 focus:outline-none',
+                taskOptionsToggle ? 'bg-gray-100' : '',
+              ]"
+              aria-haspopup="true"
+              aria-expanded="true"
+              @click="taskOptionsToggle = !taskOptionsToggle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-more-horizontal w-5 h-5 stroke-current text-gray-700"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-more-horizontal w-5 h-5 stroke-current text-gray-700"
-                >
-                  <circle cx="12" cy="12" r="1"></circle>
-                  <circle cx="19" cy="12" r="1"></circle>
-                  <circle cx="5" cy="12" r="1"></circle>
-                </svg>
-              </button>
-            </div>
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="12" r="1"></circle>
+                <circle cx="5" cy="12" r="1"></circle>
+              </svg>
+            </button>
             <div
               v-if="taskOptionsToggle"
               class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"

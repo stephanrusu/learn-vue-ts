@@ -51,7 +51,7 @@
             <label
               :for="`subtask-${sub.uid}`"
               :class="`rounded p-1 shadow-small ease-in transition-colors mr-3 cursor-pointer ${
-                sub.completed ? 'bg-indigo-400 hover:bg-indigo-500' : 'bg-gray-100 hover:bg-gray-200'
+                sub.completed ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-gray-100 hover:bg-gray-200'
               }`"
             >
               <svg

@@ -18,11 +18,64 @@
     <main class="flex flex-row py-3">
       <div :class="['w-1 rounded mr-3', boardColor.active]"></div>
       <div class="flex-1">
-        <router-link :to="{ name: 'task-view', params: { taskId } }">
-          <div class="font-medium text-sm tracking-wider text-gray-700 mb-4">
-            {{ taskCard.title }}
+        <div class="flex flex-row">
+          <router-link :to="{ name: 'task-view', params: { taskId } }">
+            <div class="font-medium text-sm tracking-wider text-gray-700 mb-4 flex-1">
+              {{ taskCard.title }}
+            </div>
+          </router-link>
+          <div class="relative ml-2">
+            <button
+              id="options-menu"
+              type="button"
+              :class="[
+                'inline-flex justify-center px-2 py-1 hover:bg-gray-100 focus:outline-none',
+                taskOptionsToggle ? 'bg-gray-100' : '',
+              ]"
+              aria-haspopup="true"
+              aria-expanded="true"
+              @click="taskOptionsToggle = !taskOptionsToggle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-more-horizontal w-5 h-5 stroke-current text-gray-700"
+              >
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="12" r="1"></circle>
+                <circle cx="5" cy="12" r="1"></circle>
+              </svg>
+            </button>
+            <div
+              v-if="taskOptionsToggle"
+              class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+            >
+              <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                <button
+                  class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
+                  role="menuitem"
+                  @click="taskOptionsToggle = !taskOptionsToggle"
+                >
+                  Edit task
+                </button>
+                <button
+                  class="rounded block w-full p-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
+                  role="menuitem"
+                  @click="taskOptionsToggle = !taskOptionsToggle"
+                >
+                  Remove task
+                </button>
+              </div>
+            </div>
           </div>
-        </router-link>
+        </div>
         <div class="flex flex-row justify-between">
           <div class="flex-1 flex flex-row space-x-2">
             <div class="flex flex-row text-xs items-center">
@@ -149,6 +202,11 @@ export default {
       type: String,
       default: "",
     },
+  },
+  data() {
+    return {
+      taskOptionsToggle: false,
+    };
   },
   computed: {
     projectTitle() {

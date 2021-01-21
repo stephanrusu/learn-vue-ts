@@ -79,7 +79,7 @@
             </div>
             <button
               type="button"
-              class="rounded py-2 px-3 shadow-small bg-lavander hover:bg-indigo-200 ease-in transition-colors border border-indigo-200 hover:bg-opacity-75"
+              class="rounded py-2 px-3 shadow-small bg-lavander hover:bg-gray-100 ease-in transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
