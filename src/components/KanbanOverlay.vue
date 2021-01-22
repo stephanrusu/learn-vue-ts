@@ -104,6 +104,8 @@ export default {
     closeAction() {
       if (this.showModal) {
         this.$router.go(-1);
+      } else {
+        this.$store.dispatch("slideOverlay");
       }
     },
   },

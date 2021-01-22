@@ -9,7 +9,7 @@
       <button class="bg-white text-gray-900 py-2 px-3 rounded mr-4 text-sm font-medium hover:bg-gray-100">
         Learn more
       </button>
-      <button class="font-bold text-white p-2 hover:bg-gray-700 rounded">
+      <button class="font-bold text-white p-2 hover:bg-gray-700 rounded" @click="toggleNotification">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -33,5 +33,10 @@
 <script>
 export default {
   name: "NotificationContainer",
+  methods: {
+    toggleNotification() {
+      this.$store.dispatch("toggleNotificationActive");
+    },
+  },
 };
 </script>

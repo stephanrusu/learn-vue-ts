@@ -9,12 +9,20 @@
       </div>
     </template>
     <template #main>
+      <!-- <div class="flex px-4 pt-4 pb-2">
+        <input
+          type="text"
+          name="text"
+          placeholder="Lookin' for someone ?"
+          class="focus:border-indigo-300 w-full border-gray-300 rounded shadow-small focus:shadow-small-2 text-sm"
+        />
+      </div> -->
       <div class="py-4 px-2 flex flex-col">
         <template v-for="(user, index) in users">
           <div
             :key="user.username"
             :class="[
-              'flex items-center p-2 hover:bg-gray-100',
+              'flex items-center p-2 hover:bg-gray-100 rounded-md',
               selectedUsers.indexOf(user.username) >= 0 ? 'bg-gray-50' : '',
             ]"
           >
@@ -27,7 +35,7 @@
               <div class="text-sm text-gray-600">{{ user.fullname }}</div>
               <div class="text-xs text-gray-400">@{{ user.username }}</div>
             </div>
-            <div class="flex flex-row items-center cursor-pointer ml-auto">
+            <div class="block cursor-pointer ml-auto">
               <input
                 :id="`user-${index}`"
                 type="checkbox"
@@ -37,7 +45,7 @@
               <label
                 :for="`user-${index}`"
                 :class="[
-                  'rounded p-1 shadow-small ease-in transition-colors mr-3 cursor-pointer',
+                  'flex items-center justify-center rounded p-1 shadow-sm ease-in transition-colors cursor-pointer',
                   selectedUsers.indexOf(user.username) >= 0
                     ? 'bg-indigo-500 hover:bg-indigo-600'
                     : 'bg-gray-100 hover:bg-gray-200',
@@ -68,6 +76,7 @@
         <button
           type="button"
           class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide bg-gray-100 hover:bg-gray-200 ease-in transition-colors"
+          @click="closeOverlay"
         >
           Cancel
         </button>
@@ -137,11 +146,6 @@ export default {
           username: "bianca.cruz",
           email: "bianca.cruz@example.com",
         },
-        {
-          fullname: "Harrison Wells",
-          username: "harrison.wells",
-          email: "harrison.wells@example.com",
-        },
       ],
     };
   },
@@ -154,6 +158,9 @@ export default {
       } else {
         this.selectedUsers.splice(indexUser, 1);
       }
+    },
+    closeOverlay() {
+      this.$store.dispatch("slideOverlay");
     },
   },
 };

@@ -51,21 +51,21 @@
               <button
                 class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                 role="menuitem"
-                @click="optionsToggle = !optionsToggle"
+                @click="changeTeamMembers"
               >
                 Manage people
               </button>
               <button
                 class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                 role="menuitem"
-                @click="optionsToggle = !optionsToggle"
+                @click="toggleOptionsDropdown"
               >
                 Edit project
               </button>
               <button
                 class="rounded block w-full p-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
                 role="menuitem"
-                @click="optionsToggle = !optionsToggle"
+                @click="deleteProject"
               >
                 Remove project
               </button>
@@ -154,6 +154,19 @@ export default {
     return {
       optionsToggle: false,
     };
+  },
+  methods: {
+    changeTeamMembers() {
+      this.$store.dispatch("slideOverlay");
+      this.toggleOptionsDropdown();
+    },
+    deleteProject() {
+      this.$store.dispatch("toggleNotificationActive");
+      this.toggleOptionsDropdown();
+    },
+    toggleOptionsDropdown() {
+      this.optionsToggle = !this.optionsToggle;
+    },
   },
 };
 </script>
