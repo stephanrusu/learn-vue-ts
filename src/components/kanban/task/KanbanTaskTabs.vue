@@ -1,18 +1,22 @@
 <template>
   <div>
-    <div class="flex mt-3 mb-4">
-      <template v-for="tab in tabs">
-        <div
-          :key="tab.key"
-          :class="[
-            'z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded',
-            activeTab === tab.key ? 'text-white bg-indigo-500 shadow-small' : 'text-indigo-300 hover:text-indigo-600',
-          ]"
-          @click="activeTab = tab.key"
-        >
-          {{ tab.text }}
-        </div>
-      </template>
+    <div class="mt-3 mb-4 flex">
+      <div class="flex bg-gray-50 p-1 flex-row rounded-full">
+        <template v-for="tab in tabs">
+          <div
+            :key="tab.key"
+            :class="[
+              'z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded-full',
+              activeTab === tab.key
+                ? 'text-gray-500 hover:text-gray-600 bg-white shadow-small'
+                : 'text-gray-400 hover:text-gray-500',
+            ]"
+            @click="activeTab = tab.key"
+          >
+            {{ tab.text }}
+          </div>
+        </template>
+      </div>
     </div>
     <div class="">
       <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :task-id="taskId" :board-id="boardId" />

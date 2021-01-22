@@ -38,7 +38,7 @@
                   'rounded px-3 py-1 text-sm font-medium text-white shadow-small',
                   selectedType === typeValue.key
                     ? typeValue.background.color
-                    : 'bg-gray-100 text-gray-400 bg-opacity-75',
+                    : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
                 ]"
                 type="button"
                 @click="selectedType = typeValue.key"
@@ -58,7 +58,7 @@
                   'rounded px-3 py-1 text-sm font-medium text-white shadow-small',
                   selectedPriority === priorityValue.key
                     ? priorityValue.background.color
-                    : 'bg-gray-100 text-gray-400 bg-opacity-75',
+                    : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
                 ]"
                 type="button"
                 @click="selectedPriority = priorityValue.key"

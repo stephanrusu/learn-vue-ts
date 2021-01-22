@@ -19,8 +19,8 @@
       <div :class="['w-1 rounded mr-3', boardColor.active]"></div>
       <div class="flex-1">
         <div class="flex flex-row">
-          <router-link :to="{ name: 'task-view', params: { taskId } }">
-            <div class="font-medium text-sm tracking-wider text-gray-700 mb-4 flex-1">
+          <router-link :to="{ name: 'task-view', params: { taskId } }" class="mb-4">
+            <div class="font-medium text-sm tracking-wider text-gray-700 flex-1">
               {{ taskCard.title }}
             </div>
           </router-link>
@@ -58,6 +58,13 @@
               class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
             >
               <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                <button
+                  class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
+                  role="menuitem"
+                  @click="taskOptionsToggle = !taskOptionsToggle"
+                >
+                  Change assignee
+                </button>
                 <button
                   class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                   role="menuitem"
