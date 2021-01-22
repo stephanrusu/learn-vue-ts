@@ -79,7 +79,7 @@
             </div>
             <button
               type="button"
-              class="rounded py-2 px-3 shadow-small bg-lavander hover:bg-gray-100 ease-in transition-colors"
+              class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="feather feather-plus stroke-current w-4 h-4 text-indigo-500"
+                class="feather feather-plus stroke-current w-4 h-4 text-gray-500"
               >
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>

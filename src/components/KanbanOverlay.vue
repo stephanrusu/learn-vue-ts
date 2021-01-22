@@ -5,8 +5,8 @@
     </div>
     <div class="z-20 mr-auto p-4">
       <button
-        class="rounded-full text-gray-300 hover:text-white focus:outline-none hover:bg-gray-500 p-1 ease-in transition-colors hover:bg-opacity-70"
-        @click="$router.go(-1)"
+        class="rounded-full text-gray-300 hover:text-white focus:outline-none hover:bg-gray-500 p-2 ease-in transition-colors hover:bg-opacity-70"
+        @click="closeAction"
       >
         <span class="sr-only">Close panel</span>
         <svg
@@ -16,10 +16,10 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
+          stroke-width="3"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-x stroke-current text-white"
+          class="feather feather-x stroke-current text-white w-5 h-5"
         >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -27,7 +27,7 @@
       </button>
     </div>
     <div class="flex items-center z-20">
-      <router-link :to="{ name: 'kanban' }" class="bg-white rounded-md w-2 h-32"></router-link>
+      <button type="button" class="bg-white rounded-md w-2 h-32" @click="closeAction"></button>
     </div>
     <div :class="['z-20 relative transition-all ease-in duration-300 p-2', toggleFullScreen ? 'w-p-95' : 'w-p-50']">
       <div class="min-h-full flex flex-col bg-white rounded-md">
@@ -96,8 +96,15 @@ export default {
     $route: {
       immediate: true,
       handler: function (newVal) {
-        this.showModal = newVal.meta && newVal.meta.showModal;
+        this.showModal = (newVal.meta && newVal.meta.showModal) ?? false;
       },
+    },
+  },
+  methods: {
+    closeAction() {
+      if (this.showModal) {
+        this.$router.go(-1);
+      }
     },
   },
 };

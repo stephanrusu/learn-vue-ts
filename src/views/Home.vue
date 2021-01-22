@@ -3,6 +3,7 @@
     <nav-section />
     <projects-page />
     <notification-container />
+    <members-selection />
   </div>
 </template>
 
@@ -10,9 +11,10 @@
 import ProjectsPage from "@/components/ProjectsPage.vue";
 import NavSection from "@/components/NavSection.vue";
 import NotificationContainer from "@/components/NotificationContainer.vue";
+import MembersSelection from "../components/MembersSelection.vue";
 
 export default {
   name: "Home",
-  components: { ProjectsPage, NavSection, NotificationContainer },
+  components: { ProjectsPage, NavSection, NotificationContainer, MembersSelection },
 };
 </script>
