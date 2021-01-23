@@ -10,7 +10,7 @@ import ProjectsPage from "@/components/ProjectsPage.vue";
 import NavSection from "@/components/NavSection.vue";
 
 export default {
-  name: "Home",
+  name: "Projects",
   components: { ProjectsPage, NavSection },
 };
 </script>

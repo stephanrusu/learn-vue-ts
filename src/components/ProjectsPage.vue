@@ -50,26 +50,22 @@
       mode="out-in"
       appear
     >
-      <members-selection v-if="toggleSlideOverlay" :key="toggleSlideOverlay" />
+      <router-view />
     </transition>
   </div>
 </template>
 
 <script>
 import NotificationContainer from "@/components/NotificationContainer.vue";
-import MembersSelection from "@/components/MembersSelection.vue";
 import ProjectCard from "./project/ProjectCard.vue";
 
 export default {
   name: "ProjectsPage",
-  components: { ProjectCard, NotificationContainer, MembersSelection },
+  components: { ProjectCard, NotificationContainer },
   data() {
     return {};
   },
   computed: {
-    toggleSlideOverlay() {
-      return this.$store.getters.getSlideOverlay;
-    },
     toggleNotification() {
       return this.$store.getters.getNotificationActive;
     },

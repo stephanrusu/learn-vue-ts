@@ -3,7 +3,7 @@
     <div class="mt-4 shadow-card bg-white p-2 flex items-center justify-between rounded-sm">
       <div class="flex items-center">
         <router-link
-          :to="{ name: 'home' }"
+          :to="{ name: 'projects' }"
           class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
         >
           Projects
@@ -11,7 +11,7 @@
         <div class="mx-2 cursor-default text-gray-300">/</div>
         <router-link
           :to="{ name: 'kanban' }"
-          class="text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+          class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
         >
           {{ projectTitle }}
         </router-link>

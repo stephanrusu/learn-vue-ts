@@ -157,7 +157,7 @@ export default {
   },
   methods: {
     changeTeamMembers() {
-      this.$store.dispatch("slideOverlay");
+      this.$router.push({ name: "project-team", params: { projectId: this.project } });
       this.toggleOptionsDropdown();
     },
     deleteProject() {

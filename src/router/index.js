@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Auth from "@/views/Auth.vue";
-import Home from "@/views/Home.vue";
+import Projects from "@/views/Projects.vue";
 import Kanban from "@/views/Kanban.vue";
 
 import SignIn from "@/components/auth/SignIn.vue";
@@ -11,6 +11,7 @@ import ForgotPass from "@/components/auth/ForgotPassword.vue";
 import ResetPass from "@/components/auth/ResetPassword.vue";
 import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
 import KanbanTaskForm from "@/components/kanban/task/KanbanTaskForm.vue";
+import MembersSelection from "@/components/MembersSelection.vue";
 
 Vue.use(VueRouter);
 
@@ -18,7 +19,39 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: Home,
+    redirect: "/projects",
+  },
+  {
+    path: "/projects",
+    name: "projects",
+    component: Projects,
+    children: [
+      {
+        path: "create",
+        name: "project-create",
+        meta: {
+          showModal: true,
+        },
+        props: true,
+      },
+      {
+        path: "edit/:projectId",
+        name: "project-edit",
+        meta: {
+          showModal: true,
+        },
+        props: true,
+      },
+      {
+        path: "team/:projectId",
+        name: "project-team",
+        component: MembersSelection,
+        meta: {
+          showModal: true,
+        },
+        props: true,
+      },
+    ],
   },
   {
     path: "/auth",

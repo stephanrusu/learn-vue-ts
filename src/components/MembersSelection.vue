@@ -76,7 +76,7 @@
         <button
           type="button"
           class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide bg-gray-100 hover:bg-gray-200 ease-in transition-colors"
-          @click="closeOverlay"
+          @click="$router.go(-1)"
         >
           Cancel
         </button>
@@ -158,9 +158,6 @@ export default {
       } else {
         this.selectedUsers.splice(indexUser, 1);
       }
-    },
-    closeOverlay() {
-      this.$store.dispatch("slideOverlay");
     },
   },
 };
