@@ -9,9 +9,12 @@ import SignIn from "@/components/auth/SignIn.vue";
 import SignUp from "@/components/auth/SignUp.vue";
 import ForgotPass from "@/components/auth/ForgotPassword.vue";
 import ResetPass from "@/components/auth/ResetPassword.vue";
+
 import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
 import KanbanTaskForm from "@/components/kanban/task/KanbanTaskForm.vue";
-import MembersSelection from "@/components/MembersSelection.vue";
+
+import MembersSelection from "@/components/project/MembersSelection.vue";
+import ProjectForm from "@/components/project/ProjectForm.vue";
 
 Vue.use(VueRouter);
 
@@ -29,6 +32,7 @@ const routes = [
       {
         path: "create",
         name: "project-create",
+        component: ProjectForm,
         meta: {
           showModal: true,
         },

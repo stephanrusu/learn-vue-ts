@@ -5,7 +5,7 @@
     </div>
     <div class="z-20 mr-auto p-4">
       <button
-        class="rounded-full text-gray-300 hover:text-white focus:outline-none hover:bg-gray-500 p-2 ease-in transition-colors hover:bg-opacity-70"
+        class="rounded-full text-gray-300 hover:text-white hover:bg-gray-500 p-2 ease-in transition-colors hover:bg-opacity-70"
         @click="closeAction"
       >
         <span class="sr-only">Close panel</span>

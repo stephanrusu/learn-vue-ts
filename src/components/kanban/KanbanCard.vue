@@ -28,10 +28,8 @@
             <button
               id="options-menu"
               type="button"
-              :class="[
-                'inline-flex justify-center px-2 py-1 hover:bg-gray-100 focus:outline-none',
-                taskOptionsToggle ? 'bg-gray-100' : '',
-              ]"
+              class="inline-flex justify-center px-2 py-1 hover:bg-gray-100"
+              :class="{ 'bg-gray-100': taskOptionsToggle }"
               aria-haspopup="true"
               aria-expanded="true"
               @click="taskOptionsToggle = !taskOptionsToggle"
@@ -53,34 +51,45 @@
                 <circle cx="5" cy="12" r="1"></circle>
               </svg>
             </button>
-            <div
-              v-if="taskOptionsToggle"
-              class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+            <transition
+              enter-active-class="transition ease-out duration-100"
+              enter-class="transform opacity-0 scale-95"
+              enter-to-class="transform opacity-100 scale-100"
+              leave-active-class="transition ease-in duration-75"
+              leave-class="transform opacity-100 scale-100"
+              leave-to-class="transform opacity-0 scale-95"
+              mode="out-in"
+              appear
             >
-              <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                <button
-                  class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
-                  role="menuitem"
-                  @click="taskOptionsToggle = !taskOptionsToggle"
-                >
-                  Change assignee
-                </button>
-                <button
-                  class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
-                  role="menuitem"
-                  @click="taskOptionsToggle = !taskOptionsToggle"
-                >
-                  Edit task
-                </button>
-                <button
-                  class="rounded block w-full p-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
-                  role="menuitem"
-                  @click="taskOptionsToggle = !taskOptionsToggle"
-                >
-                  Remove task
-                </button>
+              <div
+                v-if="taskOptionsToggle"
+                class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+              >
+                <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                  <button
+                    class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
+                    role="menuitem"
+                    @click="taskOptionsToggle = !taskOptionsToggle"
+                  >
+                    Change assignee
+                  </button>
+                  <button
+                    class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
+                    role="menuitem"
+                    @click="taskOptionsToggle = !taskOptionsToggle"
+                  >
+                    Edit task
+                  </button>
+                  <button
+                    class="rounded block w-full p-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
+                    role="menuitem"
+                    @click="taskOptionsToggle = !taskOptionsToggle"
+                  >
+                    Remove task
+                  </button>
+                </div>
               </div>
-            </div>
+            </transition>
           </div>
         </div>
         <div class="flex flex-row justify-between">

@@ -5,7 +5,8 @@
         <project-card :key="n" :project="n" />
       </template>
       <div class="bg-gray-100 rounded-md p-4 h-64 flex items-center justify-center">
-        <button
+        <router-link
+          :to="{ name: 'project-create' }"
           type="button"
           class="text-indigo-600 px-4 py-2 rounded-md text-sm font-medium tracking-wide shadow-card bg-white hover:bg-gray-50 ease-in transition-colors flex items-center"
         >
@@ -25,7 +26,7 @@
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
           <span>New project</span>
-        </button>
+        </router-link>
       </div>
     </div>
     <transition

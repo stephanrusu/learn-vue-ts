@@ -3,10 +3,8 @@
     <div
       v-for="(user, index) in users"
       :key="index"
-      :class="[
-        'bg-indigo-400 hover:z-10 flex items-center justify-center rounded-md shadow-small px-2 py-1 text-sm text-white font-medium border border-white cursor-default',
-        index > 0 ? '-ml-3' : '',
-      ]"
+      class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded-md shadow-small px-2 py-1 text-sm text-white font-medium border border-white cursor-default"
+      :class="{ '-ml-3': index > 0 }"
     >
       {{ user }}
     </div>

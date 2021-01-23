@@ -21,10 +21,9 @@
         <template v-for="(user, index) in users">
           <div
             :key="user.username"
-            :class="[
-              'flex items-center p-2 hover:bg-gray-100 rounded-md',
-              selectedUsers.indexOf(user.username) >= 0 ? 'bg-gray-50' : '',
-            ]"
+            class="flex items-center p-2 hover:bg-gray-100 rounded-md"
+            :class="{ 'bg-gray-50': selectedUsers.indexOf(user.username) >= 0 }"
+            ,
           >
             <div
               class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small w-10 h-8 text-md text-white font-medium cursor-default"
@@ -92,7 +91,7 @@
 </template>
 
 <script>
-import KanbanOverlay from "./KanbanOverlay.vue";
+import KanbanOverlay from "../KanbanOverlay.vue";
 
 export default {
   name: "MembersSelection",
