@@ -23,43 +23,54 @@ const colOffset = (maxColumns, size) => {
 
 module.exports = plugin(({ addUtilities, e, variants }) => {
   const pluginVariants = variants("flexGrid", []);
-  const maxColumns = 12;
-  const sideGutter = "1rem";
-  const columns = range(maxColumns, 1).push("auto");
+  const defaults = {
+    maxColumns: 12,
+    sideGutter: "1rem",
+  };
+  const columns = range(defaults.maxColumns, 1);
+  columns.push("auto");
 
-  const flexGrid = () => {
-    return {
-      ".flex-grid-row": {
-        boxSizing: "border-box",
-        display: "flex",
-        flex: "0 1 auto",
-        flexWrap: "wrap",
-        flexDirection: "row",
-        marginLeft: sideGutter,
-        marginRight: sideGutter,
-      },
-      ...columns.map((size) => ({
-        [`.${e(`flex-grid-col-${size}`)}`]: {
-          boxSizing: "border-box",
-          display: "flex",
-          flexDirection: "column",
-          flexGrow: `${size === "auto" ? "1" : "0"}`,
-          flexShrink: "0",
-          flexBasis: colSize(maxColumns, size, "0"),
-          maxWidth: colSize(maxColumns, size, "100%"),
-          minHeight: "1px",
-          position: "relative",
-          paddingLeft: sideGutter,
-          paddingRight: sideGutter,
-        },
-      })),
-      ...columns.map((size) => ({
-        [`.${e(`flex-grid-col-offset-${size}`)}`]: {
-          marginLeft: colOffset(maxColumns, size),
-        },
-      })),
-    };
+  const flexGridRow = {
+    [`.${e(`flex-grid-row`)}`]: {
+      boxSizing: "border-box",
+      display: "flex",
+      flexWrap: "wrap",
+      flexDirection: "row",
+      marginLeft: `-${defaults.sideGutter}`,
+      marginRight: `-${defaults.sideGutter}`,
+    },
   };
 
-  addUtilities(flexGrid, pluginVariants);
+  const flexGridCols = {
+    [`.${e(`flex-grid-col`)}`]: {
+      boxSizing: "border-box",
+      display: "flex",
+      flexDirection: "column",
+      flex: "0 0 auto",
+      minHeight: "1px",
+      position: "relative",
+      paddingLeft: defaults.sideGutter,
+      paddingRight: defaults.sideGutter,
+    },
+  };
+
+  const flexGridColsSizes = columns.map((size) => {
+    return {
+      [`.${e(`col-size-${size}`)}`]: {
+        flexGrow: `${size === "auto" ? "1" : "0"}`,
+        flexBasis: colSize(defaults.maxColumns, size, "0"),
+        maxWidth: colSize(defaults.maxColumns, size, "100%"),
+      },
+    };
+  });
+
+  const flexGridColsOffSet = columns.map((size) => {
+    return {
+      [`.${e(`col-offset-${size}`)}`]: {
+        marginLeft: colOffset(defaults.maxColumns, size),
+      },
+    };
+  });
+
+  addUtilities([flexGridRow, flexGridCols, flexGridColsSizes, flexGridColsOffSet], pluginVariants);
 });

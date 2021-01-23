@@ -6,7 +6,7 @@ module.exports = plugin(({ addUtilities, e, theme, variants }) => {
 
   const flexBasisUtitilies = Object.keys(pluginConfig).map((key) => {
     return {
-      [`.${e(`flex-basis-${key}`)}`]: {
+      [`.${e(`basis-${key}`)}`]: {
         "flex-basis": pluginConfig[key],
       },
     };
