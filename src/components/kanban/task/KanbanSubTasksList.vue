@@ -44,7 +44,7 @@
             <input
               :id="`subtask-${sub.uid}`"
               type="checkbox"
-              class="opacity-0 absolute d-none"
+              class="opacity-0 absolute hidden"
               :checked="sub.completed"
               @change="toggleSubTask(sub, index)"
             />

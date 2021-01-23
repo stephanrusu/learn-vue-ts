@@ -38,7 +38,7 @@
               <input
                 :id="`user-${index}`"
                 type="checkbox"
-                class="opacity-0 absolute d-none"
+                class="opacity-0 absolute hidden"
                 @change="toggleSelectUser(user.username)"
               />
               <label
