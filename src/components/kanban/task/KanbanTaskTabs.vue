@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="mt-3 mb-4 flex">
-      <div class="flex bg-gray-50 p-1 flex-row rounded-full">
+    <div class="mt-2 mb-4 flex">
+      <div class="flex flex-row space-x-2">
         <template v-for="tab in tabs">
           <div
             :key="tab.key"
             :class="[
-              'z-10 cursor-pointer text-center py-2 px-3 font-medium text-sm rounded-full',
+              'z-10 cursor-pointer text-center p-2 font-medium text-sm',
               activeTab === tab.key
-                ? 'text-gray-500 hover:text-gray-600 bg-white shadow-small'
-                : 'text-gray-400 hover:text-gray-500',
+                ? 'text-indigo-500 hover:text-indigo-600 border-b-2 border-indigo-500 shadow-small hover:border-indigo-600'
+                : 'text-gray-400 hover:text-gray-500 hover:border-b hover:border-gray-400',
             ]"
             @click="activeTab = tab.key"
           >
@@ -18,9 +18,9 @@
         </template>
       </div>
     </div>
-    <div class="">
-      <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :task-id="taskId" :board-id="boardId" />
-      <kanban-comments-list v-if="activeTab === 'comments'" />
+    <div>
+      <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="taskId" :board-id="boardId" />
+      <kanban-comments-list v-if="activeTab === 'comments'" :key="activeTab" />
     </div>
   </div>
 </template>

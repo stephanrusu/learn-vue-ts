@@ -11,20 +11,20 @@
     <template #main>
       <div class="flex flex-col p-4 space-y-4">
         <div class="">
-          <label for="taskTitle" class="text-sm font-medium text-gray-700">Title</label>
+          <label for="projectTitle" class="text-sm font-medium text-gray-700">Title</label>
           <input
-            id="taskTitle"
+            id="projectTitle"
             type="text"
-            name="task-title"
+            name="project-title"
             class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
           />
         </div>
         <div class="">
-          <label for="taskDescription" class="text-sm font-medium text-gray-700">Description</label>
+          <label for="projectDescription" class="text-sm font-medium text-gray-700">Description</label>
           <textarea
-            id="taskDescription"
-            name="task-title"
-            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+            id="projectDescription"
+            name="project-description"
+            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2 resize-none"
             rows="3"
           ></textarea>
         </div>

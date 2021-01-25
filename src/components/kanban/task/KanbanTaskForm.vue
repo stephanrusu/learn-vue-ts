@@ -24,7 +24,7 @@
           <textarea
             id="taskDescription"
             name="task-title"
-            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2 resize-none"
             rows="3"
           ></textarea>
         </div>

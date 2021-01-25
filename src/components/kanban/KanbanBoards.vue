@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-row justify-between space-x-5">
+  <main class="flex-grid-row">
     <template v-for="boardId in boardsOrder">
       <kanban-column :key="boardId" :board-id="boardId" />
     </template>

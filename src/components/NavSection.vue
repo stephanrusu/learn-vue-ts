@@ -18,7 +18,7 @@
       </div>
 
       <div
-        class="w-10 h-6 flex items-center bg-gray-200 rounded-full p-1 duration-300 ease-in-out shadow-small"
+        class="w-10 h-6 flex items-center bg-gray-200 rounded-full p-1 duration-300 ease-in-out shadow-small cursor-pointer"
         :class="{ 'bg-indigo-400': toggleActive }"
         @click="toggleActive = !toggleActive"
       >

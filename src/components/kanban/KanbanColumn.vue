@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1">
+  <div class="flex-grid-col col-size-3">
     <div class="bg-white shadow-card rounded-md">
       <header
         :class="[

@@ -23,7 +23,6 @@
             :key="user.username"
             class="flex items-center p-2 hover:bg-gray-100 rounded-md"
             :class="{ 'bg-gray-50': selectedUsers.indexOf(user.username) >= 0 }"
-            ,
           >
             <div
               class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small w-10 h-8 text-md text-white font-medium cursor-default"
@@ -31,8 +30,12 @@
               {{ user.fullname | avatarId }}
             </div>
             <div class="ml-4 font-medium tracking-wide">
-              <div class="text-sm text-gray-600">{{ user.fullname }}</div>
-              <div class="text-xs text-gray-400">@{{ user.username }}</div>
+              <div
+                :class="['text-sm', selectedUsers.indexOf(user.username) >= 0 ? 'text-indigo-600' : 'text-gray-600']"
+              >
+                {{ user.fullname }}
+              </div>
+              <div :class="['text-xs text-gray-400']">@{{ user.username }}</div>
             </div>
             <div class="block cursor-pointer ml-auto">
               <input
