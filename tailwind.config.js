@@ -312,7 +312,6 @@ module.exports = {
       10: "10",
       11: "11",
       12: "12",
-      13: "13",
     },
     gridColumnStart: {
       auto: "auto",
@@ -328,7 +327,6 @@ module.exports = {
       10: "10",
       11: "11",
       12: "12",
-      13: "13",
     },
     gridRow: {
       auto: "auto",
@@ -338,6 +336,12 @@ module.exports = {
       "span-4": "span 4 / span 4",
       "span-5": "span 5 / span 5",
       "span-6": "span 6 / span 6",
+      "span-7": "span 7 / span 7",
+      "span-8": "span 8 / span 8",
+      "span-9": "span 9 / span 9",
+      "span-10": "span 10 / span 10",
+      "span-11": "span 11 / span 11",
+      "span-12": "span 12 / span 12",
       "span-full": "1 / -1",
     },
     gridRowStart: {
@@ -349,6 +353,11 @@ module.exports = {
       5: "5",
       6: "6",
       7: "7",
+      8: "8",
+      9: "9",
+      10: "10",
+      11: "11",
+      12: "12",
     },
     gridRowEnd: {
       auto: "auto",
@@ -359,6 +368,11 @@ module.exports = {
       5: "5",
       6: "6",
       7: "7",
+      8: "8",
+      9: "9",
+      10: "10",
+      11: "11",
+      12: "12",
     },
     transformOrigin: {
       center: "center",
