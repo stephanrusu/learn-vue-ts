@@ -5,6 +5,7 @@ import Auth from "@/views/Auth.vue";
 import Projects from "@/views/Projects.vue";
 import Kanban from "@/views/Kanban.vue";
 import FlexGrid from "@/views/FlexGrid.vue";
+import Calendar from "@/views/Calendar.vue";
 
 import SignIn from "@/components/auth/SignIn.vue";
 import SignUp from "@/components/auth/SignUp.vue";
@@ -116,6 +117,11 @@ const routes = [
         props: true,
       },
     ],
+  },
+  {
+    path: "/calendar",
+    name: "calendar",
+    component: Calendar,
   },
   {
     path: "/flexgrid",

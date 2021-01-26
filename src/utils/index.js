@@ -21,3 +21,7 @@ export const displayFilters = (list, priority, type) => {
 export const getUuid = () => {
   return Math.random().toString(36).substr(2, 9);
 };
+
+export const range = (size, startAt = 0) => {
+  return [...Array(size).keys()].map((i) => i + startAt);
+};

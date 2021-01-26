@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow-card rounded-md p-4 h-64 flex flex-col">
+  <div class="bg-white shadow-card hover:shadow-panel rounded-md p-4 h-64 flex flex-col">
     <header>
       <div class="flex items-center justify-between">
         <div

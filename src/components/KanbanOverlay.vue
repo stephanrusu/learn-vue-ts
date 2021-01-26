@@ -29,7 +29,7 @@
     <div class="flex items-center z-20">
       <button type="button" class="bg-white rounded-md w-2 h-32" @click="closeAction"></button>
     </div>
-    <div :class="['z-20 relative transition-all ease-in duration-300 p-2', toggleFullScreen ? 'w-p-95' : 'w-p-50']">
+    <div :class="['z-20 relative transition-all ease-in duration-300 p-2', toggleFullScreen ? 'w-95%' : 'w-50%']">
       <div class="min-h-full flex flex-col bg-white rounded-md">
         <slot name="header"></slot>
         <slot name="main"></slot>
