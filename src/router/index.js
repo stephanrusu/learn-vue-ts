@@ -43,6 +43,7 @@ const routes = [
       {
         path: "edit/:projectId",
         name: "project-edit",
+        component: ProjectForm,
         meta: {
           showModal: true,
         },
@@ -102,6 +103,15 @@ const routes = [
       {
         path: "edit/:taskId",
         name: "task-edit",
+        component: KanbanTaskForm,
+        meta: {
+          showModal: true,
+        },
+        props: true,
+      },
+      {
+        path: "assign/:taskId",
+        name: "task-assign",
         meta: {
           showModal: true,
         },

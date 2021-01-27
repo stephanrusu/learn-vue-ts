@@ -65,7 +65,7 @@
                 <button
                   class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                   role="menuitem"
-                  @click="toggleOptionsDropdown"
+                  @click="editProject"
                 >
                   Edit project
                 </button>
@@ -166,6 +166,10 @@ export default {
   methods: {
     changeTeamMembers() {
       this.$router.push({ name: "project-team", params: { projectId: this.project, multiple: true } });
+      this.toggleOptionsDropdown();
+    },
+    editProject() {
+      this.$router.push({ name: "project-edit", params: { projectId: this.project } });
       this.toggleOptionsDropdown();
     },
     deleteProject() {

@@ -32,7 +32,7 @@
               :class="{ 'bg-gray-100': taskOptionsToggle }"
               aria-haspopup="true"
               aria-expanded="true"
-              @click="taskOptionsToggle = !taskOptionsToggle"
+              @click="toggleOptions"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,21 +69,21 @@
                   <button
                     class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                     role="menuitem"
-                    @click="taskOptionsToggle = !taskOptionsToggle"
+                    @click="toggleOptions"
                   >
                     Change assignee
                   </button>
                   <button
                     class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
                     role="menuitem"
-                    @click="taskOptionsToggle = !taskOptionsToggle"
+                    @click="toggleOptions"
                   >
                     Edit task
                   </button>
                   <button
                     class="rounded block w-full p-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
                     role="menuitem"
-                    @click="taskOptionsToggle = !taskOptionsToggle"
+                    @click="toggleOptions"
                   >
                     Remove task
                   </button>
@@ -261,6 +261,9 @@ export default {
 
       this.$store.dispatch("removeTask", { boardId: this.boardId, taskId: this.taskId });
       this.$store.dispatch("addTask", { boardId: newBoardId, taskId: this.taskId, task: movingTask });
+    },
+    toggleOptions() {
+      this.taskOptionsToggle = !this.taskOptionsToggle;
     },
   },
 };

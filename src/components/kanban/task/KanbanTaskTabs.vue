@@ -18,10 +18,8 @@
         </template>
       </div>
     </div>
-    <div>
-      <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="taskId" :board-id="boardId" />
-      <kanban-comments-list v-if="activeTab === 'comments'" :key="activeTab" />
-    </div>
+    <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="taskId" :board-id="boardId" />
+    <kanban-comments-list v-if="activeTab === 'comments'" :key="activeTab" />
   </div>
 </template>
 
