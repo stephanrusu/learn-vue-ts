@@ -18,8 +18,21 @@
         </template>
       </div>
     </div>
-    <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="taskId" :board-id="boardId" />
-    <kanban-comments-list v-if="activeTab === 'comments'" :key="activeTab" />
+    <transition-group
+      enter-active-class="transition-opacity ease-in-out duration-750"
+      enter-class="opacity-0"
+      enter-to-class="opacity-100 absolute"
+      leave-active-class="transition-opacity ease-in-out duration-750"
+      leave-class="opacity-100"
+      leave-to-class="opacity-0 absolute"
+      mode="out-in"
+      appear
+      tag="div"
+      class="relative"
+    >
+      <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="taskId" :board-id="boardId" />
+      <kanban-comments-list v-if="activeTab === 'comments'" :key="activeTab" />
+    </transition-group>
   </div>
 </template>
 

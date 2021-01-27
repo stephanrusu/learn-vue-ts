@@ -19,78 +19,12 @@
       <div :class="['w-1 rounded mr-3', boardColor.active]"></div>
       <div class="flex-1">
         <div class="flex flex-row">
-          <router-link :to="{ name: 'task-view', params: { taskId } }" class="mb-4">
+          <router-link :to="{ name: 'task-view', params: { taskId } }" class="mb-4 mr-2">
             <div class="font-medium text-sm tracking-wider text-gray-700 flex-1">
               {{ taskCard.title }}
             </div>
           </router-link>
-          <div class="relative ml-2">
-            <button
-              id="options-menu"
-              type="button"
-              class="inline-flex justify-center px-2 py-1 hover:bg-gray-100"
-              :class="{ 'bg-gray-100': taskOptionsToggle }"
-              aria-haspopup="true"
-              aria-expanded="true"
-              @click="toggleOptions"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-more-horizontal w-5 h-5 stroke-current text-gray-700"
-              >
-                <circle cx="12" cy="12" r="1"></circle>
-                <circle cx="19" cy="12" r="1"></circle>
-                <circle cx="5" cy="12" r="1"></circle>
-              </svg>
-            </button>
-            <transition
-              enter-active-class="transition ease-out duration-100"
-              enter-class="transform opacity-0 scale-95"
-              enter-to-class="transform opacity-100 scale-100"
-              leave-active-class="transition ease-in duration-75"
-              leave-class="transform opacity-100 scale-100"
-              leave-to-class="transform opacity-0 scale-95"
-              mode="out-in"
-              appear
-            >
-              <div
-                v-if="taskOptionsToggle"
-                class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-              >
-                <div class="p-2" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  <button
-                    class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
-                    role="menuitem"
-                    @click="toggleOptions"
-                  >
-                    Change assignee
-                  </button>
-                  <button
-                    class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
-                    role="menuitem"
-                    @click="toggleOptions"
-                  >
-                    Edit task
-                  </button>
-                  <button
-                    class="rounded block w-full p-2 text-sm text-red-700 hover:bg-gray-100 hover:text-red-800 text-left"
-                    role="menuitem"
-                    @click="toggleOptions"
-                  >
-                    Remove task
-                  </button>
-                </div>
-              </div>
-            </transition>
-          </div>
+          <task-options :task-id="taskId" />
         </div>
         <div class="flex flex-row justify-between">
           <div class="flex-1 flex flex-row space-x-2">
@@ -203,12 +137,13 @@
 </template>
 
 <script>
-import UsersAssigned from "./common/UsersAssigned.vue";
 import { Boards, KanbanTypeFilter, KanbanPriorityFilter } from "@/constants/enums";
+import UsersAssigned from "./common/UsersAssigned.vue";
+import TaskOptions from "./common/TaskOptions.vue";
 
 export default {
   name: "KanbanCard",
-  components: { UsersAssigned },
+  components: { UsersAssigned, TaskOptions },
   props: {
     boardId: {
       type: String,
@@ -218,11 +153,6 @@ export default {
       type: String,
       default: "",
     },
-  },
-  data() {
-    return {
-      taskOptionsToggle: false,
-    };
   },
   computed: {
     projectTitle() {
@@ -264,6 +194,10 @@ export default {
     },
     toggleOptions() {
       this.taskOptionsToggle = !this.taskOptionsToggle;
+    },
+    deleteTask() {
+      this.$store.dispatch("toggleNotificationActive");
+      this.toggleOptions();
     },
   },
 };

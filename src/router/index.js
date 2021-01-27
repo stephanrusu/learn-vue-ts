@@ -14,6 +14,7 @@ import ResetPass from "@/components/auth/ResetPassword.vue";
 
 import KanbanTaskDisplay from "@/components/kanban/task/KanbanTaskDisplay.vue";
 import KanbanTaskForm from "@/components/kanban/task/KanbanTaskForm.vue";
+import ChangeAssignee from "@/components/kanban/task/ChangeAssignee.vue";
 
 import MembersSelection from "@/components/project/MembersSelection.vue";
 import ProjectForm from "@/components/project/ProjectForm.vue";
@@ -112,6 +113,7 @@ const routes = [
       {
         path: "assign/:taskId",
         name: "task-assign",
+        component: ChangeAssignee,
         meta: {
           showModal: true,
         },

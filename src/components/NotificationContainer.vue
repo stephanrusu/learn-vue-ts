@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-6 px-10 font-sans w-full -ml-4">
+  <div class="fixed bottom-6 px-10 font-sans w-full -ml-4 z-50">
     <div class="bg-gray-900 rounded-lg shadow-lg flex items-center py-4 px-6">
       <p class="text-white font-bold tracking-wide">tailwindUI</p>
       <p class="text-gray-100 flex-grow ml-10">
