@@ -60,7 +60,7 @@
                   role="menuitem"
                   @click="changeTeamMembers"
                 >
-                  Manage people
+                  Manage team
                 </button>
                 <button
                   class="rounded block w-full p-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-800 text-left"
@@ -165,7 +165,7 @@ export default {
   },
   methods: {
     changeTeamMembers() {
-      this.$router.push({ name: "project-team", params: { projectId: this.project } });
+      this.$router.push({ name: "project-team", params: { projectId: this.project, multiple: true } });
       this.toggleOptionsDropdown();
     },
     deleteProject() {

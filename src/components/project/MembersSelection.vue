@@ -9,69 +9,7 @@
       </div>
     </template>
     <template #main>
-      <!-- <div class="flex px-4 pt-4 pb-2">
-        <input
-          type="text"
-          name="text"
-          placeholder="Lookin' for someone ?"
-          class="focus:border-indigo-300 w-full border-gray-300 rounded shadow-small focus:shadow-small-2 text-sm"
-        />
-      </div> -->
-      <div class="py-4 px-2 flex flex-col">
-        <template v-for="(user, index) in users">
-          <div
-            :key="user.username"
-            class="flex items-center p-2 hover:bg-gray-100 rounded-md"
-            :class="{ 'bg-gray-50': selectedUsers.indexOf(user.username) >= 0 }"
-          >
-            <div
-              class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small w-10 h-8 text-md text-white font-medium cursor-default"
-            >
-              {{ user.fullname | avatarId }}
-            </div>
-            <div class="ml-4 font-medium tracking-wide">
-              <div
-                :class="['text-sm', selectedUsers.indexOf(user.username) >= 0 ? 'text-indigo-600' : 'text-gray-600']"
-              >
-                {{ user.fullname }}
-              </div>
-              <div :class="['text-xs text-gray-400']">@{{ user.username }}</div>
-            </div>
-            <div class="block cursor-pointer ml-auto">
-              <input
-                :id="`user-${index}`"
-                type="checkbox"
-                class="opacity-0 absolute hidden"
-                @change="toggleSelectUser(user.username)"
-              />
-              <label
-                :for="`user-${index}`"
-                :class="[
-                  'flex items-center justify-center rounded p-1 shadow-sm ease-in transition-colors cursor-pointer',
-                  selectedUsers.indexOf(user.username) >= 0
-                    ? 'bg-indigo-500 hover:bg-indigo-600'
-                    : 'bg-gray-100 hover:bg-gray-200',
-                ]"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-check stroke-current w-4 h-4 text-white"
-                >
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </label>
-            </div>
-          </div>
-        </template>
-      </div>
+      <users-select :users="users" :multiple="multiple" />
     </template>
     <template #footer>
       <div class="flex flex-row space-x-2">
@@ -94,14 +32,20 @@
 </template>
 
 <script>
+import UsersSelect from "../kanban/common/UsersSelect.vue";
 import KanbanOverlay from "../KanbanOverlay.vue";
 
 export default {
   name: "MembersSelection",
-  components: { KanbanOverlay },
+  components: { KanbanOverlay, UsersSelect },
+  props: {
+    multiple: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
-      selectedUsers: [],
       users: [
         {
           fullname: "Zoey Ryan",
@@ -150,17 +94,6 @@ export default {
         },
       ],
     };
-  },
-  methods: {
-    toggleSelectUser(userName) {
-      let indexUser = this.selectedUsers.indexOf(userName);
-
-      if (indexUser < 0) {
-        this.selectedUsers.push(userName);
-      } else {
-        this.selectedUsers.splice(indexUser, 1);
-      }
-    },
   },
 };
 </script>

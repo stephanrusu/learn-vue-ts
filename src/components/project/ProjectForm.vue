@@ -30,16 +30,24 @@
         </div>
         <div class="">
           <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
-          <div class="flex items-center space-x-2 mt-2">
-            <div
-              data-v-925b48ac=""
-              class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
-            >
-              SR
+          <div class="flex items-center mt-2">
+            <div class="flex items-center space-x-2">
+              <div
+                data-v-925b48ac=""
+                class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
+              >
+                MR
+              </div>
+              <div
+                data-v-925b48ac=""
+                class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
+              >
+                SR
+              </div>
             </div>
             <button
               type="button"
-              class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200"
+              class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200 ml-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
