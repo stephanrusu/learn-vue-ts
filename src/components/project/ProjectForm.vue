@@ -9,68 +9,101 @@
       </div>
     </template>
     <template #main>
-      <div class="flex flex-col p-4 space-y-4">
-        <div class="">
-          <label for="projectTitle" class="text-sm font-medium text-gray-700">Title</label>
-          <input
-            id="projectTitle"
-            type="text"
-            name="project-title"
-            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
-          />
+      <transition
+        appear
+        enter-active-class="transition ease-in-out duration-500"
+        enter-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition ease-in-out duration-500"
+        leave-class="opacity-100"
+        leave-to-class="opacity-0"
+        mode="out-in"
+        tag="div"
+        class="relative"
+      >
+        <div v-if="membersSelect" :key="membersSelect" class="flex flex-col">
+          <users-select :users="users" :multiple="true" />
         </div>
-        <div class="">
-          <label for="projectDescription" class="text-sm font-medium text-gray-700">Description</label>
-          <textarea
-            id="projectDescription"
-            name="project-description"
-            class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2 resize-none"
-            rows="3"
-          ></textarea>
-        </div>
-        <div class="">
-          <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
-          <div class="flex items-center mt-2">
-            <div class="flex items-center space-x-2">
-              <div
-                data-v-925b48ac=""
-                class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
-              >
-                MR
+        <div v-else :key="membersSelect" class="flex flex-col p-4 space-y-4">
+          <div class="">
+            <label for="projectTitle" class="text-sm font-medium text-gray-700">Title</label>
+            <input
+              id="projectTitle"
+              type="text"
+              name="project-title"
+              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+            />
+          </div>
+          <div class="">
+            <label for="projectDescription" class="text-sm font-medium text-gray-700">Description</label>
+            <textarea
+              id="projectDescription"
+              name="project-description"
+              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2 resize-none"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="">
+            <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
+            <div class="flex items-center mt-2">
+              <div class="flex items-center space-x-2">
+                <div
+                  data-v-925b48ac=""
+                  class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
+                >
+                  MR
+                </div>
+                <div
+                  data-v-925b48ac=""
+                  class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
+                >
+                  SR
+                </div>
               </div>
-              <div
-                data-v-925b48ac=""
-                class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
+              <button
+                type="button"
+                class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200 ml-2"
+                @click="toggleSelectMembers"
               >
-                SR
-              </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus stroke-current w-4 h-4 text-gray-500"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
             </div>
-            <button
-              type="button"
-              class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200 ml-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-plus stroke-current w-4 h-4 text-gray-500"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
           </div>
         </div>
-      </div>
+      </transition>
     </template>
     <template #footer>
-      <div class="flex flex-row space-x-2">
+      <div v-if="membersSelect" class="flex flex-row space-x-2">
+        <button
+          type="button"
+          class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide bg-gray-100 hover:bg-gray-200 ease-in transition-colors"
+          @click="toggleSelectMembers"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
+          @click="toggleSelectMembers"
+        >
+          Select tean
+        </button>
+      </div>
+      <div v-else class="flex flex-row space-x-2">
         <button
           type="button"
           class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide bg-gray-100 hover:bg-gray-200 ease-in transition-colors"
@@ -90,10 +123,68 @@
 </template>
 
 <script>
+import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import KanbanOverlay from "../KanbanOverlay.vue";
 export default {
   name: "ProjectForm",
-  components: { KanbanOverlay },
+  components: { KanbanOverlay, UsersSelect },
+  data() {
+    return {
+      membersSelect: false,
+      users: [
+        {
+          fullname: "Zoey Ryan",
+          username: "zoey.ryan",
+          email: "zoey.ryan@example.com",
+        },
+        {
+          fullname: "Cameron Simmons",
+          username: "cameron.simmons",
+          email: "cameron.simmons@example.com",
+        },
+        {
+          fullname: "Josephine Davidson",
+          username: "josephine.davidson",
+          email: "josephine.davidson@example.com",
+        },
+        {
+          fullname: "Mia Russo",
+          username: "mia.russo",
+          email: "mia.russo@example.com",
+        },
+        {
+          fullname: "Dean Hale",
+          username: "dean.hale",
+          email: "dean.hale@example.com",
+        },
+        {
+          fullname: "Jaime Garcia",
+          username: "jamie.garcia",
+          email: "jamie.garcia@example.com",
+        },
+        {
+          fullname: "Sam Reid",
+          username: "sam.reid",
+          email: "sam.reid@example.com",
+        },
+        {
+          fullname: "Tara Barnett",
+          username: "tara.barnett",
+          email: "tara.barnett@example.com",
+        },
+        {
+          fullname: "Bianca Cruz",
+          username: "bianca.cruz",
+          email: "bianca.cruz@example.com",
+        },
+      ],
+    };
+  },
+  methods: {
+    toggleSelectMembers() {
+      this.membersSelect = !this.membersSelect;
+    },
+  },
 };
 </script>
 

@@ -18,21 +18,21 @@
         </template>
       </div>
     </div>
-    <transition-group
-      enter-active-class="transition-opacity ease-in-out duration-750"
-      enter-class="opacity-0"
-      enter-to-class="opacity-100 absolute"
-      leave-active-class="transition-opacity ease-in-out duration-750"
-      leave-class="opacity-100"
-      leave-to-class="opacity-0 absolute"
-      mode="out-in"
+    <transition
       appear
+      enter-active-class="transition ease-in-out duration-500"
+      enter-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition ease-in-out duration-500"
+      leave-class="opacity-100"
+      leave-to-class="opacity-0"
+      mode="out-in"
       tag="div"
       class="relative"
     >
       <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="taskId" :board-id="boardId" />
       <kanban-comments-list v-if="activeTab === 'comments'" :key="activeTab" />
-    </transition-group>
+    </transition>
   </div>
 </template>
 
@@ -76,3 +76,14 @@ export default {
   },
 };
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

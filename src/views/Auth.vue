@@ -25,10 +25,10 @@
       </div>
       <div class="flex-1 max-w-2/3 rounded-tr-md rounded-br-md">
         <transition
-          enter-active-class="transition-opacity ease-in-out duration-300"
+          enter-active-class="transition ease-in-out duration-300"
           enter-class="opacity-0"
           enter-to-class="opacity-100"
-          leave-active-class="transition-opacity ease-in-out duration-300"
+          leave-active-class="transition ease-in-out duration-300"
           leave-class="opacity-100"
           leave-to-class="opacity-0"
           mode="out-in"
