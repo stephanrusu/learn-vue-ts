@@ -23,6 +23,7 @@
         <button
           type="button"
           class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
+          @click="$router.go(-1)"
         >
           Select team
         </button>
