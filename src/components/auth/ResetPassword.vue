@@ -8,7 +8,8 @@
           id="password"
           type="password"
           name="password"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+          placeholder="Choose a strong password"
+          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2 text-gray-600 placeholder-gray-300"
         />
       </div>
       <div class="">
@@ -17,7 +18,8 @@
           id="comfirm-password"
           type="password"
           name="comfirm-password"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+          placeholder="Comfirm your chosen password"
+          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2 text-gray-600 placeholder-gray-300"
         />
       </div>
       <div class="flex flex-row items-center">
