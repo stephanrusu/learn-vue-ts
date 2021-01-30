@@ -34,6 +34,27 @@
       <input id="inputRadio" type="radio" name="members" class="opacity-0 absolute hidden" />
       <div class="w-2 h-2 rounded-full" :class="[radioSelected ? 'bg-white' : 'bg-gray-100']"></div>
     </label>
+
+    <div class="mt-3">
+      <div class="flex items-center p-2 bg-gray-50">
+        <div
+          class="hover:z-10 flex items-center justify-center rounded shadow-small w-10 h-8 text-md bg-indigo-400 text-white font-medium cursor-default"
+        >
+          SR
+        </div>
+        <div class="ml-4 font-medium tracking-wide">
+          <div class="text-sm text-indigo-600">Sam Reid</div>
+          <div class="text-xs text-gray-400">@sam.reid</div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="rounded-md mt-2 p-2 hover:bg-gray-50 ease-in transition-colors text-gray-400 text-sm font-medium"
+        @click="toggleSelectUser"
+      >
+        Change
+      </button>
+    </div>
   </div>
 </template>
 

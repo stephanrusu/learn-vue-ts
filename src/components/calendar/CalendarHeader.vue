@@ -79,11 +79,12 @@
         <div class="p-2 grid grid-cols-3 gap-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
           <template v-for="month in monthNames">
             <div
-              :key="month"
-              class="p-2 text-sm font-medium text-gray-500 text-center hover:bg-gray-50 cursor-pointer"
+              :key="month.name"
+              class="py-2 text-sm font-medium text-center cursor-pointer rounded-md"
+              :class="[month.isSelected ? 'text-white bg-indigo-500' : 'text-gray-500 hover:bg-gray-50']"
               @click="toggleOptions"
             >
-              {{ month }}
+              {{ month.name }}
             </div>
           </template>
         </div>
@@ -93,7 +94,7 @@
 </template>
 
 <script>
-import { format, startOfYear, addMonths } from "date-fns";
+import { format, startOfYear, addMonths, isSameMonth } from "date-fns";
 export default {
   name: "CalendarHeader",
   filters: {
@@ -113,7 +114,11 @@ export default {
 
       let months = [];
       for (let i = 0; i < 12; i += 1) {
-        months.push(format(addMonths(startDate, i), dateFormat));
+        let updateMonth = addMonths(startDate, i);
+        months.push({
+          name: format(updateMonth, dateFormat),
+          isSelected: isSameMonth(updateMonth, new Date()),
+        });
       }
       return months;
     },

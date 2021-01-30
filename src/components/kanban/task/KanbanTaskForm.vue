@@ -22,7 +22,7 @@
         class="relative"
       >
         <div v-if="userSelect" :key="userSelect" class="flex flex-col">
-          <users-select :users="users" />
+          <users-select :users="users" :multiple="true" />
         </div>
         <div v-else :key="userSelect" class="flex flex-col p-4 space-y-4">
           <div class="">
@@ -44,13 +44,13 @@
             ></textarea>
           </div>
           <div class="">
-            <label for="taskTitle" class="text-sm font-medium text-gray-700">Type</label>
-            <div class="flex items-center space-x-2 mt-2">
+            <div class="text-sm font-medium text-gray-700">Type</div>
+            <div class="flex items-center space-x-4 mt-3">
               <template v-for="typeValue in typeValues">
                 <button
                   :key="typeValue.key"
                   :class="[
-                    'rounded px-3 py-1 text-sm font-medium text-white shadow-small',
+                    'flex-1 rounded px-3 py-1 text-sm font-medium text-white shadow-small',
                     selectedType === typeValue.key
                       ? typeValue.background.color
                       : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
@@ -64,13 +64,13 @@
             </div>
           </div>
           <div class="">
-            <label for="taskTitle" class="text-sm font-medium text-gray-700">Priority</label>
-            <div class="flex items-center space-x-2 mt-2">
+            <div class="text-sm font-medium text-gray-700">Priority</div>
+            <div class="flex items-center space-x-4 mt-3">
               <template v-for="priorityValue in priorityValues">
                 <button
                   :key="priorityValue.key"
                   :class="[
-                    'rounded px-3 py-1 text-sm font-medium text-white shadow-small',
+                    'flex-1 rounded px-3 py-1 text-sm font-medium text-white shadow-small',
                     selectedPriority === priorityValue.key
                       ? priorityValue.background.color
                       : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
@@ -84,12 +84,12 @@
             </div>
           </div>
           <div class="">
-            <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
-            <div class="flex items-center space-x-2 mt-2">
+            <div class="text-sm font-medium text-gray-700">User assigned</div>
+            <div class="flex items-center space-x-2 mt-3">
               <user-avatar>SR</user-avatar>
               <button
                 type="button"
-                class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200"
+                class="rounded-md p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200"
                 @click="toggleSelectUser"
               >
                 <svg

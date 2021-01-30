@@ -73,6 +73,12 @@
               {{ sub.text }}
             </div>
           </label>
+          <div
+            v-if="sub.completed"
+            class="bg-indigo-100 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-indigo-500 font-medium cursor-default ml-auto mr-4"
+          >
+            SR
+          </div>
           <button
             type="button"
             class="rounded p-2 shadow-small bg-red-300 hover:bg-red-400 ease-in transition-colors"

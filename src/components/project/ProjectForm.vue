@@ -52,7 +52,7 @@
               </div>
               <button
                 type="button"
-                class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200 ml-2"
+                class="rounded-md p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200 ml-2"
                 @click="toggleSelectMembers"
               >
                 <svg
