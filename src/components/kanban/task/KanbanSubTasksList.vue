@@ -7,7 +7,7 @@
           type="text"
           name="text"
           placeholder="What do you need to do?"
-          class="focus:border-indigo-300 mr-4 w-full border-gray-300 rounded shadow-small focus:shadow-small-2 text-sm"
+          class="focus:border-indigo-300 mr-4 w-full border-gray-300 rounded shadow-small focus:shadow-medium text-sm"
           @change="checkValidation"
         />
         <button

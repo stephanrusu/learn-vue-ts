@@ -22,37 +22,37 @@
         </div>
       </template>
       <div
-        class="col-start-4 col-span-2 row-start-1 bg-purple-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small-3 self-center mx-2 cursor-pointer"
+        class="col-start-4 col-span-2 row-start-1 bg-purple-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
       >
         Event
       </div>
       <div
-        class="col-start-1 col-span-4 row-start-2 bg-orange-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small-3 self-center mx-2 cursor-pointer"
+        class="col-start-1 col-span-4 row-start-2 bg-orange-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
       >
         Event
       </div>
       <div
-        class="col-start-3 col-span-3 row-start-3 bg-green-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small-3 self-center mx-2 cursor-pointer"
+        class="col-start-3 col-span-3 row-start-3 bg-green-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
       >
         Event
       </div>
       <div
-        class="col-start-7 col-span-1 row-start-3 bg-yellow-500 text-white px-4 py-2 rounded-tl-md rounded-bl-md text-sm font-medium shadow-small-3 self-center mx-2 cursor-pointer"
+        class="col-start-7 col-span-1 row-start-3 bg-yellow-500 text-white px-4 py-2 rounded-tl-md rounded-bl-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
       >
         Event
       </div>
       <div
-        class="col-start-1 col-span-1 row-start-4 bg-yellow-500 text-white px-4 py-2 rounded-tr-md rounded-br-md text-sm font-medium shadow-small-3 self-center mx-2 cursor-pointer"
+        class="col-start-1 col-span-1 row-start-4 bg-yellow-500 text-white px-4 py-2 rounded-tr-md rounded-br-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
       >
         <span class="invisible">.</span>
       </div>
       <div
-        class="col-start-2 col-span-3 row-start-5 bg-purple-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small-3 self-center mx-2 cursor-pointer"
+        class="col-start-2 col-span-3 row-start-5 bg-purple-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
       >
         Event
       </div>
       <div
-        class="col-start-2 col-span-3 row-start-5 bg-yellow-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small-3 self-end mb-2 mx-2 cursor-pointer"
+        class="col-start-2 col-span-3 row-start-5 bg-yellow-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large self-end mb-2 mx-2 cursor-pointer"
       >
         Event
       </div>

@@ -31,7 +31,7 @@
               id="projectTitle"
               type="text"
               name="project-title"
-              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2"
+              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium"
             />
           </div>
           <div class="">
@@ -39,7 +39,7 @@
             <textarea
               id="projectDescription"
               name="project-description"
-              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-small-2 resize-none"
+              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium resize-none"
               rows="3"
             ></textarea>
           </div>

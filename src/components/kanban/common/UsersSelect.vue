@@ -26,7 +26,7 @@
         <div class="flex items-center">
           <div
             class="hover:z-10 flex items-center justify-center rounded shadow-small w-10 h-8 text-md text-white font-medium cursor-default"
-            :class="[checkValidation(user.username) ? 'bg-indigo-500 shadow-small-3' : 'bg-indigo-100 text-indigo-400']"
+            :class="[checkValidation(user.username) ? 'bg-indigo-500 shadow-large' : 'bg-indigo-100 text-indigo-400']"
           >
             {{ user.fullname | avatarId }}
           </div>

@@ -4,7 +4,7 @@
       <template v-for="n in 7">
         <project-card :key="n" :project="n" />
       </template>
-      <div class="bg-gray-100 rounded-md p-4 h-64 flex items-center justify-center">
+      <div class="bg-gray-100 rounded-lg p-4 h-64 flex items-center justify-center">
         <router-link
           :to="{ name: 'project-create' }"
           type="button"

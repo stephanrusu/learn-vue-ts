@@ -16,7 +16,7 @@
       </div>
     </header>
     <main class="flex flex-row py-3">
-      <div :class="['w-1 rounded mr-3', boardColor.active]"></div>
+      <div :class="['w-1 rounded mr-3 shadow-large', boardColor.active]"></div>
       <div class="flex-1">
         <div class="flex flex-row">
           <router-link :to="{ name: 'task-view', params: { taskId } }" class="mb-4 mr-2">

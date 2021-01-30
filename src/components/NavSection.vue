@@ -29,7 +29,7 @@
         @click="toggleActive = !toggleActive"
       >
         <div
-          class="bg-white w-4 h-4 rounded-full shadow-small-3 transform duration-300 ease-in-out"
+          class="bg-white w-4 h-4 rounded-full shadow-large transform duration-300 ease-in-out"
           :class="{ 'translate-x-4': toggleActive }"
         ></div>
       </div>

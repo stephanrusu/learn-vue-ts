@@ -1,33 +1,16 @@
 <template>
   <nav class="py-4 flex items-center justify-between">
-    <div class="flex items-center">
-      <div class="bg-white p-2 rounded-lg shadow-card flex items-center mr-4">
+    <div class="bg-white p-2 rounded-lg shadow-card relative mr-auto">
+      <div class="flex items-center space-x-2">
         <router-link
           :to="{ name: 'projects' }"
           class="text-gray-500 hover:bg-gray-100 p-2 rounded-md text-sm font-medium"
         >
           Projects
         </router-link>
-      </div>
-      <div class="bg-white p-2 rounded-lg shadow-card flex items-center space-x-2">
-        <div class="bg-indigo-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small">Month</div>
-        <div class="text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-md text-sm font-medium">Week</div>
-        <div class="text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-md text-sm font-medium">Day</div>
-      </div>
-    </div>
-    <div class="flex flex-col items-center p-2">
-      <div class="text-gray-700 font-medium tracking-wide text-xl mr-2">
-        {{ new Date() | formatDate("MMMM") }}
-      </div>
-      <div class="text-gray-400 font-medium text-sm">
-        {{ new Date() | formatDate("yyyy") }}
-      </div>
-    </div>
-    <div class="bg-white p-2 rounded-lg shadow-card relative">
-      <div class="flex items-center space-x-2">
         <button
           type="button"
-          class="flex flex-1 py-2 w-10 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
+          class="flex flex-1 py-2 w-10 bg-gray-50 hover:bg-gray-100 items-center justify-center ease-in transition-colors"
         >
           <svg
             fill="none"
@@ -44,17 +27,19 @@
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
-        <button
-          type="button"
-          class="text-gray-700 w-24 px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-gray-50"
-          @click="toggleOptions"
-        >
-          {{ new Date() | formatDate("MMMM") }}
+        <button type="button" class="w-40 px-4 py-2 rounded-md hover:bg-gray-50" @click="toggleOptions">
+          <div class="flex justify-center items-baseline">
+            <div class="text-gray-700 text-sm font-medium mr-2">
+              {{ new Date() | formatDate("MMMM") }}
+            </div>
+            <div class="text-gray-400 text-sm font-medium">
+              {{ new Date() | formatDate("yyyy") }}
+            </div>
+          </div>
         </button>
-
         <button
           type="button"
-          class="flex flex-1 py-2 w-10 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
+          class="flex flex-1 py-2 w-10 bg-gray-50 hover:bg-gray-100 items-center justify-center ease-in transition-colors"
         >
           <svg
             fill="none"
@@ -89,6 +74,11 @@
           </template>
         </div>
       </div>
+    </div>
+    <div class="bg-white p-2 rounded-lg shadow-card flex items-center space-x-2">
+      <div class="bg-indigo-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small">Month</div>
+      <div class="text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-md text-sm font-medium">Week</div>
+      <div class="text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-md text-sm font-medium">Day</div>
     </div>
   </nav>
 </template>
