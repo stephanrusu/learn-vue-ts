@@ -86,12 +86,7 @@
           <div class="">
             <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
             <div class="flex items-center space-x-2 mt-2">
-              <div
-                data-v-925b48ac=""
-                class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
-              >
-                SR
-              </div>
+              <user-avatar>SR</user-avatar>
               <button
                 type="button"
                 class="rounded-full p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200"
@@ -159,10 +154,11 @@
 import KanbanOverlay from "@/components/KanbanOverlay.vue";
 import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import { KanbanType, KanbanPriority } from "@/constants/enums";
+import UserAvatar from "../common/UserAvatar.vue";
 
 export default {
   name: "KanbanTaskForm",
-  components: { KanbanOverlay, UsersSelect },
+  components: { KanbanOverlay, UsersSelect, UserAvatar },
   data() {
     return {
       userSelect: false,

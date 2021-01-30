@@ -23,13 +23,9 @@
       <template v-for="n in 1">
         <div :key="`comment-${n}`" class="shadow-small">
           <div class="flex flex-row items-center justify-between px-2">
-            <div class="text-sm text-indigo-500 font-medium flex items-center">
-              <div
-                class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded px-2 py-1 text-sm text-white font-medium"
-              >
-                CS
-              </div>
-              <div class="ml-2">Cameron Simmons</div>
+            <div class="flex items-center">
+              <user-avatar>CS</user-avatar>
+              <div class="text-sm text-indigo-500 font-medium ml-2">Cameron Simmons</div>
             </div>
             <div class="text-xs text-gray-400 font-medium">{{ new Date() | taskDate }}</div>
           </div>
@@ -44,8 +40,10 @@
 </template>
 
 <script>
+import UserAvatar from "../common/UserAvatar.vue";
 export default {
   name: "KanbanCommentsList",
+  components: { UserAvatar },
   data() {
     return {
       comment: "",

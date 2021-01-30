@@ -90,11 +90,7 @@
     </main>
     <footer class="flex flex-col justify-between mt-auto">
       <div class="flex flex-row items-center justify-between my-2">
-        <div
-          class="bg-indigo-400 flex items-center justify-center rounded-md shadow-small px-2 py-1 text-md text-white font-medium cursor-default"
-        >
-          MR
-        </div>
+        <user-avatar>MR</user-avatar>
         <router-link
           :to="{ name: 'kanban' }"
           type="button"
@@ -150,8 +146,10 @@
 </template>
 
 <script>
+import UserAvatar from "../kanban/common/UserAvatar.vue";
 export default {
   name: "ProjectCard",
+  components: { UserAvatar },
   props: {
     project: {
       type: Number,

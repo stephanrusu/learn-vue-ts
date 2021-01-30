@@ -4,63 +4,29 @@
       <label
         :key="user.username"
         :for="`user-${index}`"
-        class="flex items-center p-2 hover:bg-gray-100 rounded-md"
+        class="flex items-center p-2 hover:bg-gray-100 rounded-md cursor-pointer"
         :class="{ 'bg-gray-50': checkValidation(user.username) }"
       >
-        <div class="block cursor-pointer mr-4">
-          <div
-            v-if="multiple"
-            :class="[
-              'flex items-center justify-center rounded p-1 shadow-sm ease-in transition-colors cursor-pointer',
-              checkValidation(user.username) ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-gray-100 hover:bg-gray-200',
-            ]"
-          >
-            <input
-              :id="`user-${index}`"
-              type="checkbox"
-              name="members"
-              class="opacity-0 absolute hidden"
-              @change="toggleSelectUser(user.username)"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-check stroke-current w-4 h-4 text-white"
-            >
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-
-          <div
-            v-else
-            :class="[
-              'flex items-center justify-center rounded-full p-2 shadow-sm ease-in transition-colors cursor-pointer',
-              checkValidation(user.username) ? 'bg-indigo-500 hover:bg-indigo-600' : 'bg-gray-100 hover:bg-gray-200',
-            ]"
-          >
-            <input
-              :id="`user-${index}`"
-              type="radio"
-              name="members"
-              class="opacity-0 absolute hidden"
-              @change="toggleSelectUser(user.username)"
-            />
-            <div
-              class="w-2 h-2 rounded-full"
-              :class="[selectedUsers === user.username ? 'bg-white' : 'bg-gray-100']"
-            ></div>
-          </div>
-        </div>
+        <input
+          v-if="multiple"
+          :id="`user-${index}`"
+          type="checkbox"
+          name="members"
+          class="opacity-0 absolute hidden"
+          @change="toggleSelectUser(user.username)"
+        />
+        <input
+          v-else
+          :id="`user-${index}`"
+          type="radio"
+          name="members"
+          class="opacity-0 absolute hidden"
+          @change="toggleSelectUser(user.username)"
+        />
         <div class="flex items-center">
           <div
-            class="bg-indigo-400 hover:z-10 flex items-center justify-center rounded shadow-small w-10 h-8 text-md text-white font-medium cursor-default"
+            class="hover:z-10 flex items-center justify-center rounded shadow-small w-10 h-8 text-md text-white font-medium cursor-default"
+            :class="[checkValidation(user.username) ? 'bg-indigo-500 shadow-small-3' : 'bg-indigo-100 text-indigo-400']"
           >
             {{ user.fullname | avatarId }}
           </div>
