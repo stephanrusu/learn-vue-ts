@@ -9,8 +9,8 @@
           :class="[
             date.sameMonth ? 'text-gray-600' : 'text-gray-400',
             { 'border-r': (index + 1) % 7 !== 0, 'bg-gray-50': date.today },
-            gridPos[index].row, //wip parseInt((index + 1) / 7)
-            gridPos[index].col, //wip parseInt((index + 1 ) % 7)
+            `row-start-${parseInt(index / 7) + 1}`,
+            `col-start-${parseInt(index % 7) + 1} col-end-${parseInt(index % 7) + 1}`,
           ]"
         >
           <div

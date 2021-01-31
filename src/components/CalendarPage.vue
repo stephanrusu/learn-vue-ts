@@ -30,7 +30,7 @@ export default {
   components: { CalendarMonthView, CalendarHeader, CalendarWeekView, CalendarDayView },
   data() {
     return {
-      activeView: "day",
+      activeView: "week",
     };
   },
   computed: {
@@ -39,9 +39,9 @@ export default {
       dayTime.setHours(7, 0, 0);
 
       let entries = [];
-      for (let i = 0; i < 16; i += 1) {
+      for (let i = 0; i < 15; i += 1) {
         entries.push({
-          timeStamp: dayTime.getTime(),
+          timeStamp: addHours(dayTime, i).getTime(),
           timeRead: format(addHours(dayTime, i), "HH:mm"),
         });
       }
@@ -55,3 +55,33 @@ export default {
   },
 };
 </script>
+
+<style>
+.row-start-13 {
+  grid-row-start: 13;
+}
+.row-end-13 {
+  grid-row-end: 13;
+}
+.row-span-13 {
+  grid-row: span 13 / span 13;
+}
+.row-start-14 {
+  grid-row-start: 14;
+}
+.row-end-14 {
+  grid-row-end: 14;
+}
+.row-span-14 {
+  grid-row: span 14 / span 14;
+}
+.row-start-15 {
+  grid-row-start: 15;
+}
+.row-end-15 {
+  grid-row-end: 15;
+}
+.row-span-15 {
+  grid-row: span 15 / span 15;
+}
+</style>

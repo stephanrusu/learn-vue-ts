@@ -17,9 +17,18 @@
           <div
             :key="n"
             class="p-2 h-36 border-t flex justify-end items-start"
-            :class="{ 'border-r': (n + 1) % 7 !== 0 }"
+            :class="[
+              { 'border-r': n % 7 !== 0 },
+              `row-start-${parseInt((n - 1) / 7) + 1}`,
+              `col-start-${parseInt((n - 1) % 7) + 1} col-end-${parseInt((n - 1) % 7) + 1}`,
+            ]"
           ></div>
         </template>
+        <div
+          class="col-start-2 col-span-1 row-start-1 row-span-4 bg-purple-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large m-2 cursor-pointer"
+        >
+          Event
+        </div>
       </div>
     </div>
   </div>

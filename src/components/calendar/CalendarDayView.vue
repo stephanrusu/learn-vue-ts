@@ -21,10 +21,15 @@
         <template v-for="n in timeEntries.length">
           <div
             :key="n"
-            class="p-2 h-36 border-t flex justify-end items-start"
-            :class="{ 'border-r': (n + 1) % 7 !== 0 }"
+            class="p-2 h-36 border-t flex justify-end items-start col-start-1"
+            :class="`row-start-${n} row-end-${n}`"
           ></div>
         </template>
+        <div
+          class="row-start-1 row-span-1 col-start-1 bg-purple-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large m-2 cursor-pointer"
+        >
+          Event
+        </div>
       </div>
     </div>
   </div>
