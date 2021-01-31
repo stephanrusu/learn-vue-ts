@@ -14,28 +14,23 @@
         <div class="flex-1 text-center py-1 text-sm font-medium text-gray-600 border-r">All day</div>
       </div>
       <div class="w-full grid grid-cols-1 grid-flow-row flex-1">
-        <div class="h-20 border-t"></div>
+        <div class="h-20 border-t bg-gray-50"></div>
       </div>
     </div>
     <div class="flex w-full">
-      <div class="w-20 flex flex-col">
-        <template v-for="time in timeEntries">
-          <div :key="time.timeStamp" class="flex-1 text-center py-1 text-sm font-medium text-gray-600 border-r">
-            {{ time.timeRead }}
-          </div>
-        </template>
-      </div>
+      <time-entries :time="timeEntries" />
       <div class="w-full grid grid-cols-1 grid-flow-row flex-1">
         <template v-for="n in timeEntries.length">
           <div
             :key="n"
-            class="p-2 h-36 border-t flex justify-end items-start col-start-1"
+            class="p-2 h-36 border-t flex justify-end items-start col-start-1 bg-gray-50"
             :class="`row-start-${n} row-end-${n}`"
           ></div>
         </template>
         <div
-          class="row-start-1 row-span-1 col-start-1 bg-purple-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-large m-2 cursor-pointer"
+          class="row-start-1 row-span-4 col-start-1 bg-white text-gray-700 p-2 rounded-md text-sm font-medium shadow-large m-2 cursor-pointer flex flex-row"
         >
+          <div class="w-2 h-full rounded-md bg-purple-500 mr-2" />
           Event
         </div>
       </div>
@@ -45,8 +40,10 @@
 
 <script>
 import { format } from "date-fns";
+import TimeEntries from "./partials/TimeEntries.vue";
 export default {
   name: "CalendarDayView",
+  components: { TimeEntries },
   props: {
     timeEntries: {
       type: Array,

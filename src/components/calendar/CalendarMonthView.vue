@@ -5,10 +5,10 @@
       <template v-for="(date, index) in listDates">
         <div
           :key="date.date"
-          class="p-2 h-36 border-t flex justify-end items-start"
+          class="p-2 h-36 border-t flex justify-end items-start bg-gray-50"
           :class="[
             date.sameMonth ? 'text-gray-600' : 'text-gray-400',
-            { 'border-r': (index + 1) % 7 !== 0, 'bg-gray-50': date.today },
+            { 'border-r': (index + 1) % 7 !== 0, 'bg-gray-100': date.today },
             `row-start-${parseInt(index / 7) + 1}`,
             `col-start-${parseInt(index % 7) + 1} col-end-${parseInt(index % 7) + 1}`,
           ]"
