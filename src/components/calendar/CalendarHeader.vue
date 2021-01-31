@@ -104,10 +104,15 @@ export default {
       return format(value, formatString);
     },
   },
+  props: {
+    activeView: {
+      type: String,
+      default: "week",
+    },
+  },
   data() {
     return {
       toggleMonths: false,
-      activeView: "month",
       calendarViews: [
         {
           key: "month",
@@ -145,7 +150,6 @@ export default {
       this.toggleMonths = !this.toggleMonths;
     },
     toggleView(view) {
-      this.activeView = view;
       this.$emit("changeView", view);
     },
   },
