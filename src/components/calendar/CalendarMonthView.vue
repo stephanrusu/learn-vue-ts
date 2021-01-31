@@ -30,11 +30,11 @@
 import { startOfISOWeek, format, addDays, startOfMonth, isToday, isSameDay, isSameMonth } from "date-fns";
 // TODO find solution for creating this dynamic
 import gridPositions from "@/utils/calendarGridPositions";
-import WeekDays from "./WeekDays.vue";
+import WeekDays from "./partials/WeekDays.vue";
 import CalendarEvents from "./CalendarEvents.vue";
 
 export default {
-  name: "CalendarPage",
+  name: "CalendarMonthView",
   components: { WeekDays, CalendarEvents },
   filters: {
     formatDate: (value, formatString) => {

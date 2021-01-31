@@ -78,9 +78,19 @@
       </div>
     </div>
     <div class="bg-white p-2 rounded-lg shadow-card flex items-center space-x-2">
-      <div class="bg-indigo-500 text-white px-4 py-2 rounded-md text-sm font-medium shadow-small">Month</div>
-      <div class="text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-md text-sm font-medium">Week</div>
-      <div class="text-gray-500 hover:bg-gray-100 px-4 py-2 rounded-md text-sm font-medium">Day</div>
+      <template v-for="view in calendarViews">
+        <button
+          :key="view.key"
+          type="button"
+          class="px-4 py-2 rounded-md text-sm font-medium"
+          :class="[
+            activeView === view.key ? 'bg-indigo-500 text-white shadow-small' : 'text-gray-500 hover:bg-gray-100',
+          ]"
+          @click="toggleView(view.key)"
+        >
+          {{ view.name }}
+        </button>
+      </template>
     </div>
   </nav>
 </template>
@@ -97,6 +107,21 @@ export default {
   data() {
     return {
       toggleMonths: false,
+      activeView: "month",
+      calendarViews: [
+        {
+          key: "month",
+          name: "Month",
+        },
+        {
+          key: "week",
+          name: "Week",
+        },
+        {
+          key: "day",
+          name: "Day",
+        },
+      ],
     };
   },
   computed: {
@@ -118,6 +143,10 @@ export default {
   methods: {
     toggleOptions() {
       this.toggleMonths = !this.toggleMonths;
+    },
+    toggleView(view) {
+      this.activeView = view;
+      this.$emit("changeView", view);
     },
   },
 };
