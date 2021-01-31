@@ -1,13 +1,15 @@
 <template>
   <nav class="py-4 flex items-center justify-between">
-    <div class="bg-white p-2 rounded-lg shadow-card relative mr-auto">
+    <div class="bg-white p-2 rounded-tl-lg rounded-bl-lg shadow-card flex items-center">
+      <router-link
+        :to="{ name: 'projects' }"
+        class="text-gray-500 hover:bg-gray-100 p-2 rounded-md text-sm font-medium"
+      >
+        Projects
+      </router-link>
+    </div>
+    <div class="bg-white p-2 rounded-tr-lg rounded-br-lg shadow-card relative mr-auto">
       <div class="flex items-center space-x-2">
-        <router-link
-          :to="{ name: 'projects' }"
-          class="text-gray-500 hover:bg-gray-100 p-2 rounded-md text-sm font-medium"
-        >
-          Projects
-        </router-link>
         <button
           type="button"
           class="flex flex-1 py-2 w-10 bg-gray-50 hover:bg-gray-100 items-center justify-center ease-in transition-colors"
