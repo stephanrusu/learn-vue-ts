@@ -6,6 +6,16 @@
     </div>
     <div class="flex">
       <div class="w-20 flex flex-col">
+        <div class="flex-1 text-center py-1 text-sm font-medium text-gray-600 border-r">All day</div>
+      </div>
+      <div class="w-full flex-1 grid grid-cols-7 grid-flow-row">
+        <template v-for="n in 7">
+          <div :key="n" class="h-20 border-t" :class="{ 'border-r': n % 7 !== 0 }"></div>
+        </template>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="w-20 flex flex-col">
         <template v-for="time in timeEntries">
           <div :key="time.timeStamp" class="flex-1 text-center py-1 text-sm font-medium text-gray-600 border-r">
             {{ time.timeRead }}

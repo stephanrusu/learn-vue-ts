@@ -11,6 +11,14 @@
     </div>
     <div class="flex w-full">
       <div class="w-20 flex flex-col">
+        <div class="flex-1 text-center py-1 text-sm font-medium text-gray-600 border-r">All day</div>
+      </div>
+      <div class="w-full grid grid-cols-1 grid-flow-row flex-1">
+        <div class="h-20 border-t"></div>
+      </div>
+    </div>
+    <div class="flex w-full">
+      <div class="w-20 flex flex-col">
         <template v-for="time in timeEntries">
           <div :key="time.timeStamp" class="flex-1 text-center py-1 text-sm font-medium text-gray-600 border-r">
             {{ time.timeRead }}
