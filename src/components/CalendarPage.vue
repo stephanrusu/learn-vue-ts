@@ -30,7 +30,7 @@ export default {
   components: { CalendarMonthView, CalendarHeader, CalendarWeekView, CalendarDayView },
   data() {
     return {
-      activeView: "week",
+      activeView: "month",
     };
   },
   computed: {

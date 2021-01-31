@@ -23,12 +23,12 @@
         <template v-for="n in timeEntries.length">
           <div
             :key="n"
-            class="p-2 h-36 border-t flex justify-end items-start col-start-1 bg-gray-50"
+            class="p-2 h-20 border-t flex justify-end items-start col-start-1 bg-gray-50"
             :class="`row-start-${n} row-end-${n}`"
           ></div>
         </template>
         <div
-          class="row-start-1 row-span-4 col-start-1 bg-white text-gray-700 p-2 rounded-md text-sm font-medium shadow-large m-2 cursor-pointer flex flex-row"
+          class="row-start-1 row-span-4 col-start-1 bg-white text-gray-700 p-2 rounded-md text-sm font-medium shadow-small m-2 cursor-pointer flex flex-row"
         >
           <div class="w-2 h-full rounded-md bg-purple-500 mr-2" />
           Event

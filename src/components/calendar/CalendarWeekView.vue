@@ -20,7 +20,7 @@
         <template v-for="n in timeEntries.length * 7">
           <div
             :key="n"
-            class="p-2 h-36 border-t flex justify-end items-start bg-gray-50"
+            class="p-2 h-20 border-t flex justify-end items-start bg-gray-50"
             :class="[
               { 'border-r': n % 7 !== 0 },
               `row-start-${parseInt((n - 1) / 7) + 1}`,
@@ -29,7 +29,7 @@
           ></div>
         </template>
         <div
-          class="col-start-2 col-span-1 row-start-1 row-span-4 bg-white text-gray-600 p-2 rounded-md text-sm font-medium shadow-large m-2 cursor-pointer flex flex-row"
+          class="col-start-2 col-span-1 row-start-1 row-span-4 bg-white text-gray-600 p-2 rounded-md text-sm font-medium shadow-small m-2 cursor-pointer flex flex-row"
         >
           <div class="w-2 h-full rounded-md bg-purple-500 mr-2" />
           Event
