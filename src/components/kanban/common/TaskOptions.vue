@@ -92,7 +92,7 @@ export default {
       this.toggleOptions();
     },
     changeAssignee() {
-      this.$router.push({ name: "task-assign", params: { taskId: this.taskId } });
+      this.$router.push({ name: "task-assign", params: { taskId: this.taskId, multiple: true } });
       this.toggleOptions();
     },
     deleteTask() {
