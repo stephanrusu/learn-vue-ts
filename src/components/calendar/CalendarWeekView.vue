@@ -28,66 +28,19 @@
             ]"
           ></div>
         </template>
-        <div class="col-start-2 col-span-1 row-start-1 row-span-4 flex flex-row m-2 space-x-2">
-          <div
-            class="flex-auto p-2 rounded-md text-sm font-medium shadow-small cursor-pointer bg-purple-500 text-white"
-          >
-            Event
-          </div>
-          <div
-            class="flex-auto p-2 rounded-md text-sm font-medium shadow-small cursor-pointer bg-orange-500 text-white"
-          >
-            Event
-          </div>
-        </div>
-
-        <div class="col-start-4 col-span-1 row-start-3 row-span-4 flex flex-row m-2 space-x-2">
-          <div
-            class="flex-auto p-2 rounded-md text-sm font-medium shadow-small cursor-pointer bg-purple-500 text-white"
-          >
-            Event
-          </div>
-          <div class="flex-auto flex flex-col">
-            <div class="h-20"></div>
-            <div class="flex-1 p-2 rounded-md text-sm font-medium shadow-small cursor-pointer bg-orange-500 text-white">
-              Event
-            </div>
-          </div>
-          <div class="flex-auto flex flex-col">
-            <div class="flex-1 p-2 rounded-md text-sm font-medium shadow-small cursor-pointer bg-green-500 text-white">
-              Event
-            </div>
-            <div class="h-20"></div>
-          </div>
-        </div>
-
-        <div class="col-start-3 col-span-1 row-start-8 row-span-4 flex flex-row m-2 space-x-2">
-          <div class="flex-auto flex flex-col">
-            <div class="flex-1 p-2 rounded-md text-sm font-medium shadow-small cursor-pointer bg-green-500 text-white">
-              Event
-            </div>
-            <div class="h-20"></div>
-            <div class="h-10"></div>
-          </div>
-          <div class="flex-auto flex flex-col">
-            <div class="h-20"></div>
-            <div class="h-10"></div>
-            <div class="flex-1 p-2 rounded-md text-sm font-medium shadow-small cursor-pointer bg-orange-500 text-white">
-              Event
-            </div>
-          </div>
-        </div>
+        <calendar-week-events />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CalendarWeekEvents from "./events/CalendarWeekEvents.vue";
 import TimeEntries from "./partials/TimeEntries.vue";
 import WeekDays from "./partials/WeekDays.vue";
 export default {
   name: "CalendarWeekView",
-  components: { WeekDays, TimeEntries },
+  components: { WeekDays, TimeEntries, CalendarWeekEvents },
   props: {
     timeEntries: {
       type: Array,

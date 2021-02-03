@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name: "CalenderEvents",
+  name: "CalendarMonthEvents",
 };
 </script>
 

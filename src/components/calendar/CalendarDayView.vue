@@ -2,7 +2,8 @@
   <div class="shadow-card bg-white flex flex-col items-center rounded-sm">
     <div class="flex w-full">
       <div class="w-20"></div>
-      <div class="py-4 text-center flex-1">
+      <div class="py-4 text-center flex-auto relative">
+        <div v-if="dayEntry.today" class="absolute h-2 left-0 right-0 top-0 rounded-sm bg-cyan-500 shadow-medium" />
         <div class="text-sm font-medium tracking-wide text-gray-500 text-center">{{ dayEntry.name }}</div>
         <div class="text-xs font-medium tracking-wide text-gray-400 text-center">
           {{ dayEntry.dateEntry }}
@@ -27,23 +28,19 @@
             :class="`row-start-${n} row-end-${n}`"
           ></div>
         </template>
-        <div
-          class="row-start-1 row-span-4 col-start-1 bg-white text-gray-700 p-2 rounded-md text-sm font-medium shadow-small m-2 cursor-pointer flex flex-row"
-        >
-          <div class="w-2 h-full rounded-md bg-purple-500 mr-2" />
-          Event
-        </div>
+        <calendar-day-events />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { format } from "date-fns";
+import { format, isToday } from "date-fns";
 import TimeEntries from "./partials/TimeEntries.vue";
+import CalendarDayEvents from "./events/CalendarDayEvents.vue";
 export default {
   name: "CalendarDayView",
-  components: { TimeEntries },
+  components: { TimeEntries, CalendarDayEvents },
   props: {
     timeEntries: {
       type: Array,
@@ -57,6 +54,7 @@ export default {
       let newDate = new Date();
       return {
         name: format(newDate, "eeee"),
+        today: isToday(newDate),
         dateEntry: format(newDate, "MMMM d"),
       };
     },

@@ -21,7 +21,7 @@
           </div>
         </div>
       </template>
-      <calendar-events />
+      <calendar-month-events />
     </div>
   </div>
 </template>
@@ -31,11 +31,11 @@ import { startOfISOWeek, format, addDays, startOfMonth, isToday, isSameDay, isSa
 // TODO find solution for creating this dynamic
 import { gridPositionsRows, gridPositionsCols } from "@/utils/calendarGridPositions";
 import WeekDays from "./partials/WeekDays.vue";
-import CalendarEvents from "./CalendarEvents.vue";
+import CalendarMonthEvents from "./events/CalendarMonthEvents.vue";
 
 export default {
   name: "CalendarMonthView",
-  components: { WeekDays, CalendarEvents },
+  components: { WeekDays, CalendarMonthEvents },
   filters: {
     formatDate: (value, formatString) => {
       return format(value, formatString);
