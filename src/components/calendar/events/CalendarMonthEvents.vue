@@ -68,5 +68,3 @@ export default {
   name: "CalendarMonthEvents",
 };
 </script>
-
-<style lang="scss" scoped></style>

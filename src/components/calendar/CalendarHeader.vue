@@ -61,7 +61,7 @@
       </div>
       <div
         v-if="toggleMonths"
-        class="origin-top-right absolute right-0 mt-4 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+        class="origin-top-right absolute right-0 mt-4 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
       >
         <div class="p-2 grid grid-cols-3 gap-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
           <template v-for="month in monthNames">

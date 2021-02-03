@@ -3,7 +3,7 @@
     <div class="flex w-full">
       <div class="w-20"></div>
       <div class="py-4 text-center flex-auto relative">
-        <div v-if="dayEntry.today" class="absolute h-2 left-0 right-0 top-0 rounded-sm bg-cyan-500 shadow-medium" />
+        <div v-if="dayEntry.today" class="absolute h-2 left-2 right-2 top-0 rounded-sm bg-cyan-500 shadow-medium" />
         <div class="text-sm font-medium tracking-wide text-gray-500 text-center">{{ dayEntry.name }}</div>
         <div class="text-xs font-medium tracking-wide text-gray-400 text-center">
           {{ dayEntry.dateEntry }}
