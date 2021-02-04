@@ -28,7 +28,7 @@
               <div class="ml-2 text-xs text-gray-400 font-medium">{{ task.date | taskDate }}</div>
             </div>
           </div>
-          <users-assigned :users="task.assigned" />
+          <task-options :task-id="task.uid" />
         </div>
         <div class="flex items-center justify-between">
           <div class="flex items-center">
@@ -56,17 +56,13 @@
               {{ columnDetails.text }}
             </div>
           </div>
-          <task-options :task-id="task.uid" />
+
+          <users-assigned :users="task.assigned" />
         </div>
       </div>
     </template>
     <template #main>
-      <div class="flex flex-col p-4">
-        <div class="text-md text-gray-500">
-          {{ task.description }}
-        </div>
-        <kanban-task-tabs :task-id="task.uid" :board-id="column.uid" />
-      </div>
+      <kanban-task-tabs :task="task" :board-id="column.uid" />
     </template>
     <template #footer>
       <div class="flex-1 flex flex-row max-w-xs">

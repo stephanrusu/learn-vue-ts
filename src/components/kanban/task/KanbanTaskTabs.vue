@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="mt-2 mb-4 flex">
+  <div class="px-4 mt-2">
+    <div class="mb-4 flex">
       <div class="flex flex-row space-x-2">
         <template v-for="tab in tabs">
           <div
@@ -30,7 +30,12 @@
       tag="div"
       class="relative"
     >
-      <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="taskId" :board-id="boardId" />
+      <div v-if="activeTab === 'description'" class="flex flex-col">
+        <div class="text-md text-gray-500">
+          {{ task.description }}
+        </div>
+      </div>
+      <kanban-sub-tasks-list v-if="activeTab === 'subtasks'" :key="activeTab" :task-id="task.uid" :board-id="boardId" />
       <kanban-comments-list v-if="activeTab === 'comments'" :key="activeTab" />
     </transition>
   </div>
@@ -44,9 +49,11 @@ export default {
   name: "KanbanTaskTabs",
   components: { KanbanSubTasksList, KanbanCommentsList },
   props: {
-    taskId: {
-      type: String,
-      default: "",
+    task: {
+      type: Object,
+      default() {
+        return {};
+      },
       required: true,
     },
     boardId: {
@@ -57,8 +64,12 @@ export default {
   },
   data() {
     return {
-      activeTab: "",
+      activeTab: "description",
       tabs: [
+        {
+          text: "Description",
+          key: "description",
+        },
         {
           text: "Subtasks",
           key: "subtasks",

@@ -2,7 +2,10 @@
   <div class="w-full grid grid-cols-7 grid-flow-row">
     <template v-for="(day, index) in dayNames">
       <div :key="index" class="py-4 relative">
-        <div v-if="day.today" class="absolute h-2 left-2 right-2 top-0 rounded-sm bg-cyan-500 shadow-medium" />
+        <div
+          v-if="day.today && withDate"
+          class="absolute h-2 left-2 right-2 top-0 rounded-sm bg-cyan-500 shadow-medium"
+        />
         <div class="flex flex-col items-center">
           <div class="text-sm font-medium tracking-wide text-gray-500">{{ day.name }}</div>
           <div v-if="withDate" class="text-xs font-medium tracking-wide text-gray-400">
