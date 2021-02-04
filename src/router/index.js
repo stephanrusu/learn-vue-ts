@@ -129,6 +129,15 @@ const routes = [
         },
         props: true,
       },
+      {
+        path: "settings",
+        name: "settings",
+        component: ProjectForm,
+        meta: {
+          showModal: true,
+        },
+        props: true,
+      },
     ],
   },
   {

@@ -73,6 +73,9 @@
               </button>
             </div>
           </div>
+          <div class="">
+            <label for="projectDescription" class="text-sm font-medium text-gray-700">Boards</label>
+          </div>
         </div>
       </transition>
     </template>

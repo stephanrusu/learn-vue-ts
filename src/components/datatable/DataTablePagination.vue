@@ -3,9 +3,9 @@
     <div class="flex flex-row items-center justify-between bg-white p-4 shadow-card mt-4">
       <div class="text-sm text-gray-700">
         Showing
-        <span class="font-medium">1</span>
+        <span class="font-medium">60</span>
         to
-        <span class="font-medium">10</span>
+        <span class="font-medium">70</span>
         of
         <span class="font-medium">146</span>
         results

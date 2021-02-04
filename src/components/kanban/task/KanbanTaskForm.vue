@@ -84,7 +84,7 @@
             </div>
           </div>
           <div class="">
-            <div class="text-sm font-medium text-gray-700">User assigned</div>
+            <div class="text-sm font-medium text-gray-700">Assigned to</div>
             <div class="flex items-center space-x-2 mt-3">
               <user-avatar>SR</user-avatar>
               <button

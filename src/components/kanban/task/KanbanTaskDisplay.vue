@@ -31,8 +31,16 @@
           <task-options :task-id="task.uid" />
         </div>
         <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <div class="flex flex-row pr-4">
+          <div class="flex items-center space-x-4">
+            <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">
+              {{ task.code }}
+            </div>
+            <div
+              :class="[columnDetails.color.active, 'rounded px-3 py-1 text-xs font-medium tracking-wider text-white']"
+            >
+              {{ columnDetails.text }}
+            </div>
+            <div class="flex flex-row">
               <div
                 :class="[
                   taskPriority.background.color,
@@ -46,14 +54,6 @@
               >
                 {{ taskType.text }}
               </div>
-            </div>
-            <div
-              :class="[
-                columnDetails.color.active,
-                'rounded px-3 py-1 bg-${}-500 text-xs font-medium tracking-wider text-white',
-              ]"
-            >
-              {{ columnDetails.text }}
             </div>
           </div>
 

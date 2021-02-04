@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
-      <template v-for="entry in entries.slice(0, 10)">
+      <template v-for="entry in entries.slice(60, 70)">
         <tr :key="entry.id">
           <td class="p-4 whitespace-nowrap">
             <div class="flex items-center">

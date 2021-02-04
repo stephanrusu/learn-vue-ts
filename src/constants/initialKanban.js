@@ -2,6 +2,7 @@ const initialKanban = {
   uid: "nigyhcmrs",
   date: 1604918663862,
   title: "Endless",
+  code: "endless",
   boardsOrder: ["ntq5y153g", "wewoprlx1", "sl0mm9cem", "z73qbvdv1"],
   status: "ongoing",
   boards: {
@@ -13,6 +14,7 @@ const initialKanban = {
         "8lvzs23uf": {
           uid: "8lvzs23uf",
           date: 1604613600000,
+          code: "Endless-8",
           assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "task",
@@ -38,6 +40,7 @@ const initialKanban = {
           uid: "8e8v16b0a",
           date: 1604613600000,
           assigned: ["MR", "SR"],
+          code: "Endless-7",
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "design",
           priority: "critical",
@@ -50,6 +53,7 @@ const initialKanban = {
         lud0xissi: {
           uid: "lud0xissi",
           date: 1604613600000,
+          code: "Endless-6",
           assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "bug",
@@ -70,6 +74,7 @@ const initialKanban = {
         "98t5ma5pg": {
           uid: "98t5ma5pg",
           date: 1604613600000,
+          code: "Endless-4",
           assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "bug",
@@ -83,6 +88,7 @@ const initialKanban = {
         hc49m900w: {
           uid: "hc49m900w",
           date: 1604613600000,
+          code: "Endless-5",
           assigned: ["MR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "design",
@@ -103,6 +109,7 @@ const initialKanban = {
         otvgpj19o: {
           uid: "otvgpj19o",
           date: 1604613600000,
+          code: "Endless-3",
           assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "bug",
@@ -123,6 +130,7 @@ const initialKanban = {
         boc7qorhc: {
           uid: "boc7qorhc",
           date: 1604613600000,
+          code: "Endless-1",
           assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "task",
@@ -136,6 +144,7 @@ const initialKanban = {
         ewhp355qo: {
           uid: "ewhp355qo",
           date: 1604613600000,
+          code: "Endless-2",
           assigned: ["SR"],
           title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           type: "feature",

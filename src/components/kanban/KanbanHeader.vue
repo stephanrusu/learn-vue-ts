@@ -38,7 +38,7 @@
           </svg>
           <span>Add new</span>
         </router-link>
-        <button type="button" class="bg-white hover:bg-gray-100 p-1.5" @click="isModalOpen = true">
+        <router-link :to="{ name: 'settings' }" class="bg-white hover:bg-gray-100 p-2 rounded">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -49,7 +49,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="feather feather-sliders stroke-current text-gray-700 stroke-1.5"
+            class="feather feather-sliders stroke-current w-5 h-5 text-gray-700 stroke-1.5"
           >
             <line x1="4" y1="21" x2="4" y2="14"></line>
             <line x1="4" y1="10" x2="4" y2="3"></line>
@@ -61,10 +61,11 @@
             <line x1="9" y1="8" x2="15" y2="8"></line>
             <line x1="17" y1="16" x2="23" y2="16"></line>
           </svg>
-        </button>
+        </router-link>
         <button
           type="button"
-          :class="['hover:bg-gray-100 p-1.5', isFilterOpen ? 'bg-gray-100' : 'bg-white']"
+          class="hover:bg-gray-100 p-2 rounded"
+          :class="[isFilterOpen ? 'bg-gray-100' : 'bg-white']"
           @click="isFilterOpen = !isFilterOpen"
         >
           <svg
@@ -77,7 +78,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="feather feather-filter-2 stroke-current text-gray-700"
+            class="feather feather-filter-2 w-5 h-5 stroke-current text-gray-700"
           >
             <line x1="4" y1="6" x2="20" y2="6" />
             <line x1="7" y1="12" x2="17" y2="12" />
@@ -86,9 +87,20 @@
         </button>
       </div>
     </div>
-    <div v-if="isFilterOpen" class="bg-white shadow-card border-t">
-      <kanban-filter />
-    </div>
+    <transition
+      enter-active-class="transition-opacity ease-in-out duration-300"
+      enter-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition-opacity ease-in-out duration-300"
+      leave-class="opacity-100"
+      leave-to-class="opacity-0"
+      mode="out-in"
+      appear
+    >
+      <div v-if="isFilterOpen" class="bg-white shadow-card border-t">
+        <kanban-filter />
+      </div>
+    </transition>
   </div>
 </template>
 

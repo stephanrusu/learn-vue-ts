@@ -3,7 +3,7 @@
     <header class="flex flex-row items-center justify-between py-3 border-b">
       <router-link :to="{ name: 'task-view', params: { taskId } }">
         <div class="rounded px-3 py-1 bg-teal-100 text-xs font-medium tracking-wider text-teal-800">
-          {{ projectTitle }}-{{ boardId }}
+          {{ taskCard.code }}
         </div>
       </router-link>
       <div class="flex flex-row">
