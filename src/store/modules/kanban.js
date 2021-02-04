@@ -1,5 +1,5 @@
 import Vue from "vue";
-import initialKanban from "../../constants/initialKanban";
+import initialKanban from "@/constants/initialKanban";
 import { getUuid } from "../../utils/index";
 
 const kanban = {

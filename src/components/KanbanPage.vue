@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div v-frag>
     <kanban-boards />
     <transition
       enter-active-class="transition-opacity ease-in-out duration-300"

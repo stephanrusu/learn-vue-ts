@@ -6,6 +6,7 @@ import Projects from "@/views/Projects.vue";
 import Kanban from "@/views/Kanban.vue";
 import FlexGrid from "@/views/FlexGrid.vue";
 import Calendar from "@/views/Calendar.vue";
+import DataTable from "@/views/DataTable.vue";
 
 import SignIn from "@/components/auth/SignIn.vue";
 import SignUp from "@/components/auth/SignUp.vue";
@@ -139,6 +140,11 @@ const routes = [
     path: "/flexgrid",
     name: "flex-grid",
     component: FlexGrid,
+  },
+  {
+    path: "/datatable",
+    name: "data-table",
+    component: DataTable,
   },
 ];
 

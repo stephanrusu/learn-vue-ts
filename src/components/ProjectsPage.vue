@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-frag>
     <div class="grid grid-cols-4 gap-8">
       <template v-for="n in 7">
         <project-card :key="n" :project="n" />

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-frag>
     <calendar-header :active-view="activeView" @changeView="changeView" />
     <transition
       enter-active-class="transition-opacity ease-in-out duration-300"
