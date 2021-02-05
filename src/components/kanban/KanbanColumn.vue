@@ -5,7 +5,7 @@
         :class="[
           'flex justify-between text-white p-3',
           boardDetails.color.active,
-          tasksList.length > 0 ? 'rounded-l-md' : 'rounded-md',
+          tasksList.length > 0 ? 'rounded-t-md' : 'rounded-md',
         ]"
       >
         <div class="text-white font-medium">{{ boardDetails.text }}</div>

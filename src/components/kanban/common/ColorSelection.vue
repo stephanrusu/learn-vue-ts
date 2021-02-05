@@ -40,6 +40,35 @@
         </template>
       </div>
     </div>
+    <div class="space-y-2">
+      <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
+      <div class="flex items-center">
+        <div class="flex items-center space-x-2">
+          <user-avatar>MR</user-avatar>
+          <user-avatar>SR</user-avatar>
+        </div>
+        <button
+          type="button"
+          class="rounded-md p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200 ml-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-plus stroke-current w-4 h-4 text-gray-500"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 

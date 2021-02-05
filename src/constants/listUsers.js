@@ -25,11 +25,6 @@ const listUsers = [
     email: "dean.hale@example.com",
   },
   {
-    fullname: "Jaime Garcia",
-    username: "jamie.garcia",
-    email: "jamie.garcia@example.com",
-  },
-  {
     fullname: "Sam Reid",
     username: "sam.reid",
     email: "sam.reid@example.com",
