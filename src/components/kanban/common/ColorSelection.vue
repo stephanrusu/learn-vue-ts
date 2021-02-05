@@ -69,6 +69,36 @@
         </button>
       </div>
     </div>
+    <div class="flex flex-row p-4 space-x-4">
+      <div class="flex-1 relative">
+        <div class="absolute h-2 top-0 rounded-sm w-full bg-indigo-500 shadow-medium" />
+        <div class="pt-4">
+          <div class="text-xs font-medium text-indigo-500">Step 1</div>
+          <div class="text-sm font-medium text-gray-600">Details</div>
+        </div>
+      </div>
+      <div class="flex-1 relative">
+        <div class="absolute h-2 top-0 rounded-sm w-full bg-indigo-500 shadow-medium" />
+        <div class="pt-4">
+          <div class="text-xs font-medium text-indigo-500">Step 2</div>
+          <div class="text-sm font-medium text-gray-600">Members</div>
+        </div>
+      </div>
+      <div class="flex-1 relative">
+        <div class="absolute h-2 top-0 rounded-sm w-full bg-gray-300" />
+        <div class="pt-4">
+          <div class="text-xs font-medium text-gray-300">Step 3</div>
+          <div class="text-sm font-medium text-gray-400">Boards</div>
+        </div>
+      </div>
+      <div class="flex-1 relative">
+        <div class="absolute h-2 top-0 rounded-sm w-full bg-gray-300" />
+        <div class="pt-4">
+          <div class="text-xs font-medium text-gray-300">Step 4</div>
+          <div class="text-sm font-medium text-gray-400">Preview</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

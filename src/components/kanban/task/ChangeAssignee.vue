@@ -9,7 +9,7 @@
       </div>
     </template>
     <template #main>
-      <users-select :users="users" :multiple="multiple" />
+      <users-select :users="users" :multiple="multiple" class="py-4 px-2" />
     </template>
     <template #footer>
       <div class="flex flex-row space-x-2">

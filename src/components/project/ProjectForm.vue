@@ -21,9 +21,7 @@
         tag="div"
         class="relative"
       >
-        <div v-if="membersSelect" :key="membersSelect" class="flex flex-col">
-          <users-select :users="users" :multiple="true" />
-        </div>
+        <users-select v-if="membersSelect" :key="membersSelect" :users="users" :multiple="true" class="py-4 px-2" />
         <div v-else :key="membersSelect" class="flex flex-col p-4 space-y-3">
           <div class="space-y-2">
             <label for="projectTitle" class="text-sm font-medium text-gray-700">Title</label>
@@ -74,7 +72,7 @@
             </div>
           </div>
           <div class="">
-            <label for="projectDescription" class="text-sm font-medium text-gray-700">Boards</label>
+            <label class="text-sm font-medium text-gray-700">Boards</label>
           </div>
         </div>
       </transition>

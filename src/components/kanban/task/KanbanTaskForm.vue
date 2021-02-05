@@ -21,9 +21,7 @@
         tag="div"
         class="relative"
       >
-        <div v-if="userSelect" :key="userSelect" class="flex flex-col">
-          <users-select :users="users" :multiple="true" />
-        </div>
+        <users-select v-if="userSelect" :key="userSelect" :users="users" :multiple="true" class="px-2 py-4" />
         <div v-else :key="userSelect" class="flex flex-col p-4 space-y-4">
           <div class="space-y-2">
             <label for="taskTitle" class="text-sm font-medium text-gray-700">Title</label>
