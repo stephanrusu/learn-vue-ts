@@ -36,12 +36,12 @@
       Event
     </div>
     <div
-      class="col-start-7 col-span-1 row-start-3 bg-yellow-500 text-white px-4 py-2 rounded-tl-md rounded-bl-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
+      class="col-start-7 col-span-1 row-start-3 bg-yellow-500 text-white px-4 py-2 rounded-l-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
     >
       Event
     </div>
     <div
-      class="col-start-1 col-span-1 row-start-4 bg-yellow-500 text-white px-4 py-2 rounded-tr-md rounded-br-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
+      class="col-start-1 col-span-1 row-start-4 bg-yellow-500 text-white px-4 py-2 rounded-r-md text-sm font-medium shadow-large self-center mx-2 cursor-pointer"
     >
       <span class="invisible">.</span>
     </div>

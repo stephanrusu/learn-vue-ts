@@ -2,44 +2,44 @@
   <div class="flex flex-col h-full">
     <div class="font-medium text-xl mb-8 mt-auto px-4 text-gray-800">Create a new account</div>
     <div class="px-4 space-y-4">
-      <div class="">
+      <div class="space-y-2">
         <label for="name" class="block text-sm font-medium text-gray-500">Name</label>
         <input
           id="name"
           type="text"
           name="name"
           placeholder="Enter your name"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
+          class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
         />
       </div>
-      <div class="">
+      <div class="space-y-2">
         <label for="email" class="block text-sm font-medium text-gray-500">Email address</label>
         <input
           id="email"
           type="email"
           name="email"
           placeholder="Enter your email"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
+          class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
         />
       </div>
-      <div class="">
+      <div class="space-y-2">
         <label for="password" class="block text-sm font-medium text-gray-500">Password</label>
         <input
           id="password"
           type="password"
           name="password"
           placeholder="Choose a strong password"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
+          class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
         />
       </div>
-      <div class="">
+      <div class="space-y-2">
         <label for="comfirm-password" class="block text-sm font-medium text-gray-500">Comfirm password</label>
         <input
           id="comfirm-password"
           type="password"
           name="comfirm-password"
           placeholder="Comfirm your chosen password"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
+          class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
         />
       </div>
       <div class="flex flex-row items-center">

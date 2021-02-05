@@ -1,6 +1,6 @@
 import Vue from "vue";
 import initialKanban from "@/constants/initialKanban";
-import { getUuid } from "../../utils/index";
+import { getUuid } from "@/utils/index";
 
 const kanban = {
   state: initialKanban,

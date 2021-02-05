@@ -7,10 +7,10 @@
         </div>
       </router-link>
       <div class="flex flex-row">
-        <div :class="['rounded-tl rounded-bl px-3 py-1 text-xs font-medium text-white', taskPriority.background.color]">
+        <div :class="['rounded-l px-3 py-1 text-xs font-medium text-white', taskPriority.background.color]">
           {{ taskPriority.text }}
         </div>
-        <div :class="['rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white', taskType.background.color]">
+        <div :class="['rounded-r px-3 py-1 text-xs font-medium text-white', taskType.background.color]">
           {{ taskType.text }}
         </div>
       </div>

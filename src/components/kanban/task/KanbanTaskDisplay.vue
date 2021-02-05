@@ -1,7 +1,7 @@
 <template>
   <kanban-overlay>
     <template #header>
-      <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
+      <div class="p-4 bg-gray-50 rounded-t-md shadow-small">
         <div class="flex items-start justify-between pb-4">
           <div>
             <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">
@@ -41,17 +41,10 @@
               {{ columnDetails.text }}
             </div>
             <div class="flex flex-row">
-              <div
-                :class="[
-                  taskPriority.background.color,
-                  'rounded-tl rounded-bl px-3 py-1 text-xs font-medium text-white',
-                ]"
-              >
+              <div :class="[taskPriority.background.color, 'rounded-l px-3 py-1 text-xs font-medium text-white']">
                 {{ taskPriority.text }}
               </div>
-              <div
-                :class="[taskType.background.color, 'rounded-tr rounded-br px-3 py-1 text-xs font-medium text-white']"
-              >
+              <div :class="[taskType.background.color, 'rounded-r px-3 py-1 text-xs font-medium text-white']">
                 {{ taskType.text }}
               </div>
             </div>

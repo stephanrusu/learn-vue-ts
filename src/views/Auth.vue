@@ -1,7 +1,7 @@
 <template>
   <div class="font-sans h-screen flex items-center justify-center">
     <div class="w-1/2 flex bg-white shadow-card min-h-login">
-      <div class="flex-1 max-w-1/3 bg-indigo-400 rounded-tl-md rounded-bl-md flex items-center justify-center">
+      <div class="flex-1 max-w-1/3 bg-indigo-400 rounded-l-md flex items-center justify-center">
         <router-link :to="{ name: 'home' }">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@
           </svg>
         </router-link>
       </div>
-      <div class="flex-1 max-w-2/3 rounded-tr-md rounded-br-md">
+      <div class="flex-1 max-w-2/3 rounded-r-md">
         <transition
           enter-active-class="transition ease-in-out duration-300"
           enter-class="opacity-0"

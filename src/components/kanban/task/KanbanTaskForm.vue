@@ -1,9 +1,9 @@
 <template>
   <kanban-overlay>
     <template #header>
-      <div class="p-4 bg-gray-50 rounded-tl-md rounded-tr-md shadow-small">
+      <div class="p-4 bg-gray-50 rounded-t-md shadow-small">
         <div class="flex flex-col">
-          <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">Task infomation</div>
+          <div class="mb-1 text-lg text-gray-800 font-medium tracking-wide">Task information</div>
           <div class="text-sm text-gray-500">Get started by filling the information below to create a new task</div>
         </div>
       </div>
@@ -25,35 +25,36 @@
           <users-select :users="users" :multiple="true" />
         </div>
         <div v-else :key="userSelect" class="flex flex-col p-4 space-y-4">
-          <div class="">
+          <div class="space-y-2">
             <label for="taskTitle" class="text-sm font-medium text-gray-700">Title</label>
             <input
               id="taskTitle"
               type="text"
               name="task-title"
-              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium"
+              class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium"
             />
           </div>
-          <div class="">
+          <div class="space-y-2">
             <label for="taskDescription" class="text-sm font-medium text-gray-700">Description</label>
             <textarea
               id="taskDescription"
               name="task-title"
-              class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium resize-none"
+              class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium resize-none"
               rows="3"
             ></textarea>
           </div>
-          <div class="">
+          <div class="space-y-2">
             <div class="text-sm font-medium text-gray-700">Type</div>
-            <div class="flex items-center space-x-4 mt-3">
+            <div class="flex items-center">
               <template v-for="typeValue in typeValues">
                 <button
                   :key="typeValue.key"
                   :class="[
-                    'flex-1 rounded px-3 py-1 text-sm font-medium text-white shadow-small',
+                    'flex-1 px-3 py-2 text-sm font-medium border -mr-px',
+                    findRounded(typeValues, typeValue.key),
                     selectedType === typeValue.key
-                      ? typeValue.background.color
-                      : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
+                      ? 'border-indigo-600 bg-indigo-50 text-indigo-500 z-40 shadow-medium hover:text-indigo-600'
+                      : 'bg-white text-gray-400 hover:bg-gray-50 hover:text-gray-500 border-gray-300 shadow-small',
                   ]"
                   type="button"
                   @click="selectedType = typeValue.key"
@@ -63,17 +64,18 @@
               </template>
             </div>
           </div>
-          <div class="">
+          <div class="space-y-2">
             <div class="text-sm font-medium text-gray-700">Priority</div>
-            <div class="flex items-center space-x-4 mt-3">
+            <div class="flex items-center">
               <template v-for="priorityValue in priorityValues">
                 <button
                   :key="priorityValue.key"
                   :class="[
-                    'flex-1 rounded px-3 py-1 text-sm font-medium text-white shadow-small',
+                    'flex-1 px-3 py-2 text-sm font-medium border -mr-px',
+                    findRounded(priorityValues, priorityValue.key),
                     selectedPriority === priorityValue.key
-                      ? priorityValue.background.color
-                      : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
+                      ? 'border-indigo-600 bg-indigo-50 text-indigo-500 z-40 shadow-medium hover:text-indigo-600'
+                      : 'bg-white text-gray-400 hover:bg-gray-50 hover:text-gray-500 border-gray-300 shadow-small',
                   ]"
                   type="button"
                   @click="selectedPriority = priorityValue.key"
@@ -83,9 +85,9 @@
               </template>
             </div>
           </div>
-          <div class="">
+          <div class="space-y-2">
             <div class="text-sm font-medium text-gray-700">Assigned to</div>
-            <div class="flex items-center space-x-2 mt-3">
+            <div class="flex items-center space-x-2">
               <user-avatar>SR</user-avatar>
               <button
                 type="button"
@@ -133,7 +135,7 @@
       <div v-else class="flex flex-row space-x-2">
         <button
           type="button"
-          class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide bg-gray-100 hover:bg-gray-200 ease-in transition-colors"
+          class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide hover:bg-gray-100 ease-in transition-colors"
           @click="$router.go(-1)"
         >
           Cancel
@@ -154,6 +156,7 @@
 import KanbanOverlay from "@/components/KanbanOverlay.vue";
 import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import { KanbanType, KanbanPriority } from "@/constants/enums";
+import listUsers from "@/constants/listUsers";
 import UserAvatar from "../common/UserAvatar.vue";
 
 export default {
@@ -166,58 +169,26 @@ export default {
       selectedPriority: "",
       typeValues: KanbanType,
       priorityValues: KanbanPriority,
-      users: [
-        {
-          fullname: "Zoey Ryan",
-          username: "zoey.ryan",
-          email: "zoey.ryan@example.com",
-        },
-        {
-          fullname: "Cameron Simmons",
-          username: "cameron.simmons",
-          email: "cameron.simmons@example.com",
-        },
-        {
-          fullname: "Josephine Davidson",
-          username: "josephine.davidson",
-          email: "josephine.davidson@example.com",
-        },
-        {
-          fullname: "Mia Russo",
-          username: "mia.russo",
-          email: "mia.russo@example.com",
-        },
-        {
-          fullname: "Dean Hale",
-          username: "dean.hale",
-          email: "dean.hale@example.com",
-        },
-        {
-          fullname: "Jaime Garcia",
-          username: "jamie.garcia",
-          email: "jamie.garcia@example.com",
-        },
-        {
-          fullname: "Sam Reid",
-          username: "sam.reid",
-          email: "sam.reid@example.com",
-        },
-        {
-          fullname: "Tara Barnett",
-          username: "tara.barnett",
-          email: "tara.barnett@example.com",
-        },
-        {
-          fullname: "Bianca Cruz",
-          username: "bianca.cruz",
-          email: "bianca.cruz@example.com",
-        },
-      ],
+      users: listUsers,
     };
   },
   methods: {
     toggleSelectUser() {
       this.userSelect = !this.userSelect;
+    },
+    findRounded(values, key) {
+      let typeKeys = Object.keys(values);
+      let indexKey = typeKeys.indexOf(key);
+
+      if (indexKey === 0) {
+        return "rounded-l";
+      }
+
+      if (indexKey === typeKeys.length - 1) {
+        return "rounded-r";
+      }
+
+      return "";
     },
   },
 };

@@ -2,24 +2,24 @@
   <div class="flex flex-col h-full">
     <div class="font-medium text-xl mb-8 mt-auto px-4 text-gray-800">Sign in to your account</div>
     <div class="px-4 space-y-4">
-      <div class="">
+      <div class="space-y-2">
         <label for="email" class="text-sm font-medium text-gray-500">Email address </label>
         <input
           id="email"
           type="email"
           name="email"
           placeholder="Enter your email"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
+          class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
         />
       </div>
-      <div class="">
+      <div class="space-y-2">
         <label for="password" class="text-sm font-medium text-gray-500">Password</label>
         <input
           id="password"
           type="password"
           name="password"
           placeholder="Enter your password"
-          class="focus:border-indigo-300 mt-2 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
+          class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
         />
       </div>
       <div class="flex flex-row items-center justify-between">
