@@ -8,7 +8,11 @@
             scope="col"
             class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
-            {{ column.name }}
+            <div class="flex items-center justify-between">
+              <div>
+                {{ column.name }}
+              </div>
+            </div>
           </th>
         </template>
       </tr>

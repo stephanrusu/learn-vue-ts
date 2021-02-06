@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-2">
+  <div class="space-y-2">
     <template v-for="(user, index) in users">
       <label
         :key="user.username"

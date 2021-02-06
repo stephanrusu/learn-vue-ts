@@ -9,6 +9,24 @@
       </div>
     </template>
     <template #main>
+      <div class="flex flex-row pt-4 pb-2 px-4 space-x-4 border-b">
+        <template v-for="(step, index) in stepList">
+          <div :key="step.key" class="flex-1 relative cursor-default">
+            <div
+              class="absolute h-1 top-0 rounded-sm w-full"
+              :class="[currentStep >= index ? 'bg-indigo-500 shadow-medium' : 'bg-gray-300']"
+            />
+            <div class="pt-3">
+              <div class="text-xs font-medium" :class="[currentStep >= index ? 'text-indigo-500' : 'text-gray-300']">
+                Step {{ index + 1 }}
+              </div>
+              <div class="text-sm font-medium" :class="[currentStep >= index ? 'text-gray-600' : 'text-gray-400']">
+                {{ step.name }}
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
       <transition
         appear
         enter-active-class="transition ease-in-out duration-500"
@@ -21,8 +39,7 @@
         tag="div"
         class="relative"
       >
-        <users-select v-if="membersSelect" :key="membersSelect" :users="users" :multiple="true" class="py-4 px-2" />
-        <div v-else :key="membersSelect" class="flex flex-col p-4 space-y-3">
+        <div v-if="stepList[currentStep].key === 'details'" :key="currentStep" class="py-2 px-4 space-y-3">
           <div class="space-y-2">
             <label for="projectTitle" class="text-sm font-medium text-gray-700">Title</label>
             <input
@@ -41,73 +58,74 @@
               rows="3"
             ></textarea>
           </div>
-          <div class="space-y-2">
-            <label for="taskTitle" class="text-sm font-medium text-gray-700">Team members</label>
-            <div class="flex items-center">
-              <div class="flex items-center space-x-2">
-                <user-avatar>MR</user-avatar>
-                <user-avatar>SR</user-avatar>
-              </div>
-              <button
-                type="button"
-                class="rounded-md p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200 ml-2"
-                @click="toggleSelectMembers"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-plus stroke-current w-4 h-4 text-gray-500"
-                >
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </button>
+        </div>
+        <users-select
+          v-if="stepList[currentStep].key === 'members'"
+          :key="currentStep"
+          :users="users"
+          :multiple="true"
+          class="p-2"
+        />
+        <div v-if="stepList[currentStep].key === 'boards'" :key="currentStep" class="py-2 px-4"></div>
+        <div v-if="stepList[currentStep].key === 'preview'" :key="currentStep" class="py-2 px-4 space-y-3">
+          <div class="">
+            <label class="text-xs font-medium text-gray-400">Title</label>
+            <div class="text-sm text-gray-700">Project Endless</div>
+          </div>
+          <div class="">
+            <label class="text-xs font-medium text-gray-400">Description</label>
+            <div class="text-sm text-gray-700">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore in architecto nam labore, cupiditate.
             </div>
           </div>
           <div class="">
-            <label class="text-sm font-medium text-gray-700">Boards</label>
+            <label class="text-xs font-medium text-gray-400">Team members</label>
+            <div class="flex items-center space-x-2 mt-2">
+              <user-avatar>MR</user-avatar>
+              <user-avatar>SR</user-avatar>
+            </div>
+          </div>
+          <div class="">
+            <label class="text-xs font-medium text-gray-400">Boards</label>
+            <div class="text-gray-700"></div>
           </div>
         </div>
       </transition>
     </template>
     <template #footer>
-      <div v-if="membersSelect" class="flex flex-row space-x-2">
+      <div class="flex flex-row items-center flex-auto">
         <button
           type="button"
-          class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide hover:bg-gray-100 ease-in transition-colors"
-          @click="toggleSelectMembers"
-        >
-          Cancel
-        </button>
-        <button
-          type="button"
-          class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
-          @click="toggleSelectMembers"
-        >
-          Select team
-        </button>
-      </div>
-      <div v-else class="flex flex-row space-x-2">
-        <button
-          type="button"
-          class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide hover:bg-gray-100 ease-in transition-colors"
+          class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide hover:bg-gray-100 ease-in transition-colors mx-4"
           @click="$router.go(-1)"
         >
           Cancel
         </button>
+        <div class="space-x-2 ml-auto">
+          <button
+            v-if="currentStep > 0"
+            type="button"
+            class="text-gray-700 w-24 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-white hover:bg-gray-100 ease-in transition-colors"
+            @click="updateStep(-1)"
+          >
+            Previous
+          </button>
+          <button
+            v-if="currentStep < stepList.length - 1"
+            type="button"
+            class="text-gray-700 w-24 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-white hover:bg-gray-100 ease-in transition-colors"
+            @click="updateStep(1)"
+          >
+            Next
+          </button>
+        </div>
         <button
+          v-if="currentStep === stepList.length - 1"
           type="button"
-          class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
+          class="text-white ml-2 px-6 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
           @click="$router.go(-1)"
         >
-          Create project
+          Save project
         </button>
       </div>
     </template>
@@ -124,13 +142,31 @@ export default {
   components: { KanbanOverlay, UsersSelect, UserAvatar },
   data() {
     return {
-      membersSelect: false,
+      currentStep: 0,
       users: listUsers,
+      stepList: [
+        {
+          name: "Details",
+          key: "details",
+        },
+        {
+          name: "Members",
+          key: "members",
+        },
+        {
+          name: "Boards",
+          key: "boards",
+        },
+        {
+          name: "Preview",
+          key: "preview",
+        },
+      ],
     };
   },
   methods: {
-    toggleSelectMembers() {
-      this.membersSelect = !this.membersSelect;
+    updateStep(direction) {
+      this.currentStep += direction;
     },
   },
 };
