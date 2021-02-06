@@ -45,7 +45,7 @@
           <div :key="showModal" class="min-h-full flex flex-col bg-white rounded-md">
             <slot name="header"></slot>
             <slot name="main"></slot>
-            <div class="flex flex-row items-center justify-between mt-auto p-4 rounded-b-md bg-gray-50">
+            <div class="flex flex-row items-center mt-auto p-4 rounded-b-md bg-gray-50">
               <button
                 type="button"
                 class="flex-0-auto px-2 py-2 bg-indigo-500 hover:bg-indigo-600 items-center justify-center rounded-md ease-in transition-colors shadow-small"

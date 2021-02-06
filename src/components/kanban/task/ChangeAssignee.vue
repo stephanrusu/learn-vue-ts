@@ -12,7 +12,7 @@
       <users-select :users="users" :multiple="multiple" class="py-4 px-2" />
     </template>
     <template #footer>
-      <div class="flex flex-row space-x-2">
+      <div class="flex flex-row space-x-2 ml-auto">
         <button
           type="button"
           class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide hover:bg-gray-100 ease-in transition-colors"

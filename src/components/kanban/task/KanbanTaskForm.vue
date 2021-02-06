@@ -114,7 +114,7 @@
       </transition>
     </template>
     <template #footer>
-      <div v-if="userSelect" class="flex flex-row space-x-2">
+      <div v-if="userSelect" class="flex flex-row space-x-2 ml-auto">
         <button
           type="button"
           class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide bg-gray-100 hover:bg-gray-200 ease-in transition-colors"

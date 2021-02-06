@@ -58,7 +58,7 @@
       <kanban-task-tabs :task="task" :board-id="column.uid" />
     </template>
     <template #footer>
-      <div class="flex-1 flex flex-row max-w-xs">
+      <div class="flex-1 flex flex-row max-w-xs ml-auto">
         <button
           v-if="!isFirstBoard"
           type="button"
