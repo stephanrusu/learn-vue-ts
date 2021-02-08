@@ -43,16 +43,15 @@
           </div>
           <div class="space-y-2">
             <div class="text-sm font-medium text-gray-700">Type</div>
-            <div class="flex items-center">
+            <div class="flex items-center space-x-2">
               <template v-for="typeValue in typeValues">
                 <button
                   :key="typeValue.key"
                   :class="[
-                    'flex-1 px-3 py-2 text-sm font-medium border -mr-px',
-                    findRounded(typeValues, typeValue.key),
+                    'flex-1 rounded px-3 py-1.5 text-sm font-medium text-white shadow-small',
                     selectedType === typeValue.key
-                      ? 'border-indigo-600 bg-indigo-50 text-indigo-500 z-40 shadow-medium hover:text-indigo-600'
-                      : 'bg-white text-gray-400 hover:bg-gray-50 hover:text-gray-500 border-gray-300 shadow-small',
+                      ? typeValue.background.color
+                      : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
                   ]"
                   type="button"
                   @click="selectedType = typeValue.key"
@@ -64,16 +63,15 @@
           </div>
           <div class="space-y-2">
             <div class="text-sm font-medium text-gray-700">Priority</div>
-            <div class="flex items-center">
+            <div class="flex items-center space-x-2">
               <template v-for="priorityValue in priorityValues">
                 <button
                   :key="priorityValue.key"
                   :class="[
-                    'flex-1 px-3 py-2 text-sm font-medium border -mr-px',
-                    findRounded(priorityValues, priorityValue.key),
+                    'flex-1 rounded px-3 py-1.5 text-sm font-medium text-white shadow-small',
                     selectedPriority === priorityValue.key
-                      ? 'border-indigo-600 bg-indigo-50 text-indigo-500 z-40 shadow-medium hover:text-indigo-600'
-                      : 'bg-white text-gray-400 hover:bg-gray-50 hover:text-gray-500 border-gray-300 shadow-small',
+                      ? priorityValue.background.color
+                      : 'bg-gray-100 text-gray-400 bg-opacity-75 hover:bg-gray-200 hover:bg-opacity-75 hover:text-gray-500',
                   ]"
                   type="button"
                   @click="selectedPriority = priorityValue.key"
@@ -130,7 +128,7 @@
           Select user
         </button>
       </div>
-      <div v-else class="flex flex-row space-x-2">
+      <div v-else class="flex flex-row space-x-2 ml-auto">
         <button
           type="button"
           class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide hover:bg-gray-100 ease-in transition-colors"
