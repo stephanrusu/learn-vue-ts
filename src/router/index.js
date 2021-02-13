@@ -8,7 +8,6 @@ import FlexGrid from "@/views/FlexGrid.vue";
 import Calendar from "@/views/Calendar.vue";
 import DataTable from "@/views/DataTable.vue";
 import NotFound from "@/views/NotFound.vue";
-import HelpDesk from "@/views/HelpDesk.vue";
 
 import SignIn from "@/components/auth/SignIn.vue";
 import SignUp from "@/components/auth/SignUp.vue";
@@ -162,13 +161,6 @@ const routes = [
     path: "/datatable",
     name: "data-table",
     component: DataTable,
-  },
-  // helpdesk
-  {
-    path: "/helpdesk",
-    name: "help-desk",
-    component: HelpDesk,
-    children: [],
   },
   // not found
   { path: "*", name: "not-found", component: NotFound },
