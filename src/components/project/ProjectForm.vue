@@ -68,14 +68,12 @@
           :multiple="true"
           class="p-2"
         />
-        <div v-if="stepList[currentStep].key === 'boards'" :key="currentStep" class="px-4 py-2 space-y-2">
+        <div v-if="stepList[currentStep].key === 'boards'" :key="currentStep" class="px-4 py-2 space-y-3">
           <template v-for="n in 4">
             <div :key="n" class="flex flex-col">
               <label class="text-sm font-medium text-gray-700 mb-2">Board name</label>
               <div class="flex flex-row items-center space-x-2 flex-1">
-                <button type="button" class="p-2 bg-indigo-500 rounded hover:z-10 border-gray-300 shadow-small">
-                  <div class="w-5 h-5"></div>
-                </button>
+                <board-color-selection />
                 <input
                   type="text"
                   placeholder="Board name"
@@ -177,9 +175,9 @@
             <div class="flex flex-row space-x-2 mt-2">
               <div class="flex-auto p-2 text-sm font-medium text-white bg-indigo-500 rounded shadow-small">To Do</div>
               <div class="flex-auto p-2 text-sm font-medium text-white bg-blue-500 rounded shadow-small">
-                In progress
+                In Progress
               </div>
-              <div class="flex-auto p-2 text-sm font-medium text-white bg-cyan-500 rounded shadow-small">In review</div>
+              <div class="flex-auto p-2 text-sm font-medium text-white bg-cyan-500 rounded shadow-small">In Review</div>
               <div class="flex-auto p-2 text-sm font-medium text-white bg-green-500 rounded shadow-small">Done</div>
             </div>
           </div>
@@ -231,10 +229,11 @@ import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import KanbanOverlay from "../KanbanOverlay.vue";
 import UserAvatar from "../kanban/common/UserAvatar.vue";
 import listUsers from "@/constants/listUsers";
+import BoardColorSelection from "./BoardColorSelection.vue";
 
 export default {
   name: "ProjectForm",
-  components: { KanbanOverlay, UsersSelect, UserAvatar },
+  components: { KanbanOverlay, UsersSelect, UserAvatar, BoardColorSelection },
   data() {
     return {
       currentStep: 0,

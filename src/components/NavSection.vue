@@ -21,6 +21,12 @@
         >
           Calendar
         </router-link>
+        <router-link
+          :to="{ name: 'data-table' }"
+          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+        >
+          DataTable
+        </router-link>
       </div>
 
       <div
