@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="flex-grid-row">
+      <div class="flex-grid-row flex-grid-gap-2">
         <div class="flex-grid-col col-size-12 lg:col-size-2">
           <div class="p-4 bg-teal-500"></div>
         </div>

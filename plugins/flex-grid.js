@@ -21,7 +21,8 @@ const colOffset = (maxColumns, size) => {
   return `${(size / maxColumns) * 100}%`;
 };
 
-module.exports = plugin(({ addUtilities, e, variants }) => {
+module.exports = plugin(({ addUtilities, e, theme, variants }) => {
+  const pluginConfigGap = theme("flexGridGap", {});
   const pluginVariants = variants("flexGrid", []);
   const defaults = {
     maxColumns: 12,
@@ -54,6 +55,19 @@ module.exports = plugin(({ addUtilities, e, variants }) => {
     },
   };
 
+  const flexGridGaps = Object.keys(pluginConfigGap).map((key) => {
+    return {
+      [`.${e(`flex-grid-gap-${key}`)}`]: {
+        marginLeft: key === 0 ? 0 : `-${pluginConfigGap[key]}`,
+        marginRight: key === 0 ? 0 : `-${pluginConfigGap[key]}`,
+      },
+      [`.${e(`flex-grid-gap-${key}`)} > .${e(`flex-grid-col`)}`]: {
+        paddingLeft: pluginConfigGap[key],
+        paddingRight: pluginConfigGap[key],
+      },
+    };
+  });
+
   const flexGridColsSizes = columns.map((size) => {
     return {
       [`.${e(`col-size-${size}`)}`]: {
@@ -72,5 +86,5 @@ module.exports = plugin(({ addUtilities, e, variants }) => {
     };
   });
 
-  addUtilities([flexGridRow, flexGridCols, flexGridColsSizes, flexGridColsOffSet], pluginVariants);
+  addUtilities([flexGridRow, flexGridCols, flexGridColsSizes, flexGridColsOffSet, flexGridGaps], pluginVariants);
 });

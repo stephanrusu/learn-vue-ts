@@ -42,7 +42,7 @@
                 <template v-for="value in itemsValues">
                   <button
                     :key="value"
-                    class="rounded block w-full p-2 text-sm text-left"
+                    class="rounded block w-full p-2 text-sm text-center"
                     :class="[
                       itemsSelected === value
                         ? 'text-white bg-cyan-500 hover:text-white hover:bg-cyan-600'
