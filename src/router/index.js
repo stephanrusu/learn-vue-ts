@@ -7,6 +7,7 @@ import Kanban from "@/views/Kanban.vue";
 import FlexGrid from "@/views/FlexGrid.vue";
 import Calendar from "@/views/Calendar.vue";
 import DataTable from "@/views/DataTable.vue";
+import NotFound from "@/views/NotFound.vue";
 
 import SignIn from "@/components/auth/SignIn.vue";
 import SignUp from "@/components/auth/SignUp.vue";
@@ -28,6 +29,7 @@ const routes = [
     name: "home",
     redirect: "/projects",
   },
+  // projects
   {
     path: "/projects",
     name: "projects",
@@ -62,6 +64,7 @@ const routes = [
       },
     ],
   },
+  // auth
   {
     path: "/auth",
     component: Auth,
@@ -88,6 +91,7 @@ const routes = [
       },
     ],
   },
+  // kanban
   {
     path: "/kanban",
     component: Kanban,
@@ -140,21 +144,26 @@ const routes = [
       },
     ],
   },
+  // calendar
   {
     path: "/calendar",
     name: "calendar",
     component: Calendar,
   },
+  // flexgrid
   {
     path: "/flexgrid",
     name: "flex-grid",
     component: FlexGrid,
   },
+  // datatable
   {
     path: "/datatable",
     name: "data-table",
     component: DataTable,
   },
+  // not found
+  { path: "*", name: "not-found", component: NotFound },
 ];
 
 const router = new VueRouter({
