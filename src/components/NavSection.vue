@@ -2,7 +2,6 @@
   <nav class="py-4">
     <div class="bg-white p-2 rounded-lg shadow-card flex items-center justify-between">
       <div class="flex items-center space-x-4">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <router-link
           :to="{ name: 'projects' }"
           class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
