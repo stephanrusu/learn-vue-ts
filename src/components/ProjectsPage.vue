@@ -1,8 +1,8 @@
 <template>
   <div v-frag>
     <div class="grid grid-cols-4 gap-8">
-      <template v-for="n in 7">
-        <project-card :key="n" :project="n" />
+      <template v-for="project in projects">
+        <project-card :key="project.uid" :project="project" />
       </template>
       <div class="bg-gray-100 rounded-lg p-4 h-64 flex items-center justify-center">
         <router-link
@@ -69,6 +69,9 @@ export default {
   computed: {
     toggleNotification() {
       return this.$store.getters.getNotificationActive;
+    },
+    projects() {
+      return this.$store.getters.listProjects;
     },
   },
 };

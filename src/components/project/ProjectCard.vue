@@ -3,7 +3,7 @@
     <header>
       <div class="flex items-center justify-between">
         <div
-          v-if="project % 2 !== 0"
+          v-if="project.status === 'finished'"
           class="rounded px-3 py-1 bg-green-100 text-xs font-medium tracking-wider text-green-800"
         >
           Finished
@@ -81,16 +81,16 @@
           </transition>
         </div>
       </div>
-      <div class="text-md font-medium my-2 text-gray-700">Project Endless {{ project }}</div>
+      <div class="text-md font-medium my-2 text-gray-700">{{ project.title }}</div>
     </header>
     <main>
       <div class="text-sm text-gray-500">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore in architecto nam labore, cupiditate.
+        {{ project.description }}
       </div>
     </main>
     <footer class="flex flex-col justify-between mt-auto">
       <div class="flex flex-row items-center justify-between my-2">
-        <user-avatar>MR</user-avatar>
+        <user-avatar>{{ project.teamLeader.fullname | avatarId }}</user-avatar>
         <router-link
           :to="{ name: 'kanban' }"
           type="button"
@@ -118,7 +118,7 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <div class="ml-2 text-xs text-gray-500 font-medium">{{ new Date() | taskDate }}</div>
+          <div class="ml-2 text-xs text-gray-500 font-medium">{{ project.date | taskDate }}</div>
         </div>
         <div class="flex flex-row items-center">
           <svg
@@ -138,7 +138,7 @@
             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-          <div class="ml-2 text-xs text-gray-500 font-medium">4</div>
+          <div class="ml-2 text-xs text-gray-500 font-medium">{{ project.teamMembers.length }}</div>
         </div>
       </div>
     </footer>
@@ -152,8 +152,11 @@ export default {
   components: { UserAvatar },
   props: {
     project: {
-      type: Number,
-      default: 0,
+      type: Object,
+      require: true,
+      default() {
+        return {};
+      },
     },
   },
   data() {
@@ -163,11 +166,11 @@ export default {
   },
   methods: {
     changeTeamMembers() {
-      this.$router.push({ name: "project-team", params: { projectId: this.project, multiple: true } });
+      this.$router.push({ name: "project-team", params: { projectId: this.project.uid, multiple: true } });
       this.toggleOptionsDropdown();
     },
     editProject() {
-      this.$router.push({ name: "project-edit", params: { projectId: this.project } });
+      this.$router.push({ name: "project-edit", params: { projectId: this.project.uid } });
       this.toggleOptionsDropdown();
     },
     deleteProject() {

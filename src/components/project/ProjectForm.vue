@@ -60,6 +60,16 @@
               rows="3"
             ></textarea>
           </div>
+          <div class="space-y-2">
+            <label for="projectCode" class="text-sm font-medium text-gray-700">Referrence</label>
+            <input
+              id="projectCode"
+              v-model="projectData.code"
+              type="text"
+              name="project-code"
+              class="focus:border-indigo-300 block w-full text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium"
+            />
+          </div>
         </div>
         <users-select
           v-if="stepList[currentStep].key === 'members'"
@@ -163,6 +173,10 @@
             </div>
           </div>
           <div class="">
+            <label class="text-xs font-medium text-gray-400">Referrence</label>
+            <div class="text-sm text-gray-700">endless</div>
+          </div>
+          <div class="">
             <label class="text-xs font-medium text-gray-400">Team members</label>
             <div class="flex items-center space-x-2 mt-2">
               <user-avatar>MR</user-avatar>
@@ -259,6 +273,7 @@ export default {
       projectData: {
         title: "",
         description: "",
+        code: "",
         boards: [],
         members: [],
       },
