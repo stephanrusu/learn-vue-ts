@@ -18,7 +18,7 @@
       mode="out-in"
       appear
     >
-      <div v-if="toggleOptions" class="origin-top-left absolute left-0 mt-2 w-72 rounded-md shadow-lg bg-white z-50">
+      <div v-if="toggleOptions" class="origin-top-left absolute left-0 mt-2 w-52 rounded-md shadow-lg bg-white z-50">
         <div
           class="p-2 grid grid-cols-6 grid-flow-row gap-2"
           role="menu"
@@ -29,8 +29,8 @@
             <button
               :key="color.name"
               type="button"
-              class="cursor-pointer rounded h-9"
-              :class="[color.className]"
+              class="cursor-pointer rounded h-6"
+              :class="[color.className, { 'shadow-large': color.name === activeColor.name }]"
               @click="colorSelect(color)"
             ></button>
           </template>

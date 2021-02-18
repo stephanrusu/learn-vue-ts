@@ -152,7 +152,6 @@ export default {
     },
 
     toggleSubTask(subtask, index) {
-      console.info(index);
       this.$store.dispatch("toggleSubTask", {
         boardId: this.boardId,
         taskId: this.taskId,

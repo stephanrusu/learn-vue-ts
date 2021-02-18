@@ -247,10 +247,10 @@ export default {
           name: "Members",
           key: "members",
         },
-        {
-          name: "Boards",
-          key: "boards",
-        },
+        // {
+        //   name: "Boards",
+        //   key: "boards",
+        // },
         {
           name: "Preview",
           key: "preview",
