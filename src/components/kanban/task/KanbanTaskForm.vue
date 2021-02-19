@@ -21,7 +21,7 @@
         tag="div"
         class="relative"
       >
-        <users-select v-if="userSelect" :key="userSelect" :users="users" :multiple="true" class="px-2 py-4" />
+        <users-select v-if="userSelect" :key="userSelect" :multiple="true" class="px-2 py-4" />
         <div v-else :key="userSelect" class="flex flex-col p-4 space-y-4">
           <div class="space-y-2">
             <label for="taskTitle" class="text-sm font-medium text-gray-700">Title</label>
@@ -152,7 +152,6 @@
 import KanbanOverlay from "@/components/KanbanOverlay.vue";
 import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import { KanbanType, KanbanPriority } from "@/constants/enums";
-import listUsers from "@/constants/listUsers";
 import UserAvatar from "../common/UserAvatar.vue";
 
 export default {
@@ -165,7 +164,6 @@ export default {
       selectedPriority: "",
       typeValues: KanbanType,
       priorityValues: KanbanPriority,
-      users: listUsers,
     };
   },
   methods: {

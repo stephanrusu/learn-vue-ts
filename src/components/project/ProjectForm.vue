@@ -74,9 +74,10 @@
         <users-select
           v-if="stepList[currentStep].key === 'members'"
           :key="currentStep"
-          :users="users"
+          :selection="projectData.members"
           :multiple="true"
           class="p-2"
+          @userSelection="updateMembers"
         />
         <div v-if="stepList[currentStep].key === 'boards'" :key="currentStep" class="px-4 py-2 space-y-3">
           <template v-for="n in 4">
@@ -164,24 +165,24 @@
         <div v-if="stepList[currentStep].key === 'preview'" :key="currentStep" class="py-2 px-4 space-y-2">
           <div class="">
             <label class="text-xs font-medium text-gray-400">Title</label>
-            <div class="text-sm text-gray-700">Project Endless</div>
+            <div class="text-sm text-gray-700">{{ projectData.title }}</div>
           </div>
           <div class="">
             <label class="text-xs font-medium text-gray-400">Description</label>
             <div class="text-sm text-gray-700">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore in architecto nam labore, cupiditate.
+              {{ projectData.description }}
             </div>
           </div>
           <div class="">
             <label class="text-xs font-medium text-gray-400">Referrence</label>
-            <div class="text-sm text-gray-700">endless</div>
+            <div class="text-sm text-gray-700">{{ projectData.code }}</div>
           </div>
           <div class="">
             <label class="text-xs font-medium text-gray-400">Team members</label>
             <div class="flex items-center space-x-2 mt-2">
-              <user-avatar>MR</user-avatar>
-              <user-avatar>SR</user-avatar>
-              <user-avatar>CS</user-avatar>
+              <template v-for="member in projectData.members">
+                <user-avatar :key="member.username">{{ member.fullname | avatarId }}</user-avatar>
+              </template>
             </div>
           </div>
           <div class="">
@@ -242,7 +243,6 @@
 import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import KanbanOverlay from "../KanbanOverlay.vue";
 import UserAvatar from "../kanban/common/UserAvatar.vue";
-import listUsers from "@/constants/listUsers";
 import BoardColorSelection from "./BoardColorSelection.vue";
 
 export default {
@@ -251,7 +251,6 @@ export default {
   data() {
     return {
       currentStep: 0,
-      users: listUsers,
       stepList: [
         {
           name: "Details",
@@ -279,9 +278,25 @@ export default {
       },
     };
   },
+  computed: {
+    selectedProject() {
+      return this.$store.getters.selectedProject(this.$route.params.projectId);
+    },
+  },
+  mounted() {
+    if (this.$route.params.projectId !== undefined) {
+      this.projectData.title = this.selectedProject.title;
+      this.projectData.description = this.selectedProject.description;
+      this.projectData.code = this.selectedProject.code;
+      this.projectData.members = this.selectedProject.teamMembers;
+    }
+  },
   methods: {
     updateStep(direction) {
       this.currentStep += direction;
+    },
+    updateMembers(list) {
+      this.projectData.members = list;
     },
   },
 };

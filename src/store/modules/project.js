@@ -5,10 +5,13 @@ const project = {
     list: initialProjects,
     active: {},
   },
+  actions: {},
   getters: {
     listProjects: (state) => state.list,
     activeProject: (state) => state.active,
+    selectedProject: (state) => (projectId) => state.list[projectId],
   },
+  mutations: {},
 };
 
 export default project;

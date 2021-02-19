@@ -9,7 +9,7 @@
       </div>
     </template>
     <template #main>
-      <users-select :users="users" :multiple="multiple" class="py-4 px-2" />
+      <users-select :multiple="multiple" class="py-4 px-2" />
     </template>
     <template #footer>
       <div class="flex flex-row space-x-2 ml-auto">
@@ -34,7 +34,6 @@
 <script>
 import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import KanbanOverlay from "@/components/KanbanOverlay.vue";
-import listUsers from "@/constants/listUsers";
 export default {
   name: "ChangeAssignee",
   components: { KanbanOverlay, UsersSelect },
@@ -43,11 +42,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  data() {
-    return {
-      users: listUsers,
-    };
   },
 };
 </script>

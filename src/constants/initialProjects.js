@@ -1,5 +1,5 @@
-const initialProjects = [
-  {
+const initialProjects = {
+  tb7gjqy7g: {
     uid: "tb7gjqy7g",
     date: 1613637384343,
     title: "Endless",
@@ -31,7 +31,7 @@ const initialProjects = [
       },
     ],
   },
-  {
+  "7z2ynj9xa": {
     uid: "7z2ynj9xa",
     date: 1613637384343,
     title: "Horizon",
@@ -68,7 +68,7 @@ const initialProjects = [
       },
     ],
   },
-  {
+  gwf5w8qpe: {
     uid: "gwf5w8qpe",
     date: 1613637384343,
     title: "Sunset",
@@ -94,7 +94,7 @@ const initialProjects = [
       },
     ],
   },
-  {
+  pzdk1rdbw: {
     uid: "pzdk1rdbw",
     date: 1613637384343,
     title: "Sunrise",
@@ -125,7 +125,38 @@ const initialProjects = [
       },
     ],
   },
-  {
+  k5fa0vaep: {
+    uid: "k5fa0vaep",
+    date: 1613637384343,
+    title: "Twilight",
+    code: "twilight",
+    description: "Tempore in architecto nam labore, cupiditate.",
+    status: "finished",
+    kanbanId: "9n4cowlt2",
+    teamLeader: {
+      fullname: "Mia Russo",
+      username: "mia.russo",
+      email: "mia.russo@example.com",
+    },
+    teamMembers: [
+      {
+        fullname: "Josephine Davidson",
+        username: "josephine.davidson",
+        email: "josephine.davidson@example.com",
+      },
+      {
+        fullname: "Dean Hale",
+        username: "dean.hale",
+        email: "dean.hale@example.com",
+      },
+      {
+        fullname: "Sam Reid",
+        username: "sam.reid",
+        email: "sam.reid@example.com",
+      },
+    ],
+  },
+  aios35jq3: {
     uid: "aios35jq3",
     date: 1613637384343,
     title: "Midnight",
@@ -157,37 +188,6 @@ const initialProjects = [
       },
     ],
   },
-  {
-    uid: "k5fa0vaep",
-    date: 1613637384343,
-    title: "Twilight",
-    code: "twilight",
-    description: "Tempore in architecto nam labore, cupiditate.",
-    status: "finished",
-    kanbanId: "9n4cowlt2",
-    teamLeader: {
-      fullname: "Mia Russo",
-      username: "mia.russo",
-      email: "mia.russo@example.com",
-    },
-    teamMembers: [
-      {
-        fullname: "Josephine Davidson",
-        username: "josephine.davidson",
-        email: "josephine.davidson@example.com",
-      },
-      {
-        fullname: "Dean Hale",
-        username: "dean.hale",
-        email: "dean.hale@example.com",
-      },
-      {
-        fullname: "Sam Reid",
-        username: "sam.reid",
-        email: "sam.reid@example.com",
-      },
-    ],
-  },
-];
+};
 
 export default initialProjects;
