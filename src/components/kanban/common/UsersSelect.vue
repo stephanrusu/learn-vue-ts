@@ -75,15 +75,14 @@ export default {
   methods: {
     checkValidation(user) {
       if (this.multiple) {
-        return this.selectedUsers.indexOf(user) >= 0;
+        return this.selectedUsers.some((elem) => elem.username === user.username);
       } else {
         return this.selectedUsers === user;
       }
     },
     toggleSelectUser(user) {
       if (this.multiple) {
-        let indexUser = this.selectedUsers.indexOf(user);
-
+        let indexUser = this.selectedUsers.findIndex((elem) => elem.username === user.username);
         if (indexUser < 0) {
           this.selectedUsers.push(user);
         } else {

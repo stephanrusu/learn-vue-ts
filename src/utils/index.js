@@ -25,3 +25,7 @@ export const getUuid = () => {
 export const range = (size, startAt = 0) => {
   return [...Array(size).keys()].map((i) => i + startAt);
 };
+
+export const objectClone = (obj) => {
+  return JSON.parse(JSON.stringify(obj));
+};

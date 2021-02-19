@@ -244,6 +244,7 @@ import UsersSelect from "@/components/kanban/common/UsersSelect.vue";
 import KanbanOverlay from "../KanbanOverlay.vue";
 import UserAvatar from "../kanban/common/UserAvatar.vue";
 import BoardColorSelection from "./BoardColorSelection.vue";
+import { objectClone } from "@/utils";
 
 export default {
   name: "ProjectForm",
@@ -280,7 +281,7 @@ export default {
   },
   computed: {
     selectedProject() {
-      return this.$store.getters.selectedProject(this.$route.params.projectId);
+      return objectClone(this.$store.getters.selectedProject(this.$route.params.projectId));
     },
   },
   mounted() {
