@@ -27,7 +27,7 @@
         :to="{ name: 'data-table' }"
         class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
       >
-        DataTable
+        Messages
       </router-link>
     </div>
   </div>
@@ -35,6 +35,6 @@
 
 <script>
 export default {
-  name: "DataTableHeader",
+  name: "MessageHeader",
 };
 </script>

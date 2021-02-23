@@ -3,7 +3,7 @@
     <div class="bg-white p-2 rounded-l-md shadow-card flex items-center">
       <router-link
         :to="{ name: 'projects' }"
-        class="text-gray-500 hover:bg-gray-100 p-2 rounded-md text-sm font-medium"
+        class="text-gray-500 hover:bg-gray-100 p-2 rounded-md text-sm font-medium ease-in transition-colors"
       >
         Projects
       </router-link>

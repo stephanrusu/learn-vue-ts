@@ -6,6 +6,7 @@ import Projects from "@/views/Projects.vue";
 import Kanban from "@/views/Kanban.vue";
 import FlexGrid from "@/views/FlexGrid.vue";
 import Calendar from "@/views/Calendar.vue";
+import Message from "@/views/Message.vue";
 import DataTable from "@/views/DataTable.vue";
 import NotFound from "@/views/NotFound.vue";
 
@@ -161,6 +162,12 @@ const routes = [
     path: "/datatable",
     name: "data-table",
     component: DataTable,
+  },
+  // messages
+  {
+    path: "/messages",
+    name: "messages",
+    component: Message,
   },
   // not found
   { path: "*", name: "not-found", component: NotFound },

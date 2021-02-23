@@ -9,7 +9,12 @@
       </div>
     </template>
     <template #main>
-      <users-select :multiple="multiple" class="py-4 px-2" />
+      <users-select
+        :multiple="multiple"
+        class="py-4 px-2"
+        :selection="selectedProject.teamMembers"
+        @userSelection="updateMembers"
+      />
     </template>
     <template #footer>
       <div class="flex flex-row space-x-2 ml-auto">
@@ -35,6 +40,7 @@
 <script>
 import UsersSelect from "../kanban/common/UsersSelect.vue";
 import KanbanOverlay from "../KanbanOverlay.vue";
+import { objectClone } from "@/utils";
 export default {
   name: "MembersSelection",
   components: { KanbanOverlay, UsersSelect },
@@ -42,6 +48,21 @@ export default {
     multiple: {
       type: Boolean,
       default: false,
+    },
+  },
+  data() {
+    return {
+      members: [],
+    };
+  },
+  computed: {
+    selectedProject() {
+      return objectClone(this.$store.getters.selectedProject(this.$route.params.projectId));
+    },
+  },
+  methods: {
+    updateMembers(list) {
+      this.members = list;
     },
   },
 };

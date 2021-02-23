@@ -4,7 +4,7 @@
       <div class="flex items-center">
         <router-link
           :to="{ name: 'projects' }"
-          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
         >
           Projects
         </router-link>
@@ -26,7 +26,7 @@
         </div>
         <router-link
           :to="{ name: 'kanban' }"
-          class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+          class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
         >
           {{ projectTitle }}
         </router-link>
@@ -34,24 +34,26 @@
       <div class="space-x-4 flex items-center">
         <router-link
           :to="{ name: 'task-create' }"
-          class="text-white flex items-center justify-between pl-3 pr-4 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors mr-4"
+          class="group flex items-center justify-between px-2 py-2 rounded-md shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors mr-4"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-plus stroke-current w-5 h-5 text-white mr-2"
-          >
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          <span>Add new</span>
+          <span class="text-sm font-medium tracking-wide text-white mr-2">Add new</span>
+          <span class="bg-indigo-400 rounded p-1 group-hover:bg-indigo-500 ease-in transition-colors">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-plus stroke-current w-4 h-4 text-indigo-50"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
         </router-link>
         <router-link :to="{ name: 'settings' }" class="bg-white hover:bg-gray-100 p-2 rounded">
           <svg

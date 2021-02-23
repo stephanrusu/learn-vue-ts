@@ -4,21 +4,27 @@
       <div class="flex items-center space-x-4">
         <router-link
           :to="{ name: 'projects' }"
-          class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+          class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
         >
           Projects
         </router-link>
         <router-link
           :to="{ name: 'sign-in' }"
-          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
         >
           Sign in
         </router-link>
         <router-link
           :to="{ name: 'calendar' }"
-          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
         >
           Calendar
+        </router-link>
+        <router-link
+          :to="{ name: 'datatable' }"
+          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
+        >
+          Datatable
         </router-link>
       </div>
 
