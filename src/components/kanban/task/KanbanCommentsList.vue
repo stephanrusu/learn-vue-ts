@@ -30,8 +30,8 @@
             <div class="text-xs text-gray-400 font-medium">{{ new Date() | taskDate }}</div>
           </div>
           <div class="text-sm p-2 text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt laboriosam eaque natus quibusdam quasi
-            magnam?
+            Cookie topping gingerbread sesame snaps muffin jelly ice cream cake soufflé. Oat cake lemon drops tiramisu
+            oat cake marzipan cake tart.
           </div>
         </div>
       </template>

@@ -5,7 +5,7 @@ const initialProjects = {
     title: "Endless",
     code: "endless",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore in architecto nam labore, cupiditate.",
+      "Muffin apple pie apple pie gingerbread chupa chups jelly powder. Pastry chupa chups liquorice chocolate cupcake.",
     status: "ongoing",
     kanbanId: "nigyhcmrs",
     teamLeader: {
@@ -37,7 +37,7 @@ const initialProjects = {
     title: "Horizon",
     code: "horizon",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore in architecto nam labore, cupiditate.",
+      "Toffee sweet wafer. Wafer liquorice icing dragée. Candy canes candy fruitcake lollipop danish toffee powder.",
     status: "ongoing",
     kanbanId: "fb9idw4a5",
     teamLeader: {
@@ -73,7 +73,7 @@ const initialProjects = {
     date: 1613637384343,
     title: "Sunset",
     code: "sunset",
-    description: "Tempore in architecto nam labore, cupiditate.",
+    description: "Jujubes bonbon brownie caramels donut tootsie roll lollipop tiramisu. ",
     status: "finished",
     kanbanId: "qh9xj0s6e",
     teamLeader: {
@@ -99,7 +99,8 @@ const initialProjects = {
     date: 1613637384343,
     title: "Sunrise",
     code: "sunrise",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    description:
+      "Dragée jujubes cupcake sweet roll gummi bears tiramisu tart powder. Cheesecake icing cheesecake pie sesame snaps cake.",
     status: "ongoing",
     kanbanId: "lvjwi5eos",
     teamLeader: {
@@ -130,7 +131,7 @@ const initialProjects = {
     date: 1613637384343,
     title: "Twilight",
     code: "twilight",
-    description: "Tempore in architecto nam labore, cupiditate.",
+    description: "Sweet fruitcake donut muffin tiramisu. Fruitcake jelly-o cotton candy caramels pie halvah. ",
     status: "finished",
     kanbanId: "9n4cowlt2",
     teamLeader: {
@@ -162,7 +163,7 @@ const initialProjects = {
     title: "Midnight",
     code: "midnight",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore in architecto nam labore, cupiditate.",
+      "Croissant bear claw caramels soufflé bear claw bear claw cheesecake cake. Topping marzipan macaroon croissant pudding brownie cake dragée.",
     status: "finished",
     kanbanId: "t775wehsq",
     teamLeader: {

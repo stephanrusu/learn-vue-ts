@@ -92,7 +92,7 @@
       <button
         v-if="!isFirstBoard"
         type="button"
-        class="flex flex-1 py-2 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
+        class="flex flex-1 py-1.5 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
         @click="moveTask(-1)"
       >
         <svg
@@ -114,7 +114,7 @@
       <button
         v-if="!isLastBoard"
         type="button"
-        class="flex flex-1 py-2 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
+        class="flex flex-1 py-1.5 bg-white hover:bg-gray-50 items-center justify-center ease-in transition-colors"
         @click="moveTask(1)"
       >
         <svg

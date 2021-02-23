@@ -7,7 +7,10 @@
       </div>
     </div>
     <div class="text-center">
-      <router-link :to="{ name: 'home' }" class="text-sm text-indigo-600 font-medium tracking-wide hover:underline">
+      <router-link
+        :to="{ name: 'home' }"
+        class="text-sm text-indigo-600 font-medium tracking-wide hover:underline p-2 hover:bg-white ease-in transition-colors"
+      >
         Go home
       </router-link>
     </div>

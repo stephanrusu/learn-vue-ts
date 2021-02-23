@@ -34,7 +34,7 @@
       <div class="space-x-4 flex items-center">
         <router-link
           :to="{ name: 'task-create' }"
-          class="group flex items-center justify-between px-2 py-2 rounded-md shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors mr-4"
+          class="group flex items-center justify-between px-2 py-1.5 rounded-md shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors mr-4"
         >
           <span class="text-sm font-medium tracking-wide text-white mr-2">Add new</span>
           <span class="bg-indigo-400 rounded p-1 group-hover:bg-indigo-500 ease-in transition-colors">

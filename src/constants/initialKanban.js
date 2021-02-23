@@ -16,7 +16,7 @@ const initialKanban = {
           date: 1604613600000,
           code: "Endless-8",
           assigned: ["SR"],
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "task",
           priority: "major",
           description:
@@ -25,12 +25,12 @@ const initialKanban = {
           files: [],
           subTasks: [
             {
-              text: "Lorem ipsum dolor sit amet",
+              text: "Carrot cake lemon drops lollipop.",
               completed: true,
               uid: "x4m5hnlkz",
             },
             {
-              text: "Consectetur adipiscing elit.",
+              text: "Icing cotton candy cheesecake soufflé lollipop powder.",
               completed: false,
               uid: "aj39ghidc",
             },
@@ -41,7 +41,7 @@ const initialKanban = {
           date: 1604613600000,
           assigned: ["MR", "SR"],
           code: "Endless-7",
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "design",
           priority: "critical",
           description:
@@ -55,7 +55,7 @@ const initialKanban = {
           date: 1604613600000,
           code: "Endless-6",
           assigned: ["SR"],
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "bug",
           priority: "trivial",
           description:
@@ -76,7 +76,7 @@ const initialKanban = {
           date: 1604613600000,
           code: "Endless-4",
           assigned: ["SR"],
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "bug",
           priority: "minor",
           description:
@@ -90,7 +90,7 @@ const initialKanban = {
           date: 1604613600000,
           code: "Endless-5",
           assigned: ["MR"],
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "design",
           priority: "minor",
           description:
@@ -111,7 +111,7 @@ const initialKanban = {
           date: 1604613600000,
           code: "Endless-3",
           assigned: ["SR"],
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "bug",
           priority: "blocker",
           description:
@@ -132,7 +132,7 @@ const initialKanban = {
           date: 1604613600000,
           code: "Endless-1",
           assigned: ["SR"],
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "task",
           priority: "critical",
           description:
@@ -146,7 +146,7 @@ const initialKanban = {
           date: 1604613600000,
           code: "Endless-2",
           assigned: ["SR"],
-          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
           type: "feature",
           priority: "major",
           description:
