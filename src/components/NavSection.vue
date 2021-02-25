@@ -26,6 +26,12 @@
         >
           Datatable
         </router-link>
+        <router-link
+          :to="{ name: 'messages' }"
+          class="text-gray-500 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
+        >
+          Messages
+        </router-link>
       </div>
 
       <div
