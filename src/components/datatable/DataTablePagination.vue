@@ -63,6 +63,7 @@
     <slot />
     <div class="flex flex-row items-center justify-between bg-white p-4 shadow-card">
       <nav class="flex flex-row items-center" role="navigation" aria-label="pagination">
+        <!-- previous -->
         <button
           class="flex flex-1 py-2 w-10 rounded bg-gray-50 hover:bg-gray-100 items-center justify-center ease-in transition-colors mr-10"
           aria-label="Previous page"
@@ -82,6 +83,7 @@
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
+        <!-- next -->
         <button
           class="flex flex-1 py-2 w-10 rounded bg-gray-50 hover:bg-gray-100 items-center justify-center ease-in transition-colors order-3 ml-10"
           aria-label="Next page"
@@ -101,6 +103,7 @@
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </button>
+        <!-- pages -->
         <ul class="flex flex-row space-x-4">
           <li>
             <button

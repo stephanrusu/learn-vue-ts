@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { initialDataTable } from "@/constants/initialDataTable";
+import initialDataTable from "@/constants/initialDataTable";
 export default {
   name: "DataTableEntries",
   data() {

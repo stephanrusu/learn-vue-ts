@@ -1,4 +1,4 @@
-export const initialDataTable = [
+const initialDataTable = [
   {
     id: "y7id9af49",
     title: "Beetlejuice",
@@ -1590,3 +1590,5 @@ export const initialDataTable = [
       "Four denizens in the world of high-finance predict the credit and housing bubble collapse of the mid-2000s, and decide to take on the big banks for their greed and lack of foresight.",
   },
 ];
+
+export default initialDataTable;
