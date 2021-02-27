@@ -7,7 +7,7 @@
         to
         <span class="font-medium">70</span>
         of
-        <span class="font-medium">146</span>
+        <span class="font-medium">{{ total }}</span>
         results
       </div>
       <div class="flex flex-row items-center">
@@ -162,9 +162,12 @@
         <label class="text-sm font-medium text-gray-500 mr-4" for="goToPage">Go to page</label>
         <input
           id="goToPage"
-          type="text"
+          type="number"
+          min="1"
+          step="1"
+          :max="total"
           name="goToPage"
-          class="focus:border-indigo-300 block w-14 sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
+          class="appereance-none focus:border-indigo-300 block w-14 sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium text-gray-600 placeholder-gray-300"
         />
         <button
           type="button"
@@ -183,18 +186,30 @@ export default {
   data() {
     return {
       itemsToggle: false,
-      itemsSelected: 10,
       itemsValues: [10, 30, 50, 100],
     };
+  },
+  computed: {
+    total() {
+      return this.$store.getters.listDataSize;
+    },
+    itemsSelected() {
+      return this.$store.getters.pageSize;
+    },
   },
   methods: {
     toggleAction() {
       this.itemsToggle = !this.itemsToggle;
     },
     selectAction(value) {
-      this.itemsSelected = value;
+      this.$store.dispatch("update:itemsPerPage", value);
       this.toggleAction();
     },
   },
 };
 </script>
+<style scoped>
+.appereance-none {
+  -moz-appearance: textfield;
+}
+</style>

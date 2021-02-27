@@ -18,7 +18,7 @@
       </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
-      <template v-for="entry in entries.slice(60, 70)">
+      <template v-for="entry in entries">
         <tr :key="entry.id">
           <td class="p-4 whitespace-nowrap">
             <div class="flex items-center">
@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import initialDataTable from "@/constants/initialDataTable";
 export default {
   name: "DataTableEntries",
   data() {
@@ -70,8 +69,12 @@ export default {
           key: "genre",
         },
       ],
-      entries: initialDataTable,
     };
+  },
+  computed: {
+    entries() {
+      return this.$store.getters.paginateData;
+    },
   },
 };
 </script>

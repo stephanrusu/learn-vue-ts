@@ -1048,5 +1048,10 @@ module.exports = {
     wordBreak: ["responsive"],
     zIndex: ["responsive", "focus-within", "focus", "hover"],
   },
-  plugins: [require("@tailwindcss/forms"), require("./plugins/flex-basis"), require("./plugins/flex-grid")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("./plugins/flex-basis"),
+    require("./plugins/flex-grid"),
+  ],
 };

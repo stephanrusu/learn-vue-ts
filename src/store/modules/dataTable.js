@@ -7,16 +7,21 @@ const dataTable = {
     itemsPerPage: 10,
   },
   actions: {
-    updateCurrentPage({ commit }, payload) {
+    ["update:currentPage"]({ commit }, payload) {
       commit("setCurrentPage", payload);
     },
-    updateItemsPerPage({ commit }, payload) {
+    ["update:itemsPerPage"]({ commit }, payload) {
       commit("setItemsPerPage", payload);
     },
   },
   getters: {
     listData: (state) => state.data,
+    listDataSize: (state) => state.data.length,
+    pageSize: (state) => state.itemsPerPage,
+    pageNumber: (state) => state.currentPage,
     pageCount: (state) => Math.ceil(state.data.length / state.itemsPerPage),
+    paginateData: (state) =>
+      state.data.slice((state.currentPage - 1) * state.itemsPerPage, state.currentPage * state.itemsPerPage),
   },
   mutations: {
     setCurrentPage(state, payload) {
