@@ -3,9 +3,9 @@
     <div class="flex flex-row items-center justify-between bg-white p-4 shadow-card mt-4">
       <div class="text-sm text-gray-700">
         Showing
-        <span class="font-medium">60</span>
+        <span class="font-medium">{{ (currentPage - 1) * itemsSelected }}</span>
         to
-        <span class="font-medium">70</span>
+        <span class="font-medium">{{ currentPage * itemsSelected > total ? total : currentPage * itemsSelected }}</span>
         of
         <span class="font-medium">{{ total }}</span>
         results
@@ -153,6 +153,7 @@
         <label class="text-sm font-medium text-gray-500 mr-4" for="goToPage">Go to page</label>
         <input
           id="goToPage"
+          v-model="pageSelect"
           type="number"
           min="1"
           step="1"
@@ -163,6 +164,7 @@
         <button
           type="button"
           class="rounded py-2 px-3 shadow-small bg-white text-gray-500 ease-in transition-colors bg-white hover:bg-gray-100 border ml-4"
+          @click="goToPage(pageSelect)"
         >
           Go
         </button>
@@ -178,6 +180,9 @@ export default {
     return {
       itemsToggle: false,
       itemsValues: [10, 30, 50, 100],
+      beforeCurrent: 1,
+      afterCurrent: 1,
+      pageSelect: "0",
     };
   },
   computed: {
@@ -196,10 +201,6 @@ export default {
     currentPage() {
       return this.$store.getters.pageNumber;
     },
-    itemsPerPage() {
-      return this.$store.getters.pageSize;
-    },
-
     /**
      * Check if previous button is available.
      */
@@ -218,31 +219,28 @@ export default {
      * Check if first page button should be visible.
      */
     hasFirst() {
-      if (this.pageCount < 5) return false;
-      return this.currentPage >= 3;
+      return this.currentPage >= this.beforeCurrent + 2;
     },
 
     /**
      * Check if first ellipsis should be visible.
      */
     hasFirstEllipsis() {
-      if (this.pageCount < 5) return false;
-      return this.currentPage >= 4;
+      return this.currentPage >= this.beforeCurrent + 4;
     },
 
     /**
      * Check if last page button should be visible.
      */
     hasLast() {
-      return this.currentPage <= this.pageCount - 2;
+      return this.currentPage <= this.pageCount - (this.afterCurrent + 1);
     },
 
     /**
      * Check if last ellipsis should be visible.
      */
     hasLastEllipsis() {
-      if (this.pageCount < 5) return false;
-      return this.currentPage <= this.pageCount - 3;
+      return this.currentPage < this.pageCount - (this.afterCurrent + 2);
     },
 
     /**
@@ -250,16 +248,14 @@ export default {
      * after that, 1 before and 1 after the current.
      */
     pagesInRange() {
-      let left = this.pageCount - 3;
-      if (this.currentPage < this.pageCount - 2) {
-        left = Math.max(1, this.currentPage - 1);
+      let left = Math.max(1, this.currentPage - this.beforeCurrent);
+      if (left - 1 === 2) {
+        left -= 1; // Do not show the ellipsis if there is only one to hide
       }
-
-      let right = 3;
-      if (this.currentPage > 2) {
-        right = Math.min(this.currentPage + 1, this.pageCount);
+      let right = Math.min(this.currentPage + this.afterCurrent, this.pageCount);
+      if (this.pageCount - right === 2) {
+        right += 1; // Do not show the ellipsis if there is only one to hide
       }
-
       const pages = [];
       for (let i = left; i <= right; i += 1) {
         pages.push({
@@ -278,7 +274,9 @@ export default {
       if (this.currentPage > value) this.last();
     },
   },
-
+  beforeDestroy() {
+    this.first();
+  },
   methods: {
     toggleAction() {
       this.itemsToggle = !this.itemsToggle;
@@ -321,8 +319,8 @@ export default {
      * Go to a specific page
      */
     goToPage(page) {
-      if (this.currentPage === page) return;
-      this.$store.dispatch("update:currentPage", page);
+      if (this.currentPage === parseInt(page, 10)) return;
+      this.$store.dispatch("update:currentPage", parseInt(page, 10));
     },
   },
 };
