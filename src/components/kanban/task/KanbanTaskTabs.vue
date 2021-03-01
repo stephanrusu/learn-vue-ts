@@ -1,22 +1,20 @@
 <template>
   <div class="px-4 mt-2">
-    <div class="mb-4 flex">
-      <div class="flex flex-row space-x-2">
-        <template v-for="tab in tabs">
-          <div
-            :key="tab.key"
-            :class="[
-              'z-10 cursor-pointer text-center p-2 font-medium text-sm',
-              activeTab === tab.key
-                ? 'text-indigo-500 hover:text-indigo-600 border-b-2 border-indigo-500 shadow-small hover:border-indigo-600'
-                : 'text-gray-400 hover:text-gray-500 hover:border-b hover:border-gray-400',
-            ]"
-            @click="activeTab = tab.key"
-          >
-            {{ tab.text }}
-          </div>
-        </template>
-      </div>
+    <div class="mb-4 flex flex-row space-x-2">
+      <template v-for="tab in tabs">
+        <div
+          :key="tab.key"
+          :class="[
+            'z-10 cursor-pointer text-center p-2 font-medium text-sm',
+            activeTab === tab.key
+              ? 'text-indigo-500 hover:text-indigo-600 border-b-2 border-indigo-500 shadow-small hover:border-indigo-600'
+              : 'text-gray-400 hover:text-gray-500 hover:border-b hover:border-gray-400',
+          ]"
+          @click="activeTab = tab.key"
+        >
+          {{ tab.text }}
+        </div>
+      </template>
     </div>
     <transition
       appear
