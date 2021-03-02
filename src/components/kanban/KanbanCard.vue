@@ -155,9 +155,6 @@ export default {
     },
   },
   computed: {
-    projectTitle() {
-      return this.$store.getters.listProject.title;
-    },
     taskCard() {
       return this.$store.getters.singleTask(this.boardId, this.taskId);
     },

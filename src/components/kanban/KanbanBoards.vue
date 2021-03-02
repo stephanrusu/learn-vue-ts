@@ -15,9 +15,15 @@ export default {
     KanbanColumn,
   },
   computed: {
+    selectedProject() {
+      return this.$store.getters.selectedProject(this.$route.params.projectId);
+    },
     boardsOrder() {
       return this.$store.getters.boardsOrder;
     },
+  },
+  mounted() {
+    this.$store.dispatch("setActiveKanban", this.selectedProject.kanbanId);
   },
 };
 </script>

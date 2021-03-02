@@ -25,10 +25,10 @@
           </svg>
         </div>
         <router-link
-          :to="{ name: 'kanban' }"
+          :to="{ name: 'kanban', params: { projectId: selectedProject.uid } }"
           class="bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm font-medium ease-in transition-colors"
         >
-          {{ projectTitle }}
+          {{ selectedProject.title }}
         </router-link>
       </div>
       <div class="space-x-4 flex items-center">
@@ -123,6 +123,7 @@
 
 <script>
 import KanbanFilter from "./filters/KanbanFilter.vue";
+
 export default {
   name: "KanbanHeader",
   components: { KanbanFilter },
@@ -133,8 +134,8 @@ export default {
     };
   },
   computed: {
-    projectTitle() {
-      return this.$store.getters.listProject.title;
+    selectedProject() {
+      return this.$store.getters.selectedProject(this.$route.params.projectId);
     },
   },
   watch: {

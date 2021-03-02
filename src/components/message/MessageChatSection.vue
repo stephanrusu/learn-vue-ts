@@ -47,23 +47,23 @@
         <!-- other -->
         <div class="flex mt-2 justify-start">
           <div class="space-y-1 text-sm text-gray-600 font-medium flex flex-col items-start max-w-lg">
-            <div class="bg-gray-100 shadow-small p-2 rounded-r-md rounded-tl-md">
+            <div class="bg-gray-100 shadow-small py-2 px-3 rounded-r-md rounded-tl-md">
               Pastry chupa chups liquorice chocolate cupcake.
             </div>
-            <div class="bg-gray-100 shadow-small p-2 rounded-r-md rounded-bl-md">Biscuit pastry cake.</div>
+            <div class="bg-gray-100 shadow-small py-2 px-3 rounded-r-md rounded-bl-md">Biscuit pastry cake.</div>
             <div class="text-xs text-gray-400 leading-none pt-1">5 min ago</div>
           </div>
         </div>
         <!-- you -->
         <div class="flex mt-2 justify-end">
           <div class="space-y-1 text-white text-sm font-medium flex flex-col items-end max-w-lg">
-            <div class="bg-indigo-400 shadow-small p-2 rounded-l-md rounded-tr-md">
+            <div class="bg-indigo-400 shadow-small py-2 px-3 rounded-l-md rounded-tr-md">
               Fruitcake marshmallow cookie jujubes cake sugar plum chocolate bar sugar plum.
             </div>
-            <div class="bg-indigo-400 shadow-small p-2 rounded-l-md">
+            <div class="bg-indigo-400 shadow-small py-2 px-3 rounded-l-md">
               Chocolate dessert cotton candy lollipop lemon drops cookie jelly-o tart.
             </div>
-            <div class="bg-indigo-400 shadow-small p-2 rounded-l-md rounded-br-md">Biscuit pastry cake.</div>
+            <div class="bg-indigo-400 shadow-small py-2 px-3 rounded-l-md rounded-br-md">Biscuit pastry cake.</div>
             <div class="text-xs text-gray-400 leading-none text-right pt-1">2 min ago</div>
           </div>
         </div>
@@ -72,7 +72,7 @@
         <input
           type="text"
           name="text"
-          placeholder="What do you need to do?"
+          placeholder="Say something!"
           class="focus:border-indigo-300 mr-4 w-full border-gray-300 rounded shadow-small focus:shadow-medium text-sm"
         />
         <button

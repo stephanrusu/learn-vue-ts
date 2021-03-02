@@ -130,9 +130,6 @@ export default {
   name: "KanbanTaskDispay",
   components: { KanbanOverlay, UsersAssigned, KanbanTaskTabs, TaskOptions },
   computed: {
-    projectTitle() {
-      return this.$store.getters.listProject.title;
-    },
     boards() {
       return this.$store.getters.listBoards;
     },

@@ -94,7 +94,7 @@ const routes = [
   },
   // kanban
   {
-    path: "/kanban",
+    path: "/kanban/:projectId",
     component: Kanban,
     name: "kanban",
     children: [

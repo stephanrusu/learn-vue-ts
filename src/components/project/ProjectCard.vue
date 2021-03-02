@@ -92,7 +92,7 @@
       <div class="flex flex-row items-center justify-between my-2">
         <user-avatar>{{ project.teamLeader.fullname | avatarId }}</user-avatar>
         <router-link
-          :to="{ name: 'kanban' }"
+          :to="{ name: 'kanban', params: { projectId: project.uid } }"
           type="button"
           class="text-indigo-600 hover:text-white px-4 py-2 rounded-md text-sm font-medium tracking-wide shadow-card bg-gray-100 hover:bg-indigo-500 ease-in transition-colors flex items-center"
         >

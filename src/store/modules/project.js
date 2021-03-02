@@ -2,8 +2,8 @@ import initialProjects from "@/constants/initialProjects";
 
 const project = {
   state: {
-    list: initialProjects,
     active: {},
+    list: initialProjects,
   },
   actions: {},
   getters: {
