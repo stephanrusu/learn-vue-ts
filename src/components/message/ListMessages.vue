@@ -62,6 +62,6 @@
 
 <script>
 export default {
-  name: "ListUsers",
+  name: "ListMessages",
 };
 </script>

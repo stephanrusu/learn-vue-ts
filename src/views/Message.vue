@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 pb-4 font-sans">
+  <div class="px-4 py-4 font-sans h-screen flex flex-col">
     <message-page />
   </div>
 </template>

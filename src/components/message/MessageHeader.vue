@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-2 rounded-lg shadow-card flex items-center justify-between mt-4">
+  <div class="bg-white p-2 rounded-lg shadow-card flex items-center justify-between">
     <div class="flex items-center">
       <router-link
         :to="{ name: 'projects' }"
