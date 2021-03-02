@@ -1,5 +1,5 @@
 <template>
-  <div v-frag>
+  <div>
     <data-table-pagination>
       <div class="flex flex-col py-4">
         <div class="align-middle inline-block min-w-full shadow-card border-b border-gray-200 sm:rounded-lg">
@@ -7,7 +7,6 @@
         </div>
       </div>
     </data-table-pagination>
-    <div class="hidden">sanity check</div>
   </div>
 </template>
 

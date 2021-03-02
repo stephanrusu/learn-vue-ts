@@ -1,5 +1,5 @@
 <template>
-  <div v-frag>
+  <div>
     <div class="flex flex-row items-center justify-between bg-white p-4 shadow-card mt-4">
       <div class="text-sm text-gray-700">
         Showing

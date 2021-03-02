@@ -1,5 +1,5 @@
 <template>
-  <div v-frag>
+  <div>
     <div class="flex items-center p-4 bg-gray-50 hover:bg-gray-50 group relative rounded-md cursor-pointer">
       <div class="absolute w-1 left-0 bottom-0 top-0 rounded-sm bg-cyan-500 shadow-medium" />
       <div

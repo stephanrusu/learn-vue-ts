@@ -28,7 +28,7 @@
       tag="div"
       class="relative"
     >
-      <div v-if="activeTab === 'description'" class="flex flex-col">
+      <div v-if="activeTab === 'description'" :key="activeTab" class="flex flex-col">
         <div class="text-md text-gray-500">
           {{ task.description }}
         </div>
