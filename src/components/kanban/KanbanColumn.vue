@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import KanbanCard from "./KanbanCard";
+import KanbanCard from "./KanbanCard.vue";
 import { displayFilters } from "@/utils";
 import { Boards } from "@/constants/enums";
 

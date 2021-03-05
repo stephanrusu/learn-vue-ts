@@ -185,7 +185,6 @@ export default {
     },
     column() {
       const taskId = this.$route.params.taskId;
-      console.info(taskId);
       if (taskId !== undefined) {
         const getBoard = (taskId) => {
           // ignore key as there is an uuid inside a board
