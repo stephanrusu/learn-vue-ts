@@ -21,12 +21,19 @@
         tag="div"
         class="relative"
       >
-        <users-select v-if="userSelect" :key="userSelect" :multiple="true" class="px-2 py-4" />
+        <users-select
+          v-if="userSelect"
+          :key="userSelect"
+          :selection="usersAssigned"
+          :multiple="true"
+          class="px-2 py-4"
+        />
         <div v-else :key="userSelect" class="flex flex-col p-4 space-y-4">
           <div class="space-y-2">
             <label for="taskTitle" class="text-sm font-medium text-gray-700">Title</label>
             <input
               id="taskTitle"
+              v-model="taskTitle"
               type="text"
               name="task-title"
               class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium"
@@ -36,6 +43,7 @@
             <label for="taskDescription" class="text-sm font-medium text-gray-700">Description</label>
             <textarea
               id="taskDescription"
+              v-model="taskDescription"
               name="task-title"
               class="focus:border-indigo-300 block w-full sm:text-sm border-gray-300 rounded-md shadow-small focus:shadow-medium resize-none"
               rows="3"
@@ -84,7 +92,9 @@
           <div class="space-y-2">
             <div class="text-sm font-medium text-gray-700">Assigned to</div>
             <div class="flex items-center space-x-2">
-              <user-avatar>SR</user-avatar>
+              <template v-for="user in usersAssigned">
+                <user-avatar :key="user.username">{{ user.fullname | avatarId }}</user-avatar>
+              </template>
               <button
                 type="button"
                 class="rounded-md p-2 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200"
@@ -160,11 +170,55 @@ export default {
   data() {
     return {
       userSelect: false,
+      taskTitle: "",
+      taskDescription: "",
       selectedType: "",
       selectedPriority: "",
       typeValues: KanbanType,
       priorityValues: KanbanPriority,
+      usersAssigned: [],
     };
+  },
+  computed: {
+    boards() {
+      return this.$store.getters.listBoards;
+    },
+    column() {
+      const taskId = this.$route.params.taskId;
+      console.info(taskId);
+      if (taskId !== undefined) {
+        const getBoard = (taskId) => {
+          // ignore key as there is an uuid inside a board
+          for (const [, board] of Object.entries(this.boards)) {
+            if (board.tasks[taskId] !== undefined) {
+              return board;
+            }
+          }
+          // if nothing, return first board
+          return this.boards[0];
+        };
+        const board = getBoard(taskId);
+        return board;
+      }
+      return false;
+    },
+    task() {
+      const taskId = this.$route.params.taskId;
+      if (taskId !== undefined) {
+        return this.column.tasks[taskId];
+      }
+      return false;
+    },
+  },
+  mounted() {
+    if (this.$route.params.taskId !== undefined) {
+      // edit task
+      this.taskTitle = this.task.title;
+      this.taskDescription = this.task.description;
+      this.selectedType = this.task.type;
+      this.selectedPriority = this.task.priority;
+      this.usersAssigned = this.task.assigned;
+    }
   },
   methods: {
     toggleSelectUser() {

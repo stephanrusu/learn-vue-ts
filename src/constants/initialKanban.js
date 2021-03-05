@@ -13,7 +13,13 @@ const initialKanban = {
             uid: "8lvzs23uf",
             date: 1604613600000,
             code: "Endless-8",
-            assigned: ["SR"],
+            assigned: [
+              {
+                fullname: "Sam Reid",
+                username: "sam.reid",
+                email: "sam.reid@example.com",
+              },
+            ],
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "task",
             priority: "major",
@@ -37,7 +43,18 @@ const initialKanban = {
           "8e8v16b0a": {
             uid: "8e8v16b0a",
             date: 1604613600000,
-            assigned: ["MR", "SR"],
+            assigned: [
+              {
+                fullname: "Mia Russo",
+                username: "mia.russo",
+                email: "mia.russo@example.com",
+              },
+              {
+                fullname: "Sam Reid",
+                username: "sam.reid",
+                email: "sam.reid@example.com",
+              },
+            ],
             code: "Endless-7",
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "design",
@@ -52,7 +69,13 @@ const initialKanban = {
             uid: "lud0xissi",
             date: 1604613600000,
             code: "Endless-6",
-            assigned: ["SR"],
+            assigned: [
+              {
+                fullname: "Sam Reid",
+                username: "sam.reid",
+                email: "sam.reid@example.com",
+              },
+            ],
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "bug",
             priority: "trivial",
@@ -73,7 +96,13 @@ const initialKanban = {
             uid: "98t5ma5pg",
             date: 1604613600000,
             code: "Endless-4",
-            assigned: ["SR"],
+            assigned: [
+              {
+                fullname: "Sam Reid",
+                username: "sam.reid",
+                email: "sam.reid@example.com",
+              },
+            ],
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "bug",
             priority: "minor",
@@ -87,7 +116,13 @@ const initialKanban = {
             uid: "hc49m900w",
             date: 1604613600000,
             code: "Endless-5",
-            assigned: ["MR"],
+            assigned: [
+              {
+                fullname: "Mia Russo",
+                username: "mia.russo",
+                email: "mia.russo@example.com",
+              },
+            ],
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "design",
             priority: "minor",
@@ -108,7 +143,13 @@ const initialKanban = {
             uid: "otvgpj19o",
             date: 1604613600000,
             code: "Endless-3",
-            assigned: ["SR"],
+            assigned: [
+              {
+                fullname: "Sam Reid",
+                username: "sam.reid",
+                email: "sam.reid@example.com",
+              },
+            ],
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "bug",
             priority: "blocker",
@@ -129,7 +170,13 @@ const initialKanban = {
             uid: "boc7qorhc",
             date: 1604613600000,
             code: "Endless-1",
-            assigned: ["SR"],
+            assigned: [
+              {
+                fullname: "Sam Reid",
+                username: "sam.reid",
+                email: "sam.reid@example.com",
+              },
+            ],
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "task",
             priority: "critical",
@@ -143,7 +190,13 @@ const initialKanban = {
             uid: "ewhp355qo",
             date: 1604613600000,
             code: "Endless-2",
-            assigned: ["SR"],
+            assigned: [
+              {
+                fullname: "Sam Reid",
+                username: "sam.reid",
+                email: "sam.reid@example.com",
+              },
+            ],
             title: "Cake biscuit ice cream. Marzipan soufflé cookie dessert macaroon. ",
             type: "feature",
             priority: "major",
