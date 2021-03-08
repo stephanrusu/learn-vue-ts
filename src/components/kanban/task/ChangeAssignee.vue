@@ -11,18 +11,25 @@
     <template #main>
       <users-select :multiple="multiple" class="py-4 px-2" />
     </template>
-    <template #footer>
+    <template #footer="{ slideAction }">
       <div class="flex flex-row space-x-2 ml-auto">
         <button
           type="button"
           class="text-gray-500 px-10 py-2 rounded-md text-sm font-medium tracking-wide hover:bg-gray-100 ease-in transition-colors"
-          @click="$router.go(-1)"
+          @click="
+            slideAction();
+            $router.go(-1);
+          "
         >
           Cancel
         </button>
         <button
           type="button"
           class="text-white px-10 py-2 rounded-md text-sm font-medium tracking-wide shadow-small bg-indigo-500 hover:bg-indigo-600 ease-in transition-colors"
+          @click="
+            slideAction();
+            $router.go(-1);
+          "
         >
           Select user
         </button>

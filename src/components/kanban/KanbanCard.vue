@@ -84,7 +84,29 @@
               <div class="ml-2 text-gray-500 font-medium">{{ taskCard.comments.length }}</div>
             </div>
           </div>
-          <users-assigned :users="taskCard.assigned" />
+          <users-assigned v-if="taskCard.assigned.length > 0" :users="taskCard.assigned" />
+          <button
+            v-else
+            type="button"
+            class="rounded-md px-2 py-1.5 hover:bg-gray-50 ease-in transition-colors border-2 border-dashed border-gray-200"
+            @click="changeAssignee"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-plus stroke-current w-4 h-4 text-gray-500"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
         </div>
       </div>
     </main>

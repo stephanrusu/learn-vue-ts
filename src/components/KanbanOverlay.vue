@@ -35,7 +35,6 @@
       leave-to-class="translate-x-full"
       mode="out-in"
       appear
-      tag="div"
     >
       <div :key="toggleSlide" class="flex relative w-full justify-end">
         <div class="flex items-center z-20">
@@ -88,7 +87,7 @@
                   <line x1="3" y1="21" x2="10" y2="14"></line>
                 </svg>
               </button>
-              <slot name="footer"></slot>
+              <slot name="footer" :slideAction="toggleSlideAction"></slot>
             </div>
           </div>
         </div>
@@ -115,9 +114,6 @@ export default {
       },
     },
   },
-  beforeMount() {
-    this.toggleSlide = !this.toggleSlide;
-  },
   methods: {
     closeAction() {
       if (this.showModal) {
@@ -125,6 +121,9 @@ export default {
       } else {
         this.$store.dispatch("slideOverlay");
       }
+      this.toggleSlideAction();
+    },
+    toggleSlideAction() {
       this.toggleSlide = !this.toggleSlide;
     },
   },
